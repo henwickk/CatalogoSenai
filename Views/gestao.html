@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/Views/css/gestao.css">
     <title>Gestão Catálogo</title>
 </head>
+
 <body>
-    <header><div><p>Administrador</p><i class="bi bi-person-circle"></i></div></header>
+    <header>
+        <div>
+            <p>Administrador</p><i class="bi bi-person-circle"></i>
+        </div>
+    </header>
     <main>
-        <div id="cursos"></div>
-        <div id="addCurso"></div>
+        <div id="cursos">
+            <h2>Cursos</h2>
+            <div id="infos">
+                <h4>CURSO</h4>
+                <h4>CATEGORIA</h4>
+                <h4>STATUS</h4>
+                <h4>AÇÕES</h4>
+            </div>
+            <div id="curso">
+                <img src="" alt="" id="Cursoimg">
+                <span>
+                    <h5 id="nameCurso"></h5> <i class="bi bi-alarm" id="cargaH"></i>
+                </span>
+                <h5 id="catCurso"></h5>
+                <h5 id="statCurso"></h5>
+                <span id="actions"><i class="bi bi-pencil-square"></i> <i class="bi bi-trash"></i></span>
+            </div>
+            <button>Ver todos os cursos</button>
+        </div>
+        <div id="addCurso">
+            <h2>Adicionar Curso</h2>
+            <section id="3">
+                <div id="imgCurso">
+                    <h3>Imagem do curso</h3>
+                    <label for="imagem" class="upload">Clique para escolher uma Imagem</label>
+                    <input type="file" id="imagem" accept="image/*" hidden>
+                    <img id="preview" src="img/default.png" alt="Prévia" style="max-width:300px; margin-top:15px;">
+                </div>
+            </section>
+        </div>
     </main>
 </body>
+<script src="/Views/script/script.js"></script>
+
 </html>

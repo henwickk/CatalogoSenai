@@ -1,0 +1,13 @@
+.upload{
+    display:inline-block;
+    padding:15px 25px;
+    border:2px dashed #999;
+    border-radius:10px;
+    cursor:pointer;
+    background:#f8f8f8;
+    transition:.2s;
+}
+
+.upload:hover{
+    background:#ececec;
+}
