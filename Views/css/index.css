@@ -5,6 +5,39 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+:root{
+    --branco: #fefefe;
+    --azul: #002DCE;
+    --laranja: #FE6102;
+    --azulEscuro: #09152F;
+}
+
 header{
-    
+    background: var(--branco);
+    width: 99vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#banner{
+    width: 100%;
+}
+
+.banner-img{
+    background: url(/Views/img/banner3.png);
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+}
+
+#main{
+    height: 40vh;
+    width: 100%;
+}
+
+footer{
+    height: 20vh;
+    width: 100%;
 }
