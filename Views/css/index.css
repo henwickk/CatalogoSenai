@@ -12,6 +12,8 @@
     --azulEscuro: #09152F;
 }
 
+/* HEADER */
+
 header{
     background: var(--branco);
     width: 99vw;
@@ -20,6 +22,39 @@ header{
     justify-content: space-around;
     align-items: center;
 }
+
+header h1{
+    color: var(--azul);
+    font-weight: 800;
+    font-size: 35px;
+}
+
+#divHeader{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#divHeader a{
+    text-decoration: none;
+    color: var(--azulEscuro);
+    font-size: 18px;
+    
+}
+
+#temaEscuro{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#temaEscuro i{
+    font-size: 25px;
+}
+
+/* BANNER */
 
 #banner{
     width: 100%;
@@ -32,12 +67,63 @@ header{
     background-size: cover;
 }
 
+/* MAIN */
+
 #main{
     height: 40vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
-footer{
-    height: 20vh;
-    width: 100%;
+/* FILTRO */
+
+#filtros{
+    width: 80%;
+    margin-top: 2%;
+    
 }
+
+#filtro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+#filtro i{
+    font-size: 45px;
+}
+
+/* CARD-CURSOS */
+
+#cursos{
+    width: 80%;
+    height: 40vh;
+    margin-top: 2%;
+}
+
+.card-curso{
+    width: 15%;
+    height: 20px;
+    background: #fd4141;
+}
+
+/* FOOTER */
+
+footer{
+    height: 15vh;
+    width: 100%;
+    background: var(--azul);
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.icons i{
+    color: var(--branco);
+}
+
