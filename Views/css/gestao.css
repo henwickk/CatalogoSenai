@@ -1,3 +1,9 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .upload{
     display:inline-block;
     padding:15px 25px;
@@ -10,4 +16,67 @@
 
 .upload:hover{
     background:#ececec;
+}
+
+header{
+    display: flex;
+    background-color: #FEFEFE;
+    height: 8vh;
+    width: 100%;
+    flex-direction: row-reverse;
+    gap: 10vh;
+    border-bottom: 2px solid #EDEFF3;
+
+}
+
+#adm{
+    height: 6vh;
+    width: 15vh;
+    align-self: center;
+    background-color: #FEFEFE;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+}
+#adm i{
+    color: #4C33EB;
+    font-size: 20pt;
+}
+
+body{
+    background-color: #F9FAFB;
+    width: 100%;
+    height: 100%;
+}
+
+
+main{
+    background-color: #dd9288;
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 4vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#cursos{
+    background-color: #FEFEFE;
+    height: 70vh;
+    width: 90vh;
+    border: 2px solid #EDEFF3;
+    border-radius: 15px;
+}
+
+#TC{
+    aw
+}
+
+#addCurso{
+    background-color: #FEFEFE;
+    height: 70vh;
+    width: 90vh;
 }
