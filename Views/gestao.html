@@ -17,18 +17,20 @@
         <div id="cursos">
             <h2>Cursos</h2>
             <div id="infos">
-                <h4>CURSO</h4>
-                <h4>CATEGORIA</h4>
-                <h4>STATUS</h4>
-                <h4>AÇÕES</h4>
+                <h5>CURSO</h5>
+                <h5>CATEGORIA</h5>
+                <h5>STATUS</h5>
+                <h5>TURNO</h5>
+                <h5>AÇÕES</h5>
             </div>
             <div id="curso">
-                <img src="" alt="" id="Cursoimg">
+                <img src="/Views/img/exemplo.jpg" alt="" id="Cursoimg">
                 <span>
-                    <h5 id="nameCurso"></h5> <i class="bi bi-alarm" id="cargaH"></i>
+                    <h5 id="nameCurso">Pedreiro</h5> <i class="bi bi-alarm" id="cargaH">200hrs</i>
                 </span>
-                <h5 id="catCurso"></h5>
-                <h5 id="statCurso"></h5>
+                <h5 id="catCurso">Construção</h5>
+                <h5 id="statCurso">Ativo</h5>
+                <h5 id="turno">Manhã</h5>
                 <span id="actions"><i class="bi bi-pencil-square"></i> <i class="bi bi-trash"></i></span>
             </div>
             <button>Ver todos os cursos</button>
@@ -66,6 +68,16 @@
 
                 <div id="statu">
                     <label id="status">Status</label>
+                    <input type="text">
+                </div>
+
+                <div id="turn">
+                    <label id="turno">Turno</label>
+                    <input type="text">
+                </div>
+
+                <div id="prof">
+                    <label id="professor">Professor</label>
                     <input type="text">
                 </div>
             </section>
