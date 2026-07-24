@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+nav.menu-lateral{
+    width: 75px;
+    height: 100%;
+    background-color:rgb(19, 19, 204);
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 rgb(254, 203, 33);
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+nav.menu-lateral:hover{
+    width: 250px;
+    transition: .2s;
+
+}
+
+.btn-expandir{
+    width: 100%;
+    padding: 10px;
+}
+
+.btn-expandir > i{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu{
+    transition: .2s;
+}
+
+ul li.item-menu:hover{
+    background-color:rgb(254, 203, 33);
+}
+
+ul li.item-menu a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+
+ul li.item-menu a .txt-link{
+    margin-left: 30px;
+}
+
+ul li.item-menu a .icon > i{
+    font-size: 30px;
+    margin-left: 5px;
+}
+
