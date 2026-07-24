@@ -5,6 +5,9 @@
 }
 
 body{
+    background-color: #F9FAFB;
+    height: 100vh;
+    width: 100%;
     height: 100vh;
 }
 
@@ -69,3 +72,14 @@ ul li.item-menu a .icon > i{
     margin-left: 5px;
 }
 
+/* FIM NAVBAR */
+
+#cad{
+    margin-left: 10vw;
+    margin-top: 1vw;
+    background-color: #FEFEFE;
+    border: 1px solid #EDEFF3;
+    border-radius: 15px;
+    height: 80vh;
+    width: 80%;
+}
