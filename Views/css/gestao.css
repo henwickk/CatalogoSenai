@@ -1,20 +1,20 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #F9FAFB;
     height: 100vh;
     width: 100%;
     height: 100vh;
 }
 
-nav.menu-lateral{
+nav.menu-lateral {
     width: 75px;
     height: 100%;
-    background-color:rgb(19, 19, 204);
+    background-color: rgb(19, 19, 204);
     padding: 40px 0 40px 1%;
     box-shadow: 3px 0 0 rgb(254, 203, 33);
     position: fixed;
@@ -23,37 +23,37 @@ nav.menu-lateral{
     left: 0;
 }
 
-nav.menu-lateral:hover{
+nav.menu-lateral:hover {
     width: 250px;
     transition: .2s;
 
 }
 
-.btn-expandir{
+.btn-expandir {
     width: 100%;
     padding: 10px;
 }
 
-.btn-expandir > i{
+.btn-expandir>i {
     color: white;
     font-size: 20px;
     cursor: pointer;
 }
 
-ul{
+ul {
     height: 100%;
     list-style-type: none;
 }
 
-ul li.item-menu{
+ul li.item-menu {
     transition: .2s;
 }
 
-ul li.item-menu:hover{
-    background-color:rgb(254, 203, 33);
+ul li.item-menu:hover {
+    background-color: rgb(254, 203, 33);
 }
 
-ul li.item-menu a{
+ul li.item-menu a {
     color: white;
     text-decoration: none;
     font-size: 20px;
@@ -63,18 +63,18 @@ ul li.item-menu a{
     line-height: 30px;
 }
 
-ul li.item-menu a .txt-link{
+ul li.item-menu a .txt-link {
     margin-left: 30px;
 }
 
-ul li.item-menu a .icon > i{
+ul li.item-menu a .icon>i {
     font-size: 30px;
     margin-left: 5px;
 }
 
 /* FIM NAVBAR */
 
-#cad{
+#cad {
     margin-left: 10vw;
     margin-top: 1vw;
     background-color: #FEFEFE;
@@ -82,4 +82,77 @@ ul li.item-menu a .icon > i{
     border-radius: 15px;
     height: 80vh;
     width: 80%;
+
+}
+
+.cad-box{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+
+}
+
+.upload-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    
+    
+    border: 1px solid #EDEFF3;
+    width: 17vw;
+    height: 39vh;
+    border-radius: 12px;
+}
+
+.btn-alt-img{
+
+}
+
+.upload-area {
+    width: 13vw;
+    height: 17vh;
+    border: 2px dashed #EDEFF3;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: flex-start;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.upload-area:hover {
+    background: #eef5ff;
+    border-color: #2563eb;
+}
+
+.upload-area span {
+    font-size: 40pt;
+    color: #555;
+}
+
+.upload-area p {
+    margin-top: 2vh;
+    font-size: 11pt;
+    color: #555;
+
+}
+
+.infos-card{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputCad{
+    border: 1px solid #EDEFF3;
+    height: 5vh;
+    width: 15vw;
+    border-radius: 5px;
+    margin-top: 1vh;
+
 }
