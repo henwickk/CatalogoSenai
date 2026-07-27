@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-:root{
+:root {
     --branco: #fefefe;
     --azul: #002DCE;
     --laranja: #FE6102;
@@ -14,7 +14,7 @@
 
 /* HEADER */
 
-header{
+header {
     background: var(--branco);
     width: 99vw;
     height: 10vh;
@@ -23,13 +23,13 @@ header{
     align-items: center;
 }
 
-header h1{
+header h1 {
     color: var(--azul);
     font-weight: 800;
     font-size: 35px;
 }
 
-#divHeader{
+#divHeader {
     width: 40%;
     height: 100%;
     display: flex;
@@ -37,30 +37,30 @@ header h1{
     align-items: center;
 }
 
-#divHeader a{
+#divHeader a {
     text-decoration: none;
     color: var(--azulEscuro);
     font-size: 18px;
-    
+
 }
 
-#temaEscuro{
+#temaEscuro {
     background: none;
     border: none;
     cursor: pointer;
 }
 
-#temaEscuro i{
+#temaEscuro i {
     font-size: 25px;
 }
 
 /* BANNER */
 
-#banner{
+#banner {
     width: 100%;
 }
 
-.banner-img{
+.banner-img {
     background: url(/Views/img/banner3.png);
     width: 100%;
     height: 80vh;
@@ -69,7 +69,7 @@ header h1{
 
 /* MAIN */
 
-#main{
+#main {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -80,41 +80,85 @@ header h1{
 
 /* FILTRO */
 
-#filtros{
+#filtros {
     width: 80%;
     margin-top: 2%;
-    
+
 }
 
 #filtro {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 }
 
-#filtro i{
+#filtro i {
     font-size: 45px;
 }
 
 /* CARD-CURSOS */
 
-#cursos{
+#cursos {
     width: 80%;
     height: 100%;
     margin-top: 2%;
 }
 
-.card-curso{
-    width: 24%;
-    height: 32vh;
-    background: #fd4141;
-    border-radius: 10px;
+.card-curso {
+    width: 25%;
+    height: 34vh;
+    background: var(--laranja);
+    border-radius: 14px 14px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    color: var(--branco);
+    font-size: 160%;
+    font-weight: 600;
+}
+
+.img-curso {
+    width: 100%;
+    height: 16vh;
+    background: var(--azulEscuro);
+    border-radius: 14px 14px 0px 0px;
+
+}
+
+.categoria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -16%;
+    left: 6%;
+    width: 17%;
+    height: 7vh;
+    border-radius: 40%;
+    background: var(--azul);
+    color: var(--branco);
+    font-size: 150%;
+}
+
+.saiba-mais {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    color: var(--branco);
+    font-size: 60%;
+    font-weight: bold;
+    text-align: start;
+    
+}
+
+.card-curso p{
+    width: 40%;
 }
 
 /* FOOTER */
 
-footer{
+footer {
     height: 15vh;
     width: 100%;
     background: var(--azul);
@@ -124,7 +168,6 @@ footer{
 
 }
 
-.icons i{
+.icons i {
     color: var(--branco);
 }
-
