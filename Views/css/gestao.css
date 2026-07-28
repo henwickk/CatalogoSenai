@@ -151,8 +151,21 @@ ul li.item-menu a .icon>i {
 .inputCad{
     border: 1px solid #EDEFF3;
     height: 5vh;
-    width: 15vw;
+    width: 20vw;
     border-radius: 5px;
     margin-top: 1vh;
+}
 
+.txtl{
+    
+}
+
+#descCurso{
+    border: 1px solid #EDEFF3;
+    border-radius: 5px;
+
+    height: 12vh;
+    width: 20vw;
+
+    margin-top: 1vh;
 }
