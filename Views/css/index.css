@@ -89,6 +89,8 @@ header img {
     gap: 3%;
 }
 
+
+
 #filtro {
     text-align: center;
 }
@@ -112,6 +114,7 @@ header img {
     border-radius: 14px 14px 14px 14px;
     display: flex;
     flex-direction: column;
+    position: relative;
     color: var(--branco);
     font-size: 160%;
     font-weight: 600;
@@ -130,8 +133,9 @@ header img {
     justify-content: center;
     align-items: center;
     position: absolute;
-    margin-top: 5.7%;
-    margin-left: 1%;
+    top: 44%;
+    transform: translateY(-50%);
+    left: 18px;
     width: 60px;
     height: 60px;
     border-radius: 40%;
