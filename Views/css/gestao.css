@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+:root{
+    --branco: #fefefe;
+    --azul: #005caa;
+    --laranja: #fe6102;
+    --azulEscuro: #09152f;
+}
+
 body {
     background-color: #F9FAFB;
     height: 100vh;
@@ -91,7 +98,11 @@ ul li.item-menu a .icon>i {
     flex-direction: row;
 }
 .cad2{
-    width: 40%;
+    height: 60vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 100vh;
 }
 .cad-box{
     display: flex;
@@ -116,6 +127,11 @@ ul li.item-menu a .icon>i {
 
 .btn-alt-img{
 
+}
+
+.margins{
+    margin-left: 2vw;
+    margin-top: 5vh;
 }
 
 .upload-area {
@@ -208,16 +224,22 @@ ul li.item-menu a .icon>i {
 
 /* PRE VISUALIZAÇÃO DO CARD */
 #pre-visu{
-    width: 50%;
+    width: 60%;
 }
 
 .card-curso {
-    width: 25%;
-    height: 34vh;
+    width: 70%;
+    height: 60vh;
     background: var(--laranja);
+    margin-left: 10vw;
+    top: 10vh;
+
     border-radius: 14px 14px 14px 14px;
+
     display: flex;
     flex-direction: column;
+    position: relative;
+
     color: var(--branco);
     font-size: 160%;
     font-weight: 600;
@@ -236,12 +258,13 @@ ul li.item-menu a .icon>i {
     justify-content: center;
     align-items: center;
     position: absolute;
-    margin-top: 5.7%;
-    margin-left: 1%;
+    top: 44%;
+    left: 18px;
+    transform: translateY(-50%);
 
     width: 60px;
     height: 60px;
-    border-radius: 40%;
+    border-radius: 20%;
     background: var(--azul);
 
     color: var(--branco);
