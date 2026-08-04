@@ -74,17 +74,25 @@ ul li.item-menu a .icon>i {
 
 /* FIM NAVBAR */
 
+
+
 #cad {
     margin-left: 10vw;
     margin-top: 1vw;
+
     background-color: #FEFEFE;
     border: 1px solid #EDEFF3;
     border-radius: 15px;
+
     height: 95vh;
     width: 80%;
 
+    display: flex;
+    flex-direction: row;
 }
-
+.cad2{
+    width: 40%;
+}
 .cad-box{
     display: flex;
     flex-direction: row;
@@ -199,6 +207,10 @@ ul li.item-menu a .icon>i {
 }
 
 /* PRE VISUALIZAÇÃO DO CARD */
+#pre-visu{
+    width: 50%;
+}
+
 .card-curso {
     width: 25%;
     height: 34vh;
@@ -226,10 +238,12 @@ ul li.item-menu a .icon>i {
     position: absolute;
     margin-top: 5.7%;
     margin-left: 1%;
+
     width: 60px;
     height: 60px;
     border-radius: 40%;
     background: var(--azul);
+
     color: var(--branco);
     font-size: 25pt;
 }
@@ -239,6 +253,7 @@ ul li.item-menu a .icon>i {
     height: 52%;
     background: #002dce;
     border-radius:  0px 0px 14px 14px;
+
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -260,7 +275,6 @@ ul li.item-menu a .icon>i {
     color: var(--branco);
     font-size: 60%;
     font-weight: bold;
-   
 }
 
 /* FIM PRE VISUALIZÇAO */
