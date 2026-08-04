@@ -85,20 +85,16 @@ header img {
     width: 80%;
     height: 10vh;
     margin-top: 2%;
-
+    display: flex;
+    gap: 3%;
 }
 
 #filtro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
-    height: 1vh;
+    text-align: center;
 }
 
 #filtros i {
-    font-size: 45px;
+    font-size: 30px;
 }
 
 /* CARD-CURSOS */
@@ -106,7 +102,7 @@ header img {
 #cursos {
     width: 80%;
     height: 100%;
-    margin-top: 2%;
+    margin-top: 3%;
 }
 
 .card-curso {
