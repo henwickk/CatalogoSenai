@@ -19,14 +19,14 @@
             <li class="item-menu">
                 <a href="#">
                     <span class="icon"><i class="bi bi-card-text"></i></span>
-                    <span class="txt-link">Cursos</span>
+                    <span class="txt-link">Cadastrar</span>
                 </a>
             </li>
 
             <li class="item-menu">
                 <a href="#">
-                    <span class="icon"><i class="bi bi-person-lines-fill"></i></span>
-                    <span class="txt-link">Professores</span>
+                    <span class="icon"><i class="bi bi-archive"></i></i></span>
+                    <span class="txt-link">Gerenciar</span>
                 </a>
             </li>
 
@@ -80,8 +80,12 @@
 
                     </div>
                     <div class="cad-box2 margins">
-                        <div class="turno-box">
+                        <div class="orgTP">
                             <p class="txtl">Turno</p>
+                            <p class="txtl">Plano de curso</p>
+                        </div>
+                        <div class="turno-box">
+
                             <div class="icon-turnos">
                                 <button class="btn-turnos">
                                     <i class="bi bi-sun"></i>
@@ -101,8 +105,10 @@
 
 
                             <div class="plano-curso">
-                                <p class="txtl">Plano de curso</p>
-                                <input type="file">
+                                <input type="file" id="plano-curso" hidden>
+                                <label for="plano-curso" class="btn-planoCurso">
+                                    📁 Escolher arquivo
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -124,6 +130,7 @@
                         </button>
                     </div>
                 </div>
+                <button class="btn-salvarCurso">Salvar Curso</button>
             </div>
         </section>
     </main>
