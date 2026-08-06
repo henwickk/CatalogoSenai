@@ -1,59 +1,66 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+:root{
+    --branco: #fefefe;
+    --azul: #005caa;
+    --laranja: #fe6102;
+    --azulEscuro: #09152f;
+}
+
+body {
     background-color: #F9FAFB;
     height: 100vh;
     width: 100%;
     height: 100vh;
 }
 
-nav.menu-lateral{
+nav.menu-lateral {
     width: 75px;
     height: 100%;
-    background-color:rgb(19, 19, 204);
+    background-color: var(--azul);
     padding: 40px 0 40px 1%;
-    box-shadow: 3px 0 0 rgb(254, 203, 33);
+    box-shadow: 1px 0 0 var(--azulEscuro);
     position: fixed;
     overflow: hidden;
     top: 0;
     left: 0;
 }
 
-nav.menu-lateral:hover{
+nav.menu-lateral:hover {
     width: 250px;
     transition: .2s;
 
 }
 
-.btn-expandir{
+.btn-expandir {
     width: 100%;
     padding: 10px;
 }
 
-.btn-expandir > i{
+.btn-expandir>i {
     color: white;
     font-size: 20px;
     cursor: pointer;
 }
 
-ul{
+ul {
     height: 100%;
     list-style-type: none;
 }
 
-ul li.item-menu{
+ul li.item-menu {
     transition: .2s;
 }
 
-ul li.item-menu:hover{
-    background-color:rgb(254, 203, 33);
+ul li.item-menu:hover {
+    background-color: var(--azulEscuro);
 }
 
-ul li.item-menu a{
+ul li.item-menu a {
     color: white;
     text-decoration: none;
     font-size: 20px;
@@ -63,23 +70,308 @@ ul li.item-menu a{
     line-height: 30px;
 }
 
-ul li.item-menu a .txt-link{
+ul li.item-menu a .txt-link {
     margin-left: 30px;
 }
 
-ul li.item-menu a .icon > i{
+ul li.item-menu a .icon>i {
     font-size: 30px;
     margin-left: 5px;
 }
 
 /* FIM NAVBAR */
 
-#cad{
+
+
+#cad {
     margin-left: 10vw;
     margin-top: 1vw;
+
     background-color: #FEFEFE;
     border: 1px solid #EDEFF3;
     border-radius: 15px;
-    height: 80vh;
+
+    height: 95vh;
     width: 80%;
+
+    display: flex;
+    flex-direction: row;
+}
+.cad2{
+    height: 60vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 100vh;
+}
+#cadastro-card h1{
+    margin-left: 2vw;
+    margin-top: 4vh;
+    color: #060D30;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#cadastro-card{
+    padding-right:2vw;
+}
+
+.cad-box{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+
+}
+
+
+
+.upload-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    
+    
+    border: 1px solid #EDEFF3;
+    width: 17vw;
+    height: 39vh;
+    border-radius: 12px;
+}
+
+.btn-alt-img{
+
+}
+
+.margins{
+    margin-left: 2vw;
+    margin-top: 5vh;
+}
+
+.upload-area {
+    width: 13vw;
+    height: 17vh;
+    border: 2px dashed #EDEFF3;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: flex-start;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.upload-area:hover {
+    background: #eef5ff;
+    border-color: #2563eb;
+}
+
+.upload-area span {
+    font-size: 40pt;
+    color: #555;
+}
+
+.upload-area p {
+    margin-top: 2vh;
+    font-size: 11pt;
+    color: #555;
+
+}
+
+.infos-card{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputCad{
+    border: 1px solid #EDEFF3;
+    height: 5vh;
+    width: 20vw;
+    border-radius: 5px;
+    margin-top: 1vh;
+}
+
+.txtl{
+    color: #858585;
+    font-size: larger;
+}
+
+#descCurso{
+    border: 1px solid #EDEFF3;
+    border-radius: 5px;
+
+    height: 12vh;
+    width: 20vw;
+
+    margin-top: 1vh;
+}
+
+.turno-box p{
+    margin-bottom: 1vh;
+}
+.turno-box {
+    display: flex;
+    gap: 5vw;
+}
+
+.icon-turnos{
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    width: 30vh;
+}
+
+.btn-turnos{
+    background: none;
+    width: 7vw;
+    height: 7vh;
+    cursor: pointer;
+
+    border: 1px solid #EDEFF3;
+    border-radius: 5px;
+    color: #555;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.orgTP{
+    display: flex;
+    gap: 17vw;
+}
+
+
+/* PRE VISUALIZAÇÃO DO CARD */
+#pre-visu{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #EDEFF3;
+    
+}
+#pre-visu p{
+    font-size: 14pt;
+    margin-top:6vh;
+    margin-left:2vw;
+    color: #060D30;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.card-curso {
+    width: 70%;
+    height: 60vh;
+    background: var(--laranja);
+    margin-left: 5vw;
+    top: 8vh;
+
+    border-radius: 14px 14px 14px 14px;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    color: var(--branco);
+    font-size: 160%;
+    font-weight: 600;
+}
+
+.img-curso {
+    width: 100%;
+    height: 48%;
+    background: var(--azulEscuro);
+    border-radius: 14px 14px 0px 0px;
+
+}
+
+.categoria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 44%;
+    left: 18px;
+    transform: translateY(-50%);
+
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    background: var(--azul);
+
+    color: var(--branco);
+    font-size: 25pt;
+}
+
+.divCategoria{
+    width: 100%;
+    height: 52%;
+    background: #002dce;
+    border-radius:  0px 0px 14px 14px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+
+.divCategoria p{
+    width: 89%;
+}
+
+.divCategoria p, .saiba-mais{
+    margin-left: 7%;
+}
+
+.saiba-mais {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--branco);
+    font-size: 60%;
+    font-weight: bold;
+}
+
+/* FIM PRE VISUALIZÇAO */
+
+/* PLANO DE CURSO */
+.btn-planoCurso{
+    margin-top: 3vh;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    background: linear-gradient(135deg, var(--azul), var(--azulEscuro));
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 10px 25px rgba(79,70,229,.3);
+}
+
+.btn-planoCurso:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(79,70,229,.4);
+}
+
+.btn-salvarCurso{
+    margin-top: 19vh;
+    margin-left: 57vh;
+    background-color: var(--azul);
+    border: none;
+    color: var(--branco);
+    width: 10vw;
+    height: 5vh;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.btn-salvarCurso:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(58, 58, 63, 0.4);
 }
