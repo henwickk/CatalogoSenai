@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --branco: #fefefe;
+    --azul: #005caa;
+    --laranja: #fe6102;
+    --azulEscuro: #09152f;
+}
+
+body {
+    background-color: #F9FAFB;
+    height: 100vh;
+    width: 100%;
+    height: 100vh;
+}
+
+/* NAVBAR */
+
+nav.menu-lateral {
+    width: 75px;
+    height: 100%;
+    background-color: var(--azul);
+    padding: 40px 0 40px 1%;
+    box-shadow: 1px 0 0 var(--azulEscuro);
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+nav.menu-lateral:hover {
+    width: 250px;
+    transition: .2s;
+
+}
+
+.btn-expandir {
+    width: 100%;
+    padding: 10px;
+}
+
+.btn-expandir>i {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu {
+    transition: .2s;
+}
+
+ul li.item-menu:hover {
+    background-color: var(--azulEscuro);
+}
+
+ul li.item-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+
+ul li.item-menu a .txt-link {
+    margin-left: 30px;
+}
+
+ul li.item-menu a .icon>i {
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+/* FIM NAVBAR */
