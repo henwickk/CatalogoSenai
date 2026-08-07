@@ -1,25 +1,16 @@
-class CursoModel {
+import db from '../config/db.js';
 
-    listar() {
-        // Buscar todos os cursos
-    }
+const prod = {
+  create: (data) => {
+    const query = 'INSERT INTO products (titulo, autor) VALUES (?, ?)';
+    db.execute(query, [data.titulo, data.autor], (err, result) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log(result);
+    });
+  },
+};
 
-    buscar(id) {
-        // Buscar um curso
-    }
-
-    criar(dados) {
-        // Inserir um curso
-    }
-
-    atualizar(id, dados) {
-        // Atualizar um curso
-    }
-
-    excluir(id) {
-        // Excluir um curso
-    }
-
-}
-
-module.exports = new CursoModel();
+export default prod;
