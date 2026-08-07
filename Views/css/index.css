@@ -9,11 +9,11 @@
     --azul: #005CAA;
     --azulEscuro: #003C82;
     --laranja: #FE6102;
-    --textoGrande: font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    --textoNormal: font-family: "Inter", sans-serif;
-    font-weight: 400;
+    --textoGrandefonte: "Montserrat", sans-serif;
+    --textoGrandeweight: 800;
+    --textoNormalfonte: "Inter", sans-serif;
     ;
+    --textoNormalweight: 500;
 }
 
 body {
@@ -30,10 +30,11 @@ header {
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+
 }
 
 header img {
-    width: 10%;
+    width: 60%;
     font-size: 35px;
 }
 
@@ -45,11 +46,40 @@ header img {
     align-items: center;
 }
 
-#divHeader a {
+nav {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
     text-decoration: none;
     color: var(--azulEscuro);
-    font-size: 18px;
+    font-size: 20px;
+    position: relative;
+    font-family: var(--textoNormalfonte);
+    font-weight: var(--textoNormalweight);
+}
 
+.animacao::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 120%;
+    width: 96%;
+    height: 3px;
+    background: var(--azul);
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .4s;
+    transform-origin: right;
+}
+
+.animacao:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
 }
 
 #temaEscuro {
@@ -82,15 +112,51 @@ header img {
 }
 
 #infoBanner {
-    max-width: 30%;
+    max-width: 35%;
     height: 80%;
+    margin-left: 4%;
     color: var(--branco);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 5%;
+}
+
+#textoBanner {
+    font-size: 30px;
+    font-family: var(--textoGrandefonte);
+    font-weight: var(--textoGrandeweight);
+}
+
+#infoBanner p {
+    font-family: var(--textoNormalfonte);
+    font-weight: var(--textoNormalweight);
+    font-size: 20px;
+    width: 78%;
+}
+
+#span1{
+    font-size: 45px;
+}
+
+#span2 {
+    color: var(--azul);
+}
+
+#infoCard{
+    width: 100%;
+    height: 12vh;
+    backdrop-filter: blur(8px);
+    background: #005baa38;
+    border-radius: 15px;
+    border: solid 1px var(--azulEscuro);
 }
 
 /* MAIN */
+
+main {
+    width: 100%;
+}
 
 #main {
     height: 100vh;
@@ -259,7 +325,7 @@ input[type="search"]::-webkit-search-cancel-button {
 /* FOOTER */
 
 footer {
-    height: 30vh;
+    height: 35vh;
     width: 100%;
     background: linear-gradient(to right,
             #002B66 0%,
@@ -268,27 +334,48 @@ footer {
             #2F80ED 100%);
     color: var(--branco);
     display: flex;
+    align-items: center;
     justify-content: center;
     box-shadow: 0 15px 35px rgba(0, 92, 170, 0.15);
 }
 
-#footer{
-    width: 90%;
-    height: 90%;
+#footer {
+    width: 93%;
+    height: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
-#infosfooter, #copydiv{
+#infosfooter,
+#copydiv {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-#senai img{
+#infosfooter {
+    height: 85%;
+    border-bottom: solid 1px var(--branco);
+
+}
+
+#copydiv {
+    justify-content: space-between;
+}
+
+.infoDivs,
+ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+#senai img {
     width: 10%;
 }
 
@@ -310,6 +397,6 @@ footer {
     border: none;
     cursor: pointer;
     color: var(--branco);
-    align-self: flex-start;
+    text-align: center;
 
 }

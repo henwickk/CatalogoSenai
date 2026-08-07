@@ -14,11 +14,14 @@
     <!-- HEADER -->
 
     <header>
-        <img src="/Views/img/senai.svg" alt="">
+        <a href="index.html"><img src="/Views/img/senai.svg" alt=""></a>
         <div id="divHeader">
-            <a href="">Home</a>
-            <a href="">Cursos</a>
-            <a href="">Contatos</a>
+            <nav>
+                <a href="" class="animacao">Home</a>
+                <a href="" class="animacao">Cursos</a>
+                <a href="" class="animacao">Sobre</a>
+                <a href="" class="animacao">Contatos</a>
+            </nav>
             <button id="temaEscuro" type="">
                 <i class="bi bi-moon-stars-fill"></i>
             </button>
@@ -32,12 +35,13 @@
         <div class="banner-img">
             <div id="infoBanner">
                 <div id="textoBanner">
-                    <h2>CATÁLOGO DE CURSOS</h2>
-                    <h1>SENAI PARNAÍBA</h1>
+                    <h1>
+                        <span id="span1">CATÁLOGO DE CURSOS</span>
+                        <br>
+                        SENAI <span id="span2">PARNAÍBA </span></h1>
                 </div>
 
-                <p>Explore todos os cursos técnicos, profissionalizantes e de qualificação oferecidos pela unidade SENAI
-                    Parnaíba.</p>
+                <p>Explore todos os cursos técnicos, profissionalizantes e de qualificação oferecidos pela unidade SENAI Parnaíba.</p>
 
                 <div id="infoCard">
                     <i class="bi bi-mortarboard"></i>
@@ -52,49 +56,50 @@
     </section>
 
     <!-- MAIN -->
+    <main>
+        <section id="main">
 
-    <section id="main">
+            <!-- FILTRO -->
 
-        <!-- FILTRO -->
-
-        <div id="filtros">
-            <div id="filtro">
-                <i class="bi bi-grid"></i>
-                <p>Categorias</p>
-            </div>
-
-            <div id="cx-pesquisa">
-                <input type="search" id="inputPesquisa" placeholder="Buscar cursos...">
-                <i class="bi bi-search"></i>
-            </div>
-        </div>
-
-        <!-- CARD-CURSOS -->
-
-        <div id="cursos">
-            <div class="card-curso">
-                <div class="img-curso">
-
-                </div>
-                <i class="categoria">
-                    <i class="bi bi-code-slash"></i>
-                </i>
-                <div class="divCategoria">
-                    <p>Categoria Categoria Categ</p>
-                    <button class="saiba-mais">
-                        Saiba-mais <i class="bi bi-arrow-right"></i>
-                    </button>
+            <div id="filtros">
+                <div id="filtro">
+                    <i class="bi bi-grid"></i>
+                    <p>Categorias</p>
                 </div>
 
+                <div id="cx-pesquisa">
+                    <input type="search" id="inputPesquisa" placeholder="Buscar cursos...">
+                    <i class="bi bi-search"></i>
+                </div>
             </div>
 
+            <!-- CARD-CURSOS -->
 
-        </div>
-    </section>
+            <div id="cursos">
+                <div class="card-curso">
+                    <div class="img-curso">
 
-    <section id="sobreSenai">
+                    </div>
+                    <i class="categoria">
+                        <i class="bi bi-code-slash"></i>
+                    </i>
+                    <div class="divCategoria">
+                        <p>Categoria Categoria Categ</p>
+                        <button class="saiba-mais">
+                            Saiba-mais <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
 
-    </section>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="sobreSenai">
+
+        </section>
+    </main>
 
     <!-- FOOTER -->
 
@@ -102,20 +107,22 @@
         <section id="footer">
             <div id="infosfooter">
 
-                <div id="senai">
+                <div id="senai" class="infoDivs">
                     <img src="/Views/img/senai.svg" alt="">
-                    <h1>CATÁLOGO DE CURSOS SENAI PARNAÍBA</h1>
+                    <h2>CATÁLOGO DE CURSOS SENAI PARNAÍBA</h2>
                     <div id="socialMidia">
                         <a class="icons" id="facebook"
                             href="https://www.facebook.com/people/Senai-Parna%C3%ADba/100087170853809/#"><i
                                 class="bi bi-facebook"></i></a>
                         <a class="icons" id="instagram" href="https://www.instagram.com/senaiparnaiba/"><i
                                 class="bi bi-instagram"></i></a>
-                        <a class="icons" id="whatsapp" href="https://api.whatsapp.com/send/?phone=5586995004221&text&type=phone_number&app_absent=0"><i class="bi bi-whatsapp"></i></a>
+                        <a class="icons" id="whatsapp"
+                            href="https://api.whatsapp.com/send/?phone=5586995004221&text&type=phone_number&app_absent=0"><i
+                                class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
 
-                <div id="navegacao">
+                <div id="navegacao" class="infoDivs">
                     <h2>NAVEGAÇÃO</h2>
                     <ul>
                         <li>Home</li>
@@ -124,7 +131,7 @@
                         <li>Contato</li>
                     </ul>
                 </div>
-                <div id="categorias">
+                <div id="categorias" class="infoDivs">
                     <h2>CATEGORIAS</h2>
                     <ul>
                         <li>Todas as categorias</li>
@@ -134,7 +141,7 @@
                     </ul>
                 </div>
 
-                <div id="localizacao">
+                <div id="localizacao" class="infoDivs">
                     <h2>UNIDADE PARNAÍBA</h2>
                     <ul>
                         <li><i class="bi bi-geo-alt-fill"></i>CFP José de Moraes Correia, Av. Capitão Claro, 199 -
