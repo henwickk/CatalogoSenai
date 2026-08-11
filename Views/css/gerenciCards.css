@@ -135,4 +135,6 @@ td .cat-card{
     height: 5vh;
     width: 3vw;
     color: var(--branco);
+    border-radius: 10px;
+    font-size: 12pt;
 }
