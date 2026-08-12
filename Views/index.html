@@ -7,7 +7,12 @@
     <title>Catalógo Senai</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-</head>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+
 
 <body>
 
@@ -29,89 +34,89 @@
 
     </header>
 
-    <!-- BANNER -->
 
-    <section id="banner">
-        <div class="banner-img">
-            <div id="infoBanner">
-                <div id="textoBanner">
-                    <h1>
-                        <span id="span1">CATÁLOGO DE CURSOS</span>
-                        <br>
-                        SENAI <span id="span2">PARNAÍBA </span>
-                    </h1>
-                </div>
 
-                <p id="p">Explore todos os cursos técnicos, profissionalizantes e de qualificação oferecidos pela unidade SENAI
-                    Parnaíba.</p>
 
-                <div id="infoCard">
-                    <div id="infoCards">
-                        <div class="cards">
-                            <i class="bi bi-mortarboard"></i>
-                            <div class="card">
-                                <h3>+20</h3>
-                                <p>CURSOS<br>DISPONIVEIS</p>
-                            </div>
-
-                        </div>
-                        <div class="cards" id="carddomeio">
-                            <i class="bi bi-grid"></i>
-                            <div class="card">
-                                <h3>7</h3>
-                                <p>AREAS<br>DISPONIVEIS</p>
-                            </div>
-
-                        </div>
-                        <div class="cards">
-                            <i class="bi bi-award"></i>
-                            <div class="card">
-                                <h3 id="h3">QUALIDADE</h3>
-                                <p>EDUCAÇÃO QUE<br> TRANSFORMA</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <button id="explorarCursos">Explorar cursos <i class="bi bi-arrow-right"></i></button>
-                <a id="localSenai">
-                    <i class="bi bi-geo-alt-fill"></i>
-                    <p>Unidade SENAI Parnaíba</p>
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- MAIN -->
     <main>
-        <section id="main">
+        <!-- BANNER -->
+        <section id="banner">
+            <div id="banner-img">
+                <div id="infoBanner">
+                    <div id="textoBanner">
+                        <h1>
+                            <span id="span1">CATÁLOGO DE CURSOS</span>
+                            <br>
+                            SENAI <span id="span2">PARNAÍBA </span>
+                        </h1>
+                    </div>
 
-            <!-- FILTRO -->
+                    <p id="p">Explore todos os cursos técnicos, profissionalizantes e de qualificação oferecidos pela
+                        unidade SENAI
+                        Parnaíba.</p>
 
-            <div id="filtros">
-                <div id="filtro">
-                    <i class="bi bi-grid"></i>
-                    <p>Categorias</p>
+                    <div id="infoCard">
+                        <div id="infoCards">
+                            <div class="cards">
+                                <i class="bi bi-mortarboard"></i>
+                                <div class="card">
+                                    <h3>+20</h3>
+                                    <p>CURSOS<br>DISPONIVEIS</p>
+                                </div>
+
+                            </div>
+                            <div class="cards" id="carddomeio">
+                                <i class="bi bi-grid"></i>
+                                <div class="card">
+                                    <h3>7</h3>
+                                    <p>AREAS<br>DISPONIVEIS</p>
+                                </div>
+
+                            </div>
+                            <div class="cards">
+                                <i class="bi bi-award"></i>
+                                <div class="card">
+                                    <h3 id="h3">QUALIDADE</h3>
+                                    <p>EDUCAÇÃO QUE<br> TRANSFORMA</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button id="explorarCursos">Explorar cursos <i class="bi bi-arrow-right"></i></button>
+                    <a id="localSenai">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <p>Unidade SENAI Parnaíba</p>
+                    </a>
                 </div>
+            </div>
+        </section>
 
-                <div id="cx-pesquisa">
-                    <input type="search" id="inputPesquisa" placeholder="Buscar cursos...">
+        <!-- FILTRO -->
+
+        <div id="filtros">
+            <div class="filtro">
+                    <button id="categoria">Todas as categorias<i class="bi bi-chevron-down"></i></button>
+            </div>
+            <div class="filtro">
+                <div id="filtroBox">
+                    <input type="search" id="inputPesquisa" placeholder="Pesquisar curso...">
                     <i class="bi bi-search"></i>
                 </div>
             </div>
+        </div>
 
-            <!-- CARD-CURSOS -->
+        <!-- CARD-CURSOS -->
 
+        <section id="cursosArea">
             <div id="cursos">
                 <div class="card-curso">
                     <div class="img-curso">
 
                     </div>
-                    <i class="categoria">
-                        <i class="bi bi-code-slash"></i>
-                    </i>
                     <div class="divCategoria">
                         <p>Categoria Categoria Categ</p>
                         <button class="saiba-mais">
@@ -123,6 +128,9 @@
 
 
             </div>
+        </section>
+
+
         </section>
 
         <section id="sobreSenai">
