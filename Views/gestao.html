@@ -38,88 +38,307 @@
             </li>
         </ul>
     </nav>
-    <main>
-        <section id="cad">
-            <div class="cad2">
-                <div id="cadastro-card">
-                    <h1>Cadastrar novo curso</h1>
-                    <div class="cad-box margins">
-                        <div class="upload-img">
-                            <input type="file" id="foto" name="foto" accept="image/*" hidden>
-                            <label for="foto" class="upload-area">
-                                <span><i class="bi bi-camera"></i></span>
-                                <p>Arraste uma imagem ou clique</p>
-                            </label>
-                            <button class="btn-alt-img"><i class="bi bi-upload"></i> Alterar imagem </button>
-                            <p>PNG, JPG ou WEBP (máx 5MB)</p>
-                        </div>
 
-                        <div class="infos-card">
-                            <ul>
-                                <label for="nomeCurso" class="txtl">Nome do curso</label><br>
-                                <input type="text" name="nomeCurso" class="inputCad">
-                            </ul>
+    <main class="page">
 
-                            <ul>
-                                <label for="categoriaCurso" class="txtl">Categoria</label><br>
-                                <input type="text" name="categoriaCurso" class="inputCad">
-                            </ul>
+        <!-- =========================
+         DADOS DO CURSO
+    ========================== -->
+        <section class="course-section">
 
-                            <ul class="carga-horaria">
-                                <p class="txtl">Carga Horária</p>
-                                <input type="text" class="inputCad">
-                            </ul>
+            <!-- Capa -->
+            <aside class="cover-card">
 
-                            <ul>
-                                <label for="descricaoCurso" class="txtl">Descrição</label><br>
-                                <textarea name="descricaoCurso" id="descCurso"></textarea>
-                            </ul>
+                <label class="section-label">Capa do curso</label>
 
+                <div class="image-upload">
+                    <i data-lucide="camera"></i>
 
-                        </div>
+                    <span>Arraste uma imagem ou clique para selecionar</span>
 
-                    </div>
-                    <div class="cad-box2 margins">
-                        <div class="orgTP">
-                            <p class="txtl">Turno</p>
-                            <p class="txtl">Grade do curso</p>
-                        </div>
-                        <div class="turno-box">
-
-                            <div class="icon-turnos">
-                                <button class="btn-turnos">
-                                    <i class="bi bi-sun"></i>
-                                    <p>Manhã</p>
-                                </button>
-
-                                <button class="btn-turnos">
-                                    <i class="bi bi-cloud-sun"></i>
-                                    <p>Tarde</p>
-                                </button>
-
-                                <button class="btn-turnos">
-                                    <i class="bi bi-moon"></i>
-                                    <p>Noite</p>
-                                </button>
-                            </div>
-
-
-                            <div class="plano-curso">
-                                <input type="file" id="plano-curso" hidden>
-                                <label for="plano-curso" class="btn-planoCurso">
-                                    📁 Escolher arquivo
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                    <input type="file" accept="image/png,image/jpeg,image/webp">
                 </div>
-            </div>
-            <div id="">
-                <ul>
-                    
-                </ul>
+
+                <button class="change-image" type="button">
+                    <i data-lucide="upload"></i>
+                    Alterar imagem
+                </button>
+
+                <small>PNG, JPG ou WEBP (max 5MB)</small>
+
+            </aside>
+
+
+            <!-- Formulário -->
+            <div class="course-form">
+
+                <!-- Linha 1 -->
+                <div class="form-row row-top">
+
+                    <div class="field course-name">
+                        <label>Nome do curso</label>
+                        <input type="text" placeholder="Digite o nome do curso">
+                    </div>
+
+                    <div class="field start-date">
+                        <label>Data prevista para o início do curso</label>
+
+                        <div class="input-icon">
+                            <input type="text" placeholder="dd/mm/aaaa">
+                            <i data-lucide="calendar"></i>
+                        </div>
+                    </div>
+
+                    <div class="field registration">
+                        <label>Período de Inscrição</label>
+
+                        <div class="date-range">
+
+                            <div class="input-icon">
+                                <input type="text" placeholder="dd/mm/aaaa">
+                                <i data-lucide="calendar"></i>
+                            </div>
+
+                            <span>até</span>
+
+                            <div class="input-icon">
+                                <input type="text" placeholder="dd/mm/aaaa">
+                                <i data-lucide="calendar"></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Linha 2 -->
+                <div class="form-row row-second">
+
+                    <div class="field category">
+                        <label>Categoria</label>
+
+                        <div class="select-wrapper">
+                            <select>
+                                <option value="">Selecione a categoria</option>
+                                <option>Administração</option>
+                                <option>Tecnologia</option>
+                                <option>Design</option>
+                            </select>
+
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                    </div>
+
+
+                    <div class="field status">
+                        <label>Status do curso</label>
+
+                        <div class="select-wrapper">
+                            <select>
+                                <option value="">Selecione o status</option>
+                                <option>Ativo</option>
+                                <option>Inativo</option>
+                                <option>Em andamento</option>
+                            </select>
+
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Linha 3 -->
+                <div class="form-row row-third">
+
+                    <div class="field workload">
+                        <label>Carga horária</label>
+
+                        <input type="text" placeholder="Ex: 40 horas">
+                    </div>
+
+
+                    <div class="field price-type">
+                        <label>Valor do curso</label>
+
+                        <div class="radio-group">
+
+                            <label class="radio">
+                                <input type="radio" name="price" value="free">
+                                <span></span>
+                                Gratuito
+                            </label>
+
+                            <label class="radio">
+                                <input type="radio" name="price" value="paid" checked>
+                                <span></span>
+                                Pago
+                            </label>
+
+                        </div>
+                    </div>
+
+
+                    <div class="field modality">
+                        <label>Modalidade</label>
+
+                        <div class="select-wrapper">
+                            <select>
+                                <option value="">Selecione a modalidade</option>
+                                <option>Presencial</option>
+                                <option>Online</option>
+                                <option>Híbrido</option>
+                            </select>
+
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                    </div>
+
+
+                    <div class="field amount">
+                        <label>Valor</label>
+
+                        <input type="text" placeholder="R$ 0,00">
+                    </div>
+
+                </div>
+
+
+                <!-- Descrição -->
+                <div class="field description">
+                    <label>Descrição</label>
+
+                    <textarea placeholder="Descreva sobre o curso..."></textarea>
+                </div>
+
             </div>
         </section>
+
+
+        <!-- =========================
+         TURNO + GRADE
+    ========================== -->
+        <section class="schedule-section">
+
+            <!-- Turnos -->
+            <aside class="shift-card">
+
+                <label class="section-label">Turno</label>
+
+                <div class="shift-list">
+
+                    <button class="shift active" type="button">
+                        <i data-lucide="sun"></i>
+                        <span>Manhã</span>
+                    </button>
+
+                    <button class="shift" type="button">
+                        <i data-lucide="sun-medium"></i>
+                        <span>Tarde</span>
+                    </button>
+
+                    <button class="shift" type="button">
+                        <i data-lucide="moon"></i>
+                        <span>Noite</span>
+                    </button>
+
+                </div>
+
+            </aside>
+
+
+            <!-- Grade -->
+            <div class="modules-card">
+
+                <div class="modules-header">
+
+                    <label class="section-label">
+                        Grade do curso
+                    </label>
+
+                    <button class="new-module" type="button">
+                        Novo módulo
+                        <i data-lucide="circle-plus"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="module-input">
+
+                    <input type="text" placeholder="Adicione os módulos ou disciplinas do curso...">
+
+                    <button type="button">
+                        <i data-lucide="plus"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="module-list">
+
+                    <div class="module">
+                        <div class="drag">
+                            <i data-lucide="grip-vertical"></i>
+                        </div>
+
+                        <span>Módulo 1 – Introdução</span>
+
+                        <button class="delete" type="button">
+                            <i data-lucide="trash-2"></i>
+                        </button>
+                    </div>
+
+
+                    <div class="module">
+                        <div class="drag">
+                            <i data-lucide="grip-vertical"></i>
+                        </div>
+
+                        <span>Módulo 2 – Fundamentos</span>
+
+                        <button class="delete" type="button">
+                            <i data-lucide="trash-2"></i>
+                        </button>
+                    </div>
+
+
+                    <div class="module">
+                        <div class="drag">
+                            <i data-lucide="grip-vertical"></i>
+                        </div>
+
+                        <span>Módulo 3 – Prática</span>
+
+                        <button class="delete" type="button">
+                            <i data-lucide="trash-2"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+         AÇÕES
+    ========================== -->
+        <footer class="actions">
+
+            <button class="cancel" type="button">
+                Cancelar
+            </button>
+
+            <button class="save" type="submit">
+                <i data-lucide="save"></i>
+                Salvar curso
+            </button>
+
+        </footer>
+
     </main>
 </body>
 
