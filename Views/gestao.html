@@ -52,7 +52,7 @@
                 <label class="section-label">Capa do curso</label>
 
                 <div class="image-upload">
-                    <i data-lucide="camera"></i>
+                    <i class="bi bi-camera"></i>
 
                     <span>Arraste uma imagem ou clique para selecionar</span>
 
@@ -60,7 +60,7 @@
                 </div>
 
                 <button class="change-image" type="button">
-                    <i data-lucide="upload"></i>
+                    <i class="bi bi-upload"></i>
                     Alterar imagem
                 </button>
 
@@ -81,11 +81,11 @@
                     </div>
 
                     <div class="field start-date">
-                        <label>Data prevista para o início do curso</label>
+                        <label>Previsão para o início do curso</label>
 
                         <div class="input-icon">
                             <input type="text" placeholder="dd/mm/aaaa">
-                            <i data-lucide="calendar"></i>
+                            
                         </div>
                     </div>
 
@@ -96,14 +96,14 @@
 
                             <div class="input-icon">
                                 <input type="text" placeholder="dd/mm/aaaa">
-                                <i data-lucide="calendar"></i>
+
                             </div>
 
                             <span>até</span>
 
                             <div class="input-icon">
                                 <input type="text" placeholder="dd/mm/aaaa">
-                                <i data-lucide="calendar"></i>
+                            
                             </div>
 
                         </div>
@@ -126,7 +126,7 @@
                                 <option>Design</option>
                             </select>
 
-                            <i data-lucide="chevron-down"></i>
+                            <i class="bi bi-chevron-down"></i>
                         </div>
                     </div>
 
@@ -142,7 +142,7 @@
                                 <option>Em andamento</option>
                             </select>
 
-                            <i data-lucide="chevron-down"></i>
+                            <i class="bi bi-chevron-down"></i>
                         </div>
                     </div>
 
@@ -189,9 +189,10 @@
                                 <option>Presencial</option>
                                 <option>Online</option>
                                 <option>Híbrido</option>
+                                
                             </select>
 
-                            <i data-lucide="chevron-down"></i>
+                            
                         </div>
                     </div>
 
@@ -229,17 +230,17 @@
                 <div class="shift-list">
 
                     <button class="shift active" type="button">
-                        <i data-lucide="sun"></i>
+                        <i class="bi bi-sun"></i>
                         <span>Manhã</span>
                     </button>
 
                     <button class="shift" type="button">
-                        <i data-lucide="sun-medium"></i>
+                        <i class="bi bi-cloud-sun"></i>
                         <span>Tarde</span>
                     </button>
 
                     <button class="shift" type="button">
-                        <i data-lucide="moon"></i>
+                        <i class="bi bi-moon"></i>
                         <span>Noite</span>
                     </button>
 
@@ -249,72 +250,58 @@
 
 
             <!-- Grade -->
-            <div class="modules-card">
+            <div class="grade-container">
+                <div class="grade-header">
+                    <div>
+                        <h2>Grade do curso</h2>
+                        <p>Envie o arquivo que contém a grade curricular do curso.</p>
+                    </div>
 
-                <div class="modules-header">
+                    <a href="#">Enviar nova grade</a>
+                </div>
 
-                    <label class="section-label">
-                        Grade do curso
+                <div class="upload-area">
+
+                    <div class="upload-icon">
+                        📄
+                    </div>
+
+                    <h3>Selecione o arquivo da grade curricular</h3>
+
+                    <p>
+                        Arraste o arquivo aqui ou clique no botão abaixo para selecionar
+                    </p>
+
+                    <label for="grade-file" class="upload-button">
+                        <i class="bi bi-arrow-bar-up"></i> Selecionar arquivo
                     </label>
 
-                    <button class="new-module" type="button">
-                        Novo módulo
-                        <i data-lucide="circle-plus"></i>
-                    </button>
+                    <input type="file" id="grade-file" accept=".pdf,.png,.jpg,.jpeg">
+
+                    <span class="file-info">
+                        PDF, PNG ou JPG • Máx. 10 MB
+                    </span>
 
                 </div>
 
+                <div class="selected-file">
 
-                <div class="module-input">
+                    <div class="file-left">
 
-                    <input type="text" placeholder="Adicione os módulos ou disciplinas do curso...">
+                        <div class="file-icon">
+                            📄
+                        </div>
 
-                    <button type="button">
-                        <i data-lucide="plus"></i>
+                        <div>
+                            <strong>grade-curso.pdf</strong>
+                            <span>PDF • 2,4 MB</span>
+                        </div>
+
+                    </div>
+
+                    <button class="remove-button">
+                        🗑 &nbsp; Remover
                     </button>
-
-                </div>
-
-
-                <div class="module-list">
-
-                    <div class="module">
-                        <div class="drag">
-                            <i data-lucide="grip-vertical"></i>
-                        </div>
-
-                        <span>Módulo 1 – Introdução</span>
-
-                        <button class="delete" type="button">
-                            <i data-lucide="trash-2"></i>
-                        </button>
-                    </div>
-
-
-                    <div class="module">
-                        <div class="drag">
-                            <i data-lucide="grip-vertical"></i>
-                        </div>
-
-                        <span>Módulo 2 – Fundamentos</span>
-
-                        <button class="delete" type="button">
-                            <i data-lucide="trash-2"></i>
-                        </button>
-                    </div>
-
-
-                    <div class="module">
-                        <div class="drag">
-                            <i data-lucide="grip-vertical"></i>
-                        </div>
-
-                        <span>Módulo 3 – Prática</span>
-
-                        <button class="delete" type="button">
-                            <i data-lucide="trash-2"></i>
-                        </button>
-                    </div>
 
                 </div>
 
