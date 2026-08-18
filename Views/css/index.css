@@ -250,9 +250,10 @@ main {
 
 #filtros {
     width: 70%;
-    height: 12vh;
+    padding: 2%;
     display: flex;
     align-items: center;
+    
     background: var(--branco);
     border-radius: 15px;
 
@@ -263,6 +264,12 @@ main {
 .filtro {
     width: 50%;
     text-align: center;
+}
+
+.filtro h3{
+    text-align: start;
+    margin-left: 7%;
+    margin-bottom: 2%;
 }
 
 #filtroBox {
@@ -375,6 +382,17 @@ main {
     font-size: 60%;
     font-weight: bold;
 
+}
+
+#sobreSenai{
+    width: 100%;
+    display: flex;
+    justify-content: ;
+}
+
+#DivSobreSenai{
+    width: 80%;
+    height: 30vh;
 }
 
 /* FOOTER */
