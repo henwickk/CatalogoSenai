@@ -18,65 +18,104 @@ body {
     height: 100vh;
 }
 
-nav.menu-lateral {
-    width: 75px;
-    height: 100%;
-    background-color: var(--azul);
-    padding: 40px 0 40px 1%;
-    box-shadow: 1px 0 0 var(--azulEscuro);
+.sidebar {
     position: fixed;
-    overflow: hidden;
-    top: 0;
     left: 0;
-}
+    top: 0;
 
-nav.menu-lateral:hover {
-    width: 250px;
-    transition: .2s;
+    width: 178px;
+    height: 100vh;
 
-}
+    background: #062451;
 
-.btn-expandir {
-    width: 100%;
-    padding: 10px;
-}
-
-.btn-expandir>i {
     color: white;
-    font-size: 20px;
-    cursor: pointer;
+
+    overflow: hidden;
 }
 
-ul {
-    height: 100%;
-    list-style-type: none;
+
+/* LOGO */
+
+.logo {
+    padding: 27px 24px 25px;
 }
 
-ul li.item-menu {
-    transition: .2s;
+.logo h1 {
+    font-size: 27pt;
+    font-weight: 900;
+    font-style: italic;
 }
 
-ul li.item-menu:hover {
-    background-color: var(--azulEscuro);
+.logo span {
+    display: block;
+
+    font-size: 8pt;
+
+    margin-top: -2px;
+
+    letter-spacing: .8px;
 }
 
-ul li.item-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 20px 4%;
+
+/* MENU */
+
+.menu {
+    padding: 0 12px;
+}
+
+.menu-item {
+    height: 39px;
+
     display: flex;
-    margin-bottom: 10px;
-    line-height: 30px;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 0 13px;
+
+    margin-bottom: 5px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 10pt;
+
+    border-radius: 6px;
 }
 
-ul li.item-menu a .txt-link {
-    margin-left: 30px;
+.menu-item i {
+    width: 14px;
+    text-align: center;
 }
 
-ul li.item-menu a .icon>i {
-    font-size: 30px;
-    margin-left: 5px;
+.menu-item.active {
+    background: #1557c8;
+}
+
+.menu-item:hover {
+    background: #1557c8;
+}
+
+
+
+/* PARTE INFERIOR */
+
+.sidebar-bottom {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 300px;
+
+    background: linear-gradient(
+        to top,
+        #031d43,
+        rgba(3, 29, 67, .4),
+        transparent
+    );
 }
 
 /* FIM NAVBAR */
