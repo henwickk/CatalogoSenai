@@ -48,7 +48,7 @@ body {
 }
 
 .logo h1 {
-    font-size: 27px;
+    font-size: 27pt;
     font-weight: 900;
     font-style: italic;
 }
@@ -56,11 +56,11 @@ body {
 .logo span {
     display: block;
 
-    font-size: 8px;
+    font-size: 8pt;
 
     margin-top: -2px;
 
-    letter-spacing: .5px;
+    letter-spacing: .8px;
 }
 
 
@@ -86,7 +86,7 @@ body {
 
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: 10pt;
 
     border-radius: 6px;
 }
@@ -104,46 +104,6 @@ body {
     background: #1557c8;
 }
 
-
-/* SUBMENU */
-
-.submenu {
-    margin: 0 0 8px 19px;
-}
-
-.submenu a {
-    position: relative;
-
-    display: block;
-
-    padding: 8px 0 8px 14px;
-
-    color: white;
-
-    font-size: 10px;
-
-    text-decoration: none;
-}
-
-.submenu a::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 12px;
-
-    width: 4px;
-    height: 4px;
-
-    border-radius: 50%;
-
-    background: #2868d3;
-}
-
-.submenu-active {
-    color: #fff;
-}
 
 
 /* PARTE INFERIOR */
@@ -221,7 +181,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    font-size: 16px;
+    font-size: 12pt;
 
     line-height: 1.4;
 }
@@ -233,7 +193,7 @@ body {
 .sidebar-text b {
     color: #ff6800;
 
-    font-size: 20px;
+    font-size: 20pt;
 }
 
 
@@ -271,7 +231,7 @@ body {
 }
 
 .bell {
-    font-size: 16px;
+    font-size: 16pt;
 }
 
 .user {
@@ -280,11 +240,11 @@ body {
 
     gap: 8px;
 
-    font-size: 10px;
+    font-size: 10pt;
 }
 
 .user i {
-    font-size: 8px;
+    font-size: 8pt;
 }
 
 .avatar {
@@ -325,33 +285,18 @@ body {
 }
 
 .page-header h2 {
-    font-size: 20px;
+    font-size: 20pt;
 
     margin-bottom: 5px;
 }
 
 .page-header p {
-    font-size: 10px;
+    font-size: 10pt;
 
     color: #687083;
 }
 
 
-/* BOTÃO */
-
-.new-course {
-    border: none;
-
-    background: #ff6800;
-
-    color: white;
-
-    padding: 9px 15px;
-
-    border-radius: 7px;
-
-    font-size: 11px;
-}
 
 
 /* =========================
@@ -405,7 +350,7 @@ body {
 .search i {
     margin-right: 10px;
 
-    font-size: 12px;
+    font-size: 12pt;
 }
 
 .search input {
@@ -415,7 +360,7 @@ body {
 
     outline: none;
 
-    font-size: 10px;
+    font-size: 10pt;
 }
 
 .filter-button {
@@ -429,7 +374,7 @@ body {
 
     border-radius: 7px;
 
-    font-size: 10px;
+    font-size: 10pt;
 }
 
 .filter-button i {
@@ -460,7 +405,7 @@ body {
 
     border-radius: 14px;
 
-    font-size: 9px;
+    font-size: 9pt;
 }
 
 .filter.active {
@@ -482,7 +427,7 @@ body {
 
     border-radius: 6px;
 
-    font-size: 9px;
+    font-size: 9pt;
 }
 
 .category i {
@@ -501,7 +446,6 @@ body {
     grid-template-columns:
         minmax(270px, 2.5fr)
         1fr
-        .65fr
         1fr
         .7fr
         .75fr;
@@ -517,7 +461,7 @@ body {
 
     padding: 0 14px;
 
-    font-size: 8px;
+    font-size: 8pt;
 
     color: #687083;
 
@@ -534,7 +478,7 @@ body {
 
     border-top: 1px solid #e8e9ec;
 
-    font-size: 9px;
+    font-size: 9pt;
 }
 
 
@@ -560,7 +504,7 @@ body {
 }
 
 .course-info h3 {
-    font-size: 11px;
+    font-size: 11pt;
 
     margin-bottom: 4px;
 }
@@ -568,7 +512,7 @@ body {
 .course-info p {
     max-width: 210px;
 
-    font-size: 8px;
+    font-size: 8pt;
 
     line-height: 1.35;
 
@@ -587,7 +531,7 @@ body {
 
     border-radius: 5px;
 
-    font-size: 8px;
+    font-size: 8pt;
 }
 
 .morning {
@@ -620,7 +564,7 @@ body {
 
     border-radius: 5px;
 
-    font-size: 8px;
+    font-size: 8pt;
 }
 
 .published {
@@ -683,7 +627,7 @@ body {
 
     border-top: 1px solid #e8e9ec;
 
-    font-size: 9px;
+    font-size: 9pt;
 
     color: #687083;
 }
