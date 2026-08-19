@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --branco: #fefefe;
-    --azul: #005CAA;
-    --azulEscuro: #003C82;
-    --laranja: #FE6102;
-}
-
 body {
     width: 100%;
     height: 200vh;
@@ -21,7 +14,7 @@ body {
 /* HEADER */
 
 header {
-    background: var(--branco);
+    background: #fefefe;
     max-width: 100%;
     height: 8vh;
     display: flex;
@@ -54,11 +47,10 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: var(--azulEscuro);
+    color: #16172B;
     font-size: 20px;
     position: relative;
-    font-family: var(--textoNormalfonte);
-    font-weight: var(--textoNormalweight);
+    font-weight: 400;
 }
 
 .animacao::after {
@@ -68,11 +60,12 @@ nav a {
     top: 120%;
     width: 96%;
     height: 3px;
-    background: var(--azul);
+    background: #16172B;
     border-radius: 5px;
     transform: scaleX(0);
     transition: transform .4s;
     transform-origin: right;
+    
 }
 
 .animacao:hover::after {
@@ -88,7 +81,7 @@ nav a {
 
 #temaEscuro i {
     font-size: 25px;
-    color: var(--azulEscuro);
+    color: #16172B;
 }
 
 /* MAIN */
@@ -124,7 +117,7 @@ main {
     max-width: 35%;
     height: 80%;
     margin-left: 3%;
-    color: var(--branco);
+    color: #fefefe;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -133,13 +126,11 @@ main {
 
 #textoBanner {
     font-size: 30px;
-    font-family: var(--textoGrandefonte);
-    font-weight: var(--textoGrandeweight);
+
 }
 
 #p {
-    font-family: var(--textoNormalfonte);
-    font-weight: var(--textoNormalweight);
+
     font-size: 20px;
     width: 78%;
 }
@@ -149,7 +140,7 @@ main {
 }
 
 #span2 {
-    color: var(--azul);
+    color: #006CEA;
 }
 
 #infoCard {
@@ -158,20 +149,20 @@ main {
     backdrop-filter: blur(8px);
     background: #003d821c;
     border-radius: 10px;
-    border: solid 2px var(--azulEscuro);
+    border: solid 2px #0A3168;
 
 }
 
 #infoCards {
     width: 100%;
-    height: 90%;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 .cards {
-    max-height: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,13 +171,15 @@ main {
 
 #carddomeio {
     width: 30%;
-    border-right: solid 1px var(--azulEscuro);
-    border-left: solid 1px var(--azulEscuro);
+    height: 80%;
+    border-right: solid 1px #0d428b;
+    border-left: solid 1px #0d428b;
 }
 
 .cards i {
     font-size: 200%;
-    background: #09387a;
+    color: #74B5FA;
+    background: #02095A;
     padding: 5px 7px;
     border-radius: 99px;
 }
@@ -198,8 +191,6 @@ main {
 }
 
 .card h3 {
-    font-weight: var(--textoGrandeweight);
-    font-family: var(--textoGrandefonte);
     font-size: 30px;
 }
 
@@ -208,8 +199,6 @@ main {
 }
 
 .card p {
-    font-weight: var(--textoNormalweight);
-    font-family: var(--textoNormalfonte);
     font-size: 12px;
 }
 
@@ -218,13 +207,12 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-family: var(--textoNormalfonte);
-    font-weight: var(--textoNormalweight);
-    color: var(--branco);
+    
+    color: #fefefe;
     border-radius: 99px;
     border: none;
     padding: 15px;
-    background: var(--laranja);
+    background: #F95512;
     width: 40%;
     gap: 3%;
 }
@@ -384,15 +372,74 @@ main {
 
 }
 
+#verTodos{
+    display: flex;
+    justify-content: space-between;
+    justify-self: center;
+    width: 40%;
+    background: none;
+    outline: none;
+    border: solid #1E43B6 2px;
+    padding: 14px;
+    border-radius: 99px;
+    color: #1E43B6;
+}
+
+#sobreSenai, #DivSobreSenai, #resumo, #infos{
+    display:flex;
+    align-items: center;
+}
+
 #sobreSenai{
     width: 100%;
-    display: flex;
-    justify-content: ;
+    
+    justify-content: center;
+    margin: 2%;
 }
 
 #DivSobreSenai{
     width: 80%;
     height: 30vh;
+    background: #E1E4EC;
+    border-radius: 20px;
+    
+}
+
+#resumo{
+    justify-content: space-evenly;
+    
+    height: 70%;
+}
+
+#resumo img{
+    width: 190px;
+    height: 250px;
+    border-radius: 140px 80px 10px 10px;
+
+}
+
+
+
+#resumo1{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#infos{
+    width: 100%;
+    height: 50%;
+    justify-content: space-around;
+}
+
+#infos div{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* FOOTER */
