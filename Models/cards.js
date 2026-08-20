@@ -1,6 +1,6 @@
 import db from '../config/db.js';
 
-const prod = {
+const card = {
   create: (data) => {
     const query = 'INSERT INTO products (titulo, autor) VALUES (?, ?)';
     db.execute(query, [data.titulo, data.autor], (err, result) => {
