@@ -10,130 +10,342 @@
 </head>
 
 <body>
-    <nav class="menu-lateral">
-        <div class="btn-expandir">
-            <i class="bi bi-list"></i>
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>SENAI</h1>
+            <span>CATÁLOGO DE CURSOS</span>
         </div>
 
-        <ul>
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-card-text"></i></span>
-                    <span class="txt-link">Cadastrar</span>
-                </a>
-            </li>
+        <nav class="menu">
 
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-archive"></i></i></span>
-                    <span class="txt-link">Gerenciar</span>
-                </a>
-            </li>
+            <a href="#" class="menu-item">
+                <i class="bi bi-book"></i>
+                <span>Cadastro Curso</span>
+            </a>
 
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-copy"></i></i></span>
-                    <span class="txt-link">Categorias</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <main>
-        <section id="cad">
-            <div class="cad2">
-                <div id="cadastro-card">
-                    <h1>Cadastrar novo curso</h1>
-                    <div class="cad-box margins">
-                        <div class="upload-img">
-                            <input type="file" id="foto" name="foto" accept="image/*" hidden>
-                            <label for="foto" class="upload-area">
-                                <span><i class="bi bi-camera"></i></span>
-                                <p>Arraste uma imagem ou clique</p>
-                            </label>
-                            <button class="btn-alt-img"><i class="bi bi-upload"></i> Alterar imagem </button>
-                            <p>PNG, JPG ou WEBP (máx 5MB)</p>
-                        </div>
-
-                        <div class="infos-card">
-                            <ul>
-                                <label for="nomeCurso" class="txtl">Nome do curso</label><br>
-                                <input type="text" name="nomeCurso" class="inputCad">
-                            </ul>
-
-                            <ul>
-                                <label for="categoriaCurso" class="txtl">Categoria</label><br>
-                                <input type="text" name="categoriaCurso" class="inputCad">
-                            </ul>
-
-                            <ul class="carga-horaria">
-                                <p class="txtl">Carga Horária</p>
-                                <input type="text" class="inputCad">
-                            </ul>
-
-                            <ul>
-                                <label for="descricaoCurso" class="txtl">Descrição</label><br>
-                                <textarea name="descricaoCurso" id="descCurso"></textarea>
-                            </ul>
+            <a href="#" class="menu-item active">
+                <i class="bi bi-card-list"></i>
+                <span>Gerenciar Cursos</span>
+            </a>
 
 
-                        </div>
+            <a href="#" class="menu-item">
+                <i class="bi bi-box-arrow-left"></i>
+                <span>Sair</span>
+            </a>
+        </nav>
 
-                    </div>
-                    <div class="cad-box2 margins">
-                        <div class="orgTP">
-                            <p class="txtl">Turno</p>
-                            <p class="txtl">Plano de curso</p>
-                        </div>
-                        <div class="turno-box">
-
-                            <div class="icon-turnos">
-                                <button class="btn-turnos">
-                                    <i class="bi bi-sun"></i>
-                                    <p>Manhã</p>
-                                </button>
-
-                                <button class="btn-turnos">
-                                    <i class="bi bi-cloud-sun"></i>
-                                    <p>Tarde</p>
-                                </button>
-
-                                <button class="btn-turnos">
-                                    <i class="bi bi-moon"></i>
-                                    <p>Noite</p>
-                                </button>
-                            </div>
-
-
-                            <div class="plano-curso">
-                                <input type="file" id="plano-curso" hidden>
-                                <label for="plano-curso" class="btn-planoCurso">
-                                    📁 Escolher arquivo
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="sidebar-bottom">
+            <div class="people">
+                <div class="person person1"></div>
+                <div class="person person2"></div>
+                <div class="person person3"></div>
             </div>
-            <div id="pre-visu">
-                <p>Pré-visualização do card</p>
-                <div class="card-curso">
-                    <div class="img-curso">
 
-                    </div>
-                    <i class="categoria">
-                        <i class="bi bi-code-slash"></i>
-                    </i>
-                    <div class="divCategoria">
-                        <p>Categoria Categoria Categ</p>
-                        <button class="saiba-mais">
-                            Saiba-mais <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </div>
+            <div class="sidebar-text">
+                <span>O FUTURO</span>
+                <span>SE CONSTRÓI</span>
+                <strong>AQUI</strong>
+            </div>
+        </div>
+    </aside>
+<header class="topbar">
+          <i class="fa-regular fa-bell bell"></i>
+
+          <div class="user">
+            <div class="avatar">A</div>
+
+            <span>Administrador</span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </header>
+    <main class="page">
+        
+
+        <!-- =========================
+         DADOS DO CURSO
+    ========================== -->
+        <section class="course-section">
+
+            <!-- Capa -->
+            <aside class="cover-card">
+
+                <label class="section-label">Capa do curso</label>
+
+                <div class="image-upload">
+                    <i class="bi bi-camera"></i>
+
+                    <span>Arraste uma imagem ou clique para selecionar</span>
+
+                    <input type="file" accept="image/png,image/jpeg,image/webp">
                 </div>
-                <button class="btn-salvarCurso">Salvar Curso</button>
+
+                <button class="change-image" type="button">
+                    <i class="bi bi-upload"></i>
+                    Alterar imagem
+                </button>
+
+                <small>PNG, JPG ou WEBP (max 5MB)</small>
+
+            </aside>
+
+
+            <!-- Formulário -->
+            <div class="course-form">
+
+                <!-- Linha 1 -->
+                <div class="form-row row-top">
+
+                    <div class="field course-name">
+                        <label>Nome do curso</label>
+                        <input type="text" placeholder="Digite o nome do curso">
+                    </div>
+
+                    <div class="field start-date">
+                        <label>Previsão para o início do curso</label>
+
+                        <div class="input-icon">
+                            <input type="text" placeholder="dd/mm/aaaa">
+
+                        </div>
+                    </div>
+
+                    <div class="field registration">
+                        <label>Período de Inscrição</label>
+
+                        <div class="date-range">
+
+                            <div class="input-icon">
+                                <input type="text" placeholder="dd/mm/aaaa">
+
+                            </div>
+
+                            <span>até</span>
+
+                            <div class="input-icon">
+                                <input type="text" placeholder="dd/mm/aaaa">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Linha 2 -->
+                <div class="form-row row-second">
+
+                    <div class="field category">
+                        <label>Categoria</label>
+
+                        <div class="select-wrapper">
+                            <select>
+                                <option value="">Selecione a categoria</option>
+                                <option>Administração</option>
+                                <option>Tecnologia</option>
+                                <option>Design</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+
+                    <div class="field status">
+                        <label>Status do curso</label>
+
+                        <div class="select-wrapper">
+                            <select>
+                                <option value="">Selecione o status</option>
+                                <option>Ativo</option>
+                                <option>Inativo</option>
+                                <option>Em andamento</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Linha 3 -->
+                <div class="form-row row-third">
+
+                    <div class="field workload">
+                        <label>Carga horária</label>
+
+                        <input type="text" placeholder="Ex: 40 horas">
+                    </div>
+
+
+                    <div class="field price-type">
+                        <label>Valor do curso</label>
+
+                        <div class="radio-group">
+
+                            <label class="radio">
+                                <input type="radio" name="price" value="free">
+                                <span></span>
+                                Gratuito
+                            </label>
+
+                            <label class="radio">
+                                <input type="radio" name="price" value="paid" checked>
+                                <span></span>
+                                Pago
+                            </label>
+
+                        </div>
+                    </div>
+
+
+                    <div class="field modality">
+                        <label>Modalidade</label>
+
+                        <div class="select-wrapper">
+                            <select>
+                                <option value="">Selecione a modalidade</option>
+                                <option>Presencial</option>
+                                <option>Online</option>
+                                <option>Híbrido</option>
+                            </select>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="field amount">
+                        <label>Valor</label>
+
+                        <input type="text" placeholder="R$ 0,00">
+                    </div>
+
+                </div>
+
+
+                <!-- Descrição -->
+                <div class="field description">
+                    <label>Descrição</label>
+
+                    <textarea placeholder="Descreva sobre o curso..."></textarea>
+                </div>
+
             </div>
         </section>
+
+
+        <!-- =========================
+         TURNO + GRADE
+    ========================== -->
+        <section class="schedule-section">
+
+            <!-- Turnos -->
+            <aside class="shift-card">
+
+                <label class="section-label">Turno</label>
+
+                <div class="shift-list">
+
+                    <button class="shift active" type="button">
+                        <i class="bi bi-sun"></i>
+                        <span>Manhã</span>
+                    </button>
+
+                    <button class="shift" type="button">
+                        <i class="bi bi-cloud-sun"></i>
+                        <span>Tarde</span>
+                    </button>
+
+                    <button class="shift" type="button">
+                        <i class="bi bi-moon"></i>
+                        <span>Noite</span>
+                    </button>
+
+                </div>
+
+            </aside>
+
+
+            <!-- Grade -->
+            <div class="grade-container">
+                <div class="grade-header">
+                    <div>
+                        <h2>Grade do curso</h2>
+                        <p>Envie o arquivo que contém a grade curricular do curso.</p>
+                    </div>
+
+                    <a href="#">Enviar nova grade</a>
+                </div>
+
+                <div class="upload-area">
+
+                    <div class="upload-icon">
+                        📄
+                    </div>
+
+                    <h3>Selecione o arquivo da grade curricular</h3>
+
+                    <p>
+                        Arraste o arquivo aqui ou clique no botão abaixo para selecionar
+                    </p>
+
+                    <label for="grade-file" class="upload-button">
+                        <i class="bi bi-arrow-bar-up"></i> Selecionar arquivo
+                    </label>
+
+                    <input type="file" id="grade-file" accept=".pdf,.png,.jpg,.jpeg">
+
+                    <span class="file-info">
+                        PDF, PNG ou JPG • Máx. 10 MB
+                    </span>
+
+                </div>
+
+                <div class="selected-file">
+
+                    <div class="file-left">
+
+                        <div class="file-icon">
+                            📄
+                        </div>
+
+                        <div>
+                            <strong>grade-curso.pdf</strong>
+                            <span>PDF • 2,4 MB</span>
+                        </div>
+
+                    </div>
+
+                    <button class="remove-button">
+                        🗑 &nbsp; Remover
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+         AÇÕES
+    ========================== -->
+        <footer class="actions">
+
+            <button class="cancel" type="button">
+                Cancelar
+            </button>
+
+            <button class="save" type="submit">
+                <i data-lucide="save"></i>
+                Salvar curso
+            </button>
+
+        </footer>
+
     </main>
+    <script src="/Views/script/scriptGestao.js"></script>
 </body>
 
 </html>
