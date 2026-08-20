@@ -6,6 +6,7 @@ const connection = mysql.createConnection({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
+  port:Number(process.env.dbPort) || 3306
 });
 
 connection.connect((err) => {
@@ -15,6 +16,6 @@ connection.connect((err) => {
   }
 
   console.log('conectado ao MySQL!');
-});
+})
 
-module.exports = connection;
+export default connection;
