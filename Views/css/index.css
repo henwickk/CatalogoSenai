@@ -4,11 +4,28 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     width: 100%;
-    height: 200vh;
+    min-height: 100vh;
     background: #F6F6F8;
     font-family: 'Roboto', sans-serif;
+}
+
+button {
+    transition: .3s;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: #fefefe;
 }
 
 /* HEADER */
@@ -24,12 +41,16 @@ header {
 
 }
 
+header a{
+    width: 10%;
+}
+
 header img {
-    width: 60%;
+    width: 100%;
     font-size: 35px;
 }
 
-#divHeader {
+#Home {
     width: 40%;
     height: 100%;
     display: flex;
@@ -46,11 +67,17 @@ nav {
 }
 
 nav a {
-    text-decoration: none;
+
     color: #02095A;
     font-size: 20px;
     position: relative;
     font-weight: 400;
+    
+    transition: color .3s;
+}
+
+nav a:hover {
+    color: #006CEA;
 }
 
 .animacao::after {
@@ -60,7 +87,7 @@ nav a {
     top: 120%;
     width: 96%;
     height: 3px;
-    background: #02095A;
+    background: #006CEA;
     border-radius: 5px;
     transform: scaleX(0);
     transition: transform .4s;
@@ -84,11 +111,15 @@ nav a {
     color: #02095A;
 }
 
+#temaEscuro i:hover{
+    color: #006CEA;
+}
+
 /* MAIN */
 
 main {
     width: 100%;
-    height: 100%;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -221,12 +252,15 @@ main {
     font-size: 22px;
 }
 
+#explorarCursos:hover{
+    background: #bd3500;
+}
+
 #localSenai {
     display: flex;
     align-items: center;
     gap: 20px;
     font-size: 20px;
-    text-decoration: none;
     
     color: #fefefe;
 }
@@ -237,21 +271,23 @@ main {
 
 /* FILTRO */
 
-#filtros {
+#Cursos {
     width: 60%;
     padding: 2%;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     
     background: #fefefe;
     border-radius: 15px;
 
     transform: translateY(-25%);
+    margin-bottom: 2%;
     
 }
 
 .filtro {
-    width: 50%;
+    width: 40%;
     text-align: center;
 }
 
@@ -269,8 +305,17 @@ main {
 
 #categoria{
     display: flex;
-    justify-content: space-between;
     justify-self: center;
+}
+
+#categoria:hover {
+    border-color: #006CEA;
+}
+
+#categoria:focus {
+    border-color: #006CEA;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 108, 234, 0.15);
 }
 
 #inputPesquisa, #categoria{
@@ -278,13 +323,22 @@ main {
     background: none;
     outline: none;
     border: solid #02095a5e 2px;
-    padding: 14px;
+    padding: 14px 8px;
     border-radius: 8px;
     color: #02095A;
 }
 
 #inputPesquisa::placeholder{
     color: #02095A;
+}
+
+#inputPesquisa:hover {
+    border-color: #006CEA;
+}
+
+#inputPesquisa:focus {
+    border-color: #006CEA;
+    box-shadow: 0 0 0 2px rgba(0, 109, 233, 0.15);
 }
 
 #inputPesquisa::-webkit-search-cancel-button {
@@ -295,16 +349,12 @@ main {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 10%;
+    right: 7%;
     font-size: 20px;
     color: #02095A;
 }
 
 /* CARD-CURSOS */
-main{
-    max-height: 100%;
-    margin-bottom: 3%;
-}
 
 #cursosArea{
     width: 85%;
@@ -317,13 +367,10 @@ main{
 
 #cursos {
     width: 100%;
-    
     display: grid;
-    
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 55%;
-
-    margin-bottom: 4%;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    margin-bottom: 6%;
 }
 
 .card-curso {
@@ -390,32 +437,41 @@ main{
 
 #verTodos{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     justify-self: center;
-    width: 40%;
+    width: 35%;
     background: none;
 
     border: solid #1E43B6 2px;
     padding: 14px;
     border-radius: 99px;
     color: #1E43B6;
-    margin: 2%;
+    font-weight: 600;
+
+    margin-bottom: 10%;
     
 }
 
-#sobreSenai, #DivSobreSenai, #resumo, #infos{
+#verTodos:hover{
+    background: #1E43B6;
+    color: #fefefe;
+}
+
+#Sobre, #DivSobreSenai, #resumo, #infos{
     display:flex;
     align-items: center;
 }
 
-#sobreSenai{
+#Sobre{
     width: 100%;
     justify-content: center;
+    margin-bottom: 7%;
+    /* background: #E1E4EC; */
     
 }
 
 #DivSobreSenai{
-    width: 83%;
+    width: 90%;
     height: 30vh;
     background: #E1E4EC;
     border-radius: 20px;
@@ -447,11 +503,6 @@ main{
     color: #02095A;
 }
 
-#resumo1 a{
-    text-decoration: none;
-    
-}
-
 #conheca{
     width: 75%;
     background: none;
@@ -464,6 +515,11 @@ main{
     padding: 12px;
     border-radius: 18px;
     font-weight: 600;
+}
+
+#conheca:hover{
+    background: #1E43B6;
+    color: #fefefe;
 }
 
 #conheca i{
@@ -491,7 +547,7 @@ main{
 /* FOOTER */
 
 footer {
-    height: 34vh;
+    height: 40vh;
     width: 100%;
     background: linear-gradient(to right,
             #002B66 0%,
@@ -506,7 +562,7 @@ footer {
     
 }
 
-#footer {
+#Contatos  {
     width: 93%;
     height: 85%;
     display: flex;
@@ -538,24 +594,42 @@ ul {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 12%;
     list-style: none;
 }
 
-#senai img {
-    width: 10%;
+#senai{
+    
+    justify-content: space-around;
+    gap: 0;
+}
+
+#senaiimg {
+    width: 40%;
+    height: 50px;
+    background: url(/Views/img/senai.svg);
+    background-size: cover;
+
 }
 
 #socialMidia {
-    margin-top: 1.5%;
-    width: 15%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 20px;
 }
 
-.icons i {
+
+#senai h2{
+    font-size: 18px;
+}
+
+.icons{
+    border: solid 1px#fefefe;
+    padding: 12px;
+    border-radius: 99%;
+    font-size: 22px;
     color: #fefefe;
 }
 

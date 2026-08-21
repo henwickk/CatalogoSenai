@@ -20,12 +20,12 @@
 
     <header>
         <a href="index.html"><img src="/Views/img/senai.svg" alt=""></a>
-        <div id="divHeader">
+        <div id="Home">
             <nav>
-                <a href="" class="animacao">Home</a>
-                <a href="" class="animacao">Cursos</a>
-                <a href="" class="animacao">Sobre</a>
-                <a href="" class="animacao">Contatos</a>
+                <a href="index.html" class="animacao">Home</a>
+                <a href="#Cursos" class="animacao">Cursos</a>
+                <a href="#Sobre" class="animacao">Sobre</a>
+                <a href="#Contatos" class="animacao">Contatos</a>
             </nav>
             <button id="temaEscuro" type="">
                 <i class="bi bi-moon-stars-fill"></i>
@@ -81,10 +81,11 @@
                         </div>
 
                     </div>
-
-                    <button id="explorarCursos">
-                        Explorar cursos <i class="bi bi-arrow-right"></i>
-                    </button>
+                    <a href="#Cursos">
+                        <button id="explorarCursos">
+                            Explorar cursos <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </a>
 
                     <a href="https://www.google.com/maps/place/SENAI+Senai/@-2.9081189,-41.7830287,17z/data=!3m1!4b1!4m6!3m5!1s0x7ec2fe7b0a81c43:0x46b78ca8ceae1148!8m2!3d-2.9081243!4d-41.7781578!16s%2Fg%2F1ptzbtjw8?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"
                         id="localSenai">
@@ -101,10 +102,15 @@
 
             <!-- FILTRO -->
 
-            <div id="filtros">
+            <div id="Cursos">
                 <div class="filtro">
                     <h3>ORGANIZAR POR</h3>
-                    <button id="categoria">Todas as categorias<i class="bi bi-chevron-down"></i></button>
+                    <select id="categoria">
+                        <option value="todos">Todas as categorias</option>
+                        <option value="tecnico">Cursos Técnicos</option>
+                        <option value="gratuito">Cursos Gratuitos</option>
+                        <option value="pago">Cursos Pagos</option>
+                    </select>
                 </div>
                 <div class="filtro">
                     <h3>PROCURE UM CURSO</h3>
@@ -126,6 +132,8 @@
                     </div>
 
                 </div>
+
+
 
                 <div class="card-curso">
                     <img src="/Views/img/bannerzao.png" alt="" class="img-curso">
@@ -208,12 +216,12 @@
             </div>
 
             <div class="filtro">
-                <button id="verTodos">Ver todas as categorias<i class="bi bi-chevron-down"></i></button>
+                <button id="verTodos">Ver todos os cursos<i class="bi bi-chevron-down"></i></button>
             </div>
 
         </section>
 
-        <section id="sobreSenai">
+        <section id="Sobre">
             <div id="DivSobreSenai">
                 <div id="resumo">
                     <img src="/Views/img/senai.jpg" alt="">
@@ -224,7 +232,7 @@
                         <a
                             href="https://www.google.com/maps/place/SENAI+Senai/@-2.9081189,-41.7830287,17z/data=!3m1!4b1!4m6!3m5!1s0x7ec2fe7b0a81c43:0x46b78ca8ceae1148!8m2!3d-2.9081243!4d-41.7781578!16s%2Fg%2F1ptzbtjw8?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D">
 
-                            <button id="conheca">Conheça nossa unidade 
+                            <button id="conheca">Conheça nossa unidade
                                 <i class="bi bi-arrow-right"></i>
                             </button>
                         </a>
@@ -258,12 +266,12 @@
     <!-- FOOTER -->
 
     <footer>
-        <section id="footer">
+        <section id="Contatos">
             <div id="infosfooter">
 
                 <div id="senai" class="infoDivs">
-                    <img src="/Views/img/senai.svg" alt="">
-                    <h2>CATÁLOGO DE CURSOS SENAI PARNAÍBA</h2>
+                    <div id="senaiimg"></div>
+                    <h2>CATÁLOGO DE CURSOS<br>SENAI PARNAÍBA</h2>
                     <div id="socialMidia">
                         <a class="icons" id="facebook"
                             href="https://www.facebook.com/people/Senai-Parna%C3%ADba/100087170853809/#"><i
@@ -279,10 +287,11 @@
                 <div id="navegacao" class="infoDivs">
                     <h2>NAVEGAÇÃO</h2>
                     <ul>
-                        <li>Home</li>
-                        <li>Cursos</li>
-                        <li>Sobre</li>
-                        <li>Contato</li>
+                        <li><a href="#Home" class="animacao">Home</a>
+                        <li><a href="#Cursos" class="animacao">Cursos</a></li>
+                        <li><a href="#Sobre" class="animacao">Sobre</a></li>
+                        <li><a href="#Contatos" class="animacao">Contatos</a></li>
+                        </li>
                     </ul>
                 </div>
                 <div id="categorias" class="infoDivs">
@@ -300,9 +309,9 @@
                     <ul>
                         <li><a
                                 href="https://www.google.com/maps/place/SENAI+Senai/@-2.9081189,-41.7830287,17z/data=!3m1!4b1!4m6!3m5!1s0x7ec2fe7b0a81c43:0x46b78ca8ceae1148!8m2!3d-2.9081243!4d-41.7781578!16s%2Fg%2F1ptzbtjw8?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"><i
-                                    class="bi bi-geo-alt-fill"></i>CFP José de Moraes Correia, Av. Capitão Claro, 199 -
+                                    class="bi bi-geo-alt-fill"></i> CFP José de Moraes Correia, Av. Capitão Claro, 199 -
                                 Centro, Parnaíba - PI, CEP 64200-500</a></li>
-                        <li><i class="bi bi-telephone"></i>40220-8922 ((86) 3321-2640)</li>
+                        <li><i class="bi bi-telephone"></i> (86) 3321-2640</li>
                     </ul>
                 </div>
             </div>
