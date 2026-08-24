@@ -19,18 +19,19 @@
     <!-- HEADER -->
 
     <header>
-        <a href="index.html"><img src="/Views/img/senai.svg" alt=""></a>
-        <div id="Home">
-            <nav>
-                <a href="index.html" class="animacao">Home</a>
-                <a href="#Cursos" class="animacao">Cursos</a>
-                <a href="#Sobre" class="animacao">Sobre</a>
-                <a href="#Contatos" class="animacao">Contatos</a>
-            </nav>
+        <a href="index.html" id="senaiLogo">
+            <img src="/Views/img/senai.svg" alt="">
+        </a>
+
+        <nav>
+            <a href="" class="animacao">Home</a>
+            <a href="#Cursos" class="animacao">Cursos</a>
+            <a href="#Sobre" class="animacao">Sobre</a>
+            <a href="#Contatos" class="animacao">Contatos</a>
             <button id="temaEscuro" type="">
                 <i class="bi bi-moon-stars-fill"></i>
             </button>
-        </div>
+        </nav>
 
     </header>
 
@@ -38,62 +39,54 @@
     <main>
         <!-- BANNER -->
         <section id="banner">
-            <div id="banner-img">
-                <div id="infoBanner">
-                    <div id="textoBanner">
-                        <h1>
-                            <span id="span1">CATÁLOGO DE CURSOS</span>
-                            <br>
-                            SENAI <span id="span2">PARNAÍBA </span>
-                        </h1>
-                    </div>
+            <div id="infoBanner">
+                <div id="textoBanner">
+                    <h4>
+                        CATÁLOGO DE CURSOS
+                    </h4>
 
-                    <p id="p">Explore todos os cursos técnicos, profissionalizantes e de qualificação oferecidos pela
-                        unidade SENAI
-                        Parnaíba.</p>
+                    <h1>
+                        SENAI PARNAÍBA
+                    </h1>
+                </div>
 
-                    <div id="infoCard">
-                        <div id="infoCards">
-                            <div class="cards">
-                                <i class="bi bi-mortarboard"></i>
-                                <div class="card">
-                                    <h3>+20</h3>
-                                    <p>CURSOS<br>DISPONIVEIS</p>
-                                </div>
+                <p>Explore todos os cursos técnicos, profissionalizantes e de qualificação oferecidos pela unidade SENAI Parnaíba.</p>
 
-                            </div>
-                            <div class="cards" id="carddomeio">
-                                <i class="bi bi-grid"></i>
-                                <div class="card">
-                                    <h3>7</h3>
-                                    <p>AREAS<br>DISPONIVEIS</p>
-                                </div>
-
-                            </div>
-                            <div class="cards">
-                                <i class="bi bi-award"></i>
-                                <div class="card">
-                                    <h3 id="h3">QUALIDADE</h3>
-                                    <p>EDUCAÇÃO QUE<br> TRANSFORMA</p>
-                                </div>
-
+                    <div id="infoCards">
+                        <div class="cards">
+                            <i class="bi bi-mortarboard"></i>
+                            <div class="card">
+                                <h3>+20</h3>
+                                <h4>CURSOS DISPONIVEIS</h4>
                             </div>
                         </div>
 
-                    </div>
-                    <a href="#Cursos">
-                        <button id="explorarCursos">
-                            Explorar cursos <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </a>
+                        <div class="cards">
+                            <i class="bi bi-grid"></i>
+                            <div class="card">
+                                <h3>7</h3>
+                                <h4>AREAS DISPONIVEIS</h4>
+                            </div>
+                        </div>
 
-                    <a href="https://www.google.com/maps/place/SENAI+Senai/@-2.9081189,-41.7830287,17z/data=!3m1!4b1!4m6!3m5!1s0x7ec2fe7b0a81c43:0x46b78ca8ceae1148!8m2!3d-2.9081243!4d-41.7781578!16s%2Fg%2F1ptzbtjw8?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"
-                        id="localSenai">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <p>Unidade SENAI Parnaíba</p>
-                    </a>
+                        <div class="cards">
+                            <i class="bi bi-award"></i>
+                            <div class="card">
+                                <h3>+10 ANOS</h3>
+                                <h4>TRANSFORMANDO VIDAS</h4>
+                            </div>
+                        </div>
+
                 </div>
+
+
+                <a href="https://www.google.com/maps/place/SENAI+Senai/@-2.9081189,-41.7830287,17z/data=!3m1!4b1!4m6!3m5!1s0x7ec2fe7b0a81c43:0x46b78ca8ceae1148!8m2!3d-2.9081243!4d-41.7781578!16s%2Fg%2F1ptzbtjw8?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"
+                    id="localSenai">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <p>Unidade SENAI Parnaíba</p>
+                </a>
             </div>
+            <div id="banner-img"></div>
         </section>
 
         <!-- CARD-CURSOS -->
@@ -121,96 +114,80 @@
                 </div>
             </div>
             <div id="cursos">
+
                 <div class="card-curso">
                     <img src="/Views/img/senai.jpg" alt="" class="img-curso">
 
-                    <div class="divCategoria">
-                        <p>Categoria Categoria</p>
+                    <div class="infosCurso">
+                        
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
                         <button class="saiba-mais">
                             Saiba-mais <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
-
-                </div>
-
-
-
-                <div class="card-curso">
-                    <img src="/Views/img/bannerzao.png" alt="" class="img-curso">
-                    <div class="divCategoria">
-                        <p>Categoria Categoria Categ</p>
-                        <button class="saiba-mais">
-                            Saiba-mais <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </div>
-
                 </div>
 
                 <div class="card-curso">
-                    <img src="/Views/img/banner2.png" alt="" class="img-curso">
-                    <div class="divCategoria">
-                        <p>Categoria Categoria Categ</p>
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+                        
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
                         <button class="saiba-mais">
                             Saiba-mais <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
-
                 </div>
 
                 <div class="card-curso">
-                    <img src="/Views/img/trionai.png" alt="" class="img-curso">
-                    <div class="divCategoria">
-                        <p>Categoria Categoria Categoria</p>
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+                        
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
                         <button class="saiba-mais">
                             Saiba-mais <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
-
                 </div>
 
                 <div class="card-curso">
-                    <img src="/Views/img/trioSenai.png" alt="" class="img-curso">
-                    <div class="divCategoria">
-                        <p>Categoria Categoria Categoria </p>
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+                        
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
                         <button class="saiba-mais">
                             Saiba-mais <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
-
                 </div>
 
                 <div class="card-curso">
-                    <img src="/Views/img/trioSenai.png" alt="" class="img-curso">
-                    <div class="divCategoria">
-                        <p>Categoria Categoria Categoria </p>
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+                        
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
                         <button class="saiba-mais">
                             Saiba-mais <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
-
-                </div>
-
-
-                <div class="card-curso">
-                    <img src="/Views/img/trioSenai.png" alt="" class="img-curso">
-                    <div class="divCategoria">
-                        <p>Categoria Categoria Categoria </p>
-                        <button class="saiba-mais">
-                            Saiba-mais <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="card-curso">
-                    <img src="/Views/img/trioSenai.png" alt="" class="img-curso">
-                    <div class="divCategoria">
-                        <p>Categoria Categoria Categoria </p>
-                        <button class="saiba-mais">
-                            Saiba-mais <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </div>
-
                 </div>
 
             </div>
@@ -287,10 +264,10 @@
                 <div id="navegacao" class="infoDivs">
                     <h2>NAVEGAÇÃO</h2>
                     <ul>
-                        <li><a href="#Home" class="animacao">Home</a>
-                        <li><a href="#Cursos" class="animacao">Cursos</a></li>
-                        <li><a href="#Sobre" class="animacao">Sobre</a></li>
-                        <li><a href="#Contatos" class="animacao">Contatos</a></li>
+                        <li><a href="">Home</a>
+                        <li><a href="#Cursos">Cursos</a></li>
+                        <li><a href="#Sobre">Sobre</a></li>
+                        <li><a href="#Contatos">Contatos</a></li>
                         </li>
                     </ul>
                 </div>
