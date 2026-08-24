@@ -601,3 +601,43 @@ ul {
 
 }
 
+/* MODAL DOS CARDS */
+
+.modalSection{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+    z-index: 2000;
+
+}
+
+.modalSection.ativo{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalConteudo{
+    width: 500px;
+    height: 400px;
+
+    background: var(--card);
+    border-radius: 15px;
+    position: relative;
+
+    transform: scale(0.9);
+    transition: 0.3s;
+}
+
+.fecharModal{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
