@@ -1,28 +1,34 @@
-const express = require('express');
-const session = require('express-session');
-const path = require('path');
-const authRoutes = require('./Routes/authRoutes');
+const express = require("express");
+const session = require("express-session");
+const path = require("path");
+
+const usuarioRoutes = require("./Routes/usuarioRoutes");
+const cardRoutes = require("./Routes/cardRoutes");
 
 const app = express();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Configurações do EJS
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "src", "views"));
 
-app.set('view engine')
-app.set('views', path.join(__dirname, 'src', 'views'))
-
+// Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 app.use(
-    session({
-    secret: 'chavee-secreta-segura',
+  session({
+    secret: "chavee-secreta-segura",
     resave: false,
     saveUninitialized: true,
-}),
-)
+  })
+);
 
-app.use('/', authRoutes);
+// Rotas
+app.use("/", usuarioRoutes);
+app.use("/cards", cardRoutes);
 
-app.listen(3000, () => 
-    console.log('servidor rodando em http://localhost:3000')
-)
+
+// Servidor
+app.listen(3000, () => {
+  console.log("Servidor rodando em http://localhost:3000");
+});
