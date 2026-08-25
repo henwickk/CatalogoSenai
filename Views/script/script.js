@@ -1,5 +1,5 @@
 const modal = document.querySelector(".modalSection")
-const btnsSaibaMais = document.querySelector(".saiba-mais")
+const btnsSaibaMais = document.querySelectorAll(".saiba-mais")
 const fecharModal = document.querySelector(".fecharModal")
 
 btnsSaibaMais.forEach(botao => {
