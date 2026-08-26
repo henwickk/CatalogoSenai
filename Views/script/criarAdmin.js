@@ -3,18 +3,18 @@ const db = require("../config/db");
 
 async function criarAdmin() {
   try {
-    const login = "admin";
-    const senha = "senai@2026";
+    const nome_usuario = "admin";
+    const senha_usuario = "senai@2026";
 
     // Cria o hash da senha
     const senhaHash = await bcrypt.hash(senha, 10);
 
     const sql = `
-      INSERT INTO usuarios (login, senha)
+      INSERT INTO usuarios (nome_usuario, senha_usuario)
       VALUES (?, ?)
     `;
 
-    await db.execute(sql, [login, senhaHash]);
+    await db.execute(sql, [nome_usuario, senha_usuarioHash]);
 
     console.log("Admin criado com sucesso!");
 

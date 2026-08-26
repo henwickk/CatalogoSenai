@@ -5,10 +5,10 @@ class UsuarioController {
 
   static async login(req, res) {
     try {
-      const { login, senha } = req.body;
+      const { nome_usuario, senha_usuario} = req.body;
 
       // Verifica se os campos foram preenchidos
-      if (!login || !senha) {
+      if (!nome_usuario || !senha_usuario) {
         return res.status(400).json({
           mensagem: "Login e senha são obrigatórios"
         });
@@ -26,8 +26,8 @@ class UsuarioController {
 
       // Compara a senha digitada com o hash do banco
       const senhaCorreta = await bcrypt.compare(
-        senha,
-        usuario.senha
+        senha_usuario,
+        usuario.senha_usuario
       );
 
       // Senha incorreta

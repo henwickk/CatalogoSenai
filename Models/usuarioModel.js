@@ -2,17 +2,17 @@ const db = require("../config/db");
 
 class UsuarioModel {
 
-  static async buscarPorLogin(login) {
+  static async buscarPorLogin(nome_usuario) {
     const sql = `
       SELECT *
-      FROM usuarios
-      WHERE login = ?
+      FROM usuario
+      WHERE nome_usuario = ?
       LIMIT 1
     `;
 
-    const [usuarios] = await db.execute(sql, [login]);
+    const [usuario] = await db.execute(sql, [nome_usuario]);
 
-    return usuarios[0];
+    return usuario[0];
   }
 
 }

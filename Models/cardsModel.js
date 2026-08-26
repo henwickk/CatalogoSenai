@@ -5,45 +5,48 @@ class CardModel {
   // Criar um novo card
   static async criar(dados) {
     const {
-      nome,
-      imagem,
-      categoria,
-      carga_horaria,
-      descricao,
-      turno,
+      nome_curso,
+      turno_curso,
+      descricao_curso,
       grade_curso,
-      status,
-      valor,
-      modalidade
+      modalidade_curso,
+      status_curso,
+      cargaHoraria_curso,
+      categoria_curso,
+      valor_curso,
+      imagem_curso,
+      local_curso
     } = dados;
 
     const sql = `
       INSERT INTO cursos (
-        nome,
-        imagem,
-        categoria,
-        carga_horaria,
-        descricao,
-        turno,
+        nome_curso,
+        turno_curso,
+        descricao_curso,
         grade_curso,
-        status,
-        valor,
-        modalidade
+        modalidade_curso,
+        status_curso,
+        cargaHoraria_curso,
+        categoria_curso,
+        valor_curso,
+        imagem_curso,
+        local_curso
       )
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
     const valores = [
-      nome,
-      imagem,
-      categoria,
-      carga_horaria,
-      descricao,
-      turno,
+      nome_curso,
+      turno_curso,
+      descricao_curso,
       grade_curso,
-      status,
-      valor,
-      modalidade
+      modalidade_curso,
+      status_curso,
+      cargaHoraria_curso,
+      categoria_curso,
+      valor_curso,
+      imagem_curso,
+      local_curso
     ];
 
     const [resultado] = await db.execute(sql, valores);
@@ -54,18 +57,18 @@ class CardModel {
 
   // Listar todos os cards
   static async listarTodos() {
-    const sql = `SELECT * FROM cursos`;
+    const sql = `SELECT * FROM curso`;
 
-    const [cursos] = await db.execute(sql);
+    const [curso] = await db.execute(sql);
 
-    return cursos;
+    return curso;
   }
 
 
   // Buscar card por ID
   static async buscarPorId(id) {
     const sql = `
-      SELECT * FROM cursos
+      SELECT * FROM curso
       WHERE id = ?
     `;
 
@@ -79,16 +82,17 @@ class CardModel {
   static async editar(id, dados) {
 
     const camposPermitidos = [
-      "nome",
-      "imagem",
-      "categoria",
-      "carga_horaria",
-      "descricao",
-      "turno",
-      "grade_curso",
-      "status",
-      "valor",
-      "modalidade"
+      nome_curso,
+      turno_curso,
+      descricao_curso,
+      grade_curso,
+      modalidade_curso,
+      status_curso,
+      cargaHoraria_curso,
+      categoria_curso,
+      valor_curso,
+      imagem_curso,
+      local_curso
     ];
 
     const campos = [];
@@ -111,7 +115,7 @@ class CardModel {
     valores.push(id);
 
     const sql = `
-      UPDATE cursos
+      UPDATE curso
       SET ${campos.join(", ")}
       WHERE id = ?
     `;
@@ -125,7 +129,7 @@ class CardModel {
   // Deletar um card
   static async deletar(id) {
     const sql = `
-      DELETE FROM cursos
+      DELETE FROM curso
       WHERE id = ?
     `;
 
