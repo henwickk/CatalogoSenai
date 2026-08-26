@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const UsuarioController = require("../Controllers/usuarioController");
+const UsuarioController = require("../Controller/usuarioController");
 
 // Login do administrador
 router.post("/login", UsuarioController.login);

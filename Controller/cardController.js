@@ -15,9 +15,10 @@ class CardController {
       });
 
     } catch (erro) {
+      console.error("ERRO AO CRIAR CARD:", error);
       return res.status(500).json({
         mensagem: "Erro ao criar o card",
-        erro: erro.message
+        error: error.message
       });
     }
   }
@@ -31,6 +32,7 @@ class CardController {
       return res.status(200).json(cursos);
 
     } catch (erro) {
+      console.error("ERRO AO LISTAR CARDS:", erro);
       return res.status(500).json({
         mensagem: "Erro ao buscar os cards",
         erro: erro.message
@@ -55,9 +57,10 @@ class CardController {
       return res.status(200).json(curso);
 
     } catch (erro) {
+      console.error("ERRO AO ENCONTRAR CARD:", error);
       return res.status(500).json({
         mensagem: "Erro ao buscar o card",
-        erro: erro.message
+        erro: error.message
       });
     }
   }

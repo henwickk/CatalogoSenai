@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const CardController = require("../controllers/cardController");
+const CardController = require("../Controller/cardController");
+
 
 // Criar um card
 router.post("/", CardController.criar);
