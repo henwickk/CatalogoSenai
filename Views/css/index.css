@@ -8,13 +8,24 @@
     --fundo: #f5f6fa;
     --card: #fefefe;
     --navbar: #fefefe;
-    
+
+    --texto: #02095A;
+    --texto-secundario: #53618A;
+    --sobre: #E1E4EC;
+    --subcard: #eef3ff;
+    --borda: #dce4f5;
 }
 
 [data-theme="dark"] {
-    --fundo: #0d1933;
-    --card: #162544;
-    --navbar: #101c36;
+    --fundo: #22252B;
+    --card: #2B2E35;
+    --navbar: #292C32;
+
+    --texto: #F1F3F7;
+    --texto-secundario: #B7BECB;
+    --sobre: #2B3038;
+    --subcard: #323740;
+    --borda: #3B414B;
 }
 
 html {
@@ -25,13 +36,14 @@ body {
     width: 100%;
     background: var(--fundo);
     font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     cursor: pointer;
 }
 
-a{
+a {
     text-decoration: none;
     color: #fefefe;
 }
@@ -49,10 +61,10 @@ header {
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
-
+    transition: background-color 0.3s ease;
 }
 
-#senaiLogo{
+#senaiLogo {
     width: 10%;
 }
 
@@ -69,11 +81,10 @@ nav {
 }
 
 nav a {
-    color: #02095A;
+    color: var(--texto);
     font-size: 20px;
     position: relative;
-    
-
+    transition: color .3s ease;
 }
 
 nav a:hover {
@@ -92,11 +103,18 @@ nav a:hover {
     transform: scaleX(0);
     transition: transform .4s;
     transform-origin: right;
-    
 }
 
 .animacao:hover::after {
     transform-origin: left;
+    transform: scaleX(1);
+}
+
+.animacao.ativo {
+    color: #F95512;
+}
+
+.animacao.ativo::after {
     transform: scaleX(1);
 }
 
@@ -108,10 +126,11 @@ nav a:hover {
 
 #temaEscuro i {
     font-size: 25px;
-    color: #02095A;
+    color: var(--texto);
+    transition: color .3s ease;
 }
 
-#temaEscuro i:hover{
+#temaEscuro i:hover {
     color: #F95512;
 }
 
@@ -132,7 +151,6 @@ main {
     position: relative;
     background: #011748;
     box-shadow: 0 25px 45px rgba(0, 0, 0, .18);
-
 }
 
 #banner-img {
@@ -141,20 +159,15 @@ main {
     isolation: isolate;
     right: 0;
     top: 0;
-
     width: 50%;
     height: 100%;
-
     background-image: url("/Views/img/senai.png");
     background-size: cover;
 
-    /* faz a imagem desaparecer suavemente para o lado esquerdo */
-    mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        rgba(0, 0, 0, 0.4) 15%,
-        black 40%
-    );
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.4) 15%,
+            black 40%);
 }
 
 #infoBanner {
@@ -170,11 +183,11 @@ main {
     z-index: 1;
 }
 
-#textoBanner{
+#textoBanner {
     font-size: 35px
 }
 
-#textoBanner h4{
+#textoBanner h4 {
     color: #F95512;
     margin-bottom: 3%;
 }
@@ -187,7 +200,6 @@ main {
     width: 100%;
     display: flex;
     gap: 2%;
-    
 }
 
 .cards {
@@ -216,7 +228,7 @@ main {
     font-size: 28px;
 }
 
-.card h4{
+.card h4 {
     font-size: 15px;
     font-weight: 100;
 }
@@ -226,7 +238,6 @@ main {
     align-items: center;
     gap: 20px;
     font-size: 20px;
-    
     color: #fefefe;
 }
 
@@ -242,13 +253,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    
     background: var(--card);
     border-radius: 15px;
-
     transform: translateY(-25%);
     margin-bottom: 1%;
-    
+    transition: background-color .3s ease;
 }
 
 .filtro {
@@ -256,19 +265,18 @@ main {
     text-align: center;
 }
 
-.filtro h3{
+.filtro h3 {
     text-align: start;
     margin-left: 5%;
     margin-bottom: 3%;
-    color: #02095A;
+    color: var(--texto);
 }
 
 #filtroBox {
     position: relative;
-    
 }
 
-#categoria{
+#categoria {
     display: flex;
     justify-self: center;
 }
@@ -283,18 +291,20 @@ main {
     box-shadow: 0 0 0 3px rgba(0, 108, 234, 0.15);
 }
 
-#inputPesquisa, #categoria{
+#inputPesquisa,
+#categoria {
     width: 90%;
-    background: none;
+    background: transparent;
     outline: none;
     border: solid #02095a5e 2px;
     padding: 14px 8px;
     border-radius: 8px;
-    color: #02095A;
+    color: var(--texto);
+    transition: .3s;
 }
 
-#inputPesquisa::placeholder{
-    color: #02095A;
+#inputPesquisa::placeholder {
+    color: var(--texto-secundario);
 }
 
 #inputPesquisa:hover {
@@ -316,41 +326,34 @@ main {
     transform: translateY(-50%);
     right: 7%;
     font-size: 20px;
-    color: #02095A;
+    color: var(--texto);
 }
 
 /* CARD-CURSOS */
 
-#cursosArea{
+#cursosArea {
     width: 75%;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 #cursos {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     margin-bottom: 3%;
 }
 
 .card-curso {
-
     height: 350px;
     background: var(--card);
-    
     border-radius: 14px;
- 
     font-size: 160%;
-
     overflow: hidden;
     transition: .35s;
     box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
-
 }
 
 .card-curso:hover {
@@ -365,22 +368,21 @@ main {
 
 .infosCurso {
     height: 50%;
-    
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin-left: 10%;
 }
 
-.textoCurso h5{
+.textoCurso h5 {
     color: #F95512;
     margin-top: 10px;
     font-size: 60%;
     font-weight: 100;
 }
 
-.textoCurso h4{
-    color: #0A247D;
+.textoCurso h4 {
+    color: var(--texto);
 }
 
 .saiba-mais {
@@ -391,68 +393,60 @@ main {
     color: #006CEA;
     font-size: 60%;
     font-weight: bold;
-
 }
 
-#verTodos{
-    display: flex;
-    justify-content: space-around;
-    justify-self: center;
-    width: 35%;
+#verTodos {
     background: none;
-
     border: solid #1E43B6 2px;
-    padding: 14px;
+    padding: 18px;
     border-radius: 99px;
     color: #1E43B6;
     font-weight: 600;
-
     margin-bottom: 10%;
-    
 }
 
-#verTodos:hover{
+#verTodos:hover {
     background: #1E43B6;
     color: #fefefe;
 }
 
 /* SOBRE SENAI */
 
-#Sobre, #DivSobreSenai, #resumo, #infos{
-    display:flex;
+#Sobre,
+#DivSobreSenai,
+#resumo,
+#infos {
+    display: flex;
     align-items: center;
 }
 
-#Sobre{
+#Sobre {
     width: 100%;
+    min-height: 500px;
     justify-content: center;
     margin-bottom: 7%;
-    /* background: #E1E4EC; */
-    
 }
 
-#DivSobreSenai{
+#DivSobreSenai {
     width: 80%;
     height: 30vh;
-    background: #E1E4EC;
+    background: var(--sobre);
     border-radius: 20px;
-    
+    transition: background-color .3s ease;
 }
 
-#resumo{
+#resumo {
     justify-content: space-evenly;
-    
     height: 70%;
 }
 
-#resumo img{
+#resumo img {
     width: 190px;
     height: 250px;
     border-radius: 140px 80px 10px 10px;
-
 }
 
-#resumo1{
+#resumo1 {
     width: 50%;
     height: 100%;
     display: flex;
@@ -460,44 +454,51 @@ main {
     justify-content: space-between;
 }
 
-#resumo1 h3{
-    color: #02095A;
+#resumo1 h3 {
+    color: var(--texto);
 }
 
-#conheca{
+#resumo1 p {
+    color: var(--texto-secundario);
+}
+
+#conheca {
     width: 75%;
     background: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: #1E43B6;
-    
     border: solid #1E43B6 2px;
     padding: 12px;
     border-radius: 18px;
     font-weight: 600;
 }
 
-#conheca:hover{
+#conheca:hover {
     background: #1E43B6;
     color: #fefefe;
 }
 
-#conheca i{
+#conheca i {
     font-size: 20px;
 }
 
-#infos{
+#infos {
     width: 100%;
     height: 50%;
     justify-content: space-around;
 }
 
-#infos h4{
+#infos h4 {
     color: #005CAA;
 }
 
-#infos div{
+#infos p {
+    color: var(--texto-secundario);
+}
+
+#infos div {
     width: 20%;
     height: 100%;
     display: flex;
@@ -520,10 +521,9 @@ footer {
     align-items: center;
     justify-content: center;
     box-shadow: 0 15px 35px rgba(0, 92, 170, 0.15);
-    
 }
 
-#Contatos  {
+#Contatos {
     width: 80%;
     height: 85%;
     display: flex;
@@ -542,7 +542,6 @@ footer {
 #infosfooter {
     height: 85%;
     border-bottom: solid 1px #fefefe;
-
 }
 
 #copydiv {
@@ -559,8 +558,7 @@ ul {
     list-style: none;
 }
 
-#senai{
-    
+#senai {
     justify-content: space-around;
     gap: 0;
 }
@@ -570,7 +568,6 @@ ul {
     height: 50px;
     background: url(/Views/img/senai.svg);
     background-size: cover;
-
 }
 
 #socialMidia {
@@ -581,13 +578,11 @@ ul {
     font-size: 20px;
 }
 
-
-#senai h2{
+#senai h2 {
     font-size: 18px;
 }
 
-.icons{
-
+.icons {
     font-size: 30px;
     color: #fefefe;
 }
@@ -598,47 +593,273 @@ ul {
     cursor: pointer;
     color: #fefefe;
     text-align: center;
-
 }
 
 /* MODAL DOS CARDS */
 
-.modalSection{
+.modalSection {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.6);
-
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-
     transition: 0.3s;
     z-index: 2000;
-
 }
 
-.modalSection.ativo{
+.modalSection.ativo {
     opacity: 1;
     visibility: visible;
 }
 
-.modalConteudo{
-    width: 500px;
-    height: 400px;
-
+.modalConteudo {
+    width: 80%;
+    max-width: 1000px;
+    height: 84vh;
     background: var(--card);
     border-radius: 15px;
     position: relative;
-
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    gap: 30px;
     transform: scale(0.9);
     transition: 0.3s;
 }
 
-.fecharModal{
-    position: absolute;
-    top: 15px;
-    right: 15px;
+.ladoDireito {
+    width: 94%;
 }
 
+.img-modal {
+    background: url(/Views/img/senai.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 280px;
+    border-radius: 14px;
+}
+
+.modalidade-modal {
+    display: inline-block;
+    margin: 15px;
+    background: #F95512;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modalHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.modalHead h2 {
+    color: var(--texto);
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+.modalHead p {
+    color: var(--texto-secundario);
+    margin-top: 5px;
+}
+
+.status {
+    background: #d9f7df;
+    color: #176b2b;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.modalDescricao h3,
+.aviso h3 {
+    color: var(--texto);
+    margin-bottom: 12px;
+}
+
+.modalDescricao h3 i,
+.aviso h3 i {
+    color: #006CEA;
+}
+
+.modalDescricao p,
+.aviso p {
+    color: var(--texto-secundario);
+    line-height: 1.5;
+}
+
+.informacoesPrincipais {
+    background: var(--subcard);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.informacoesPrincipais h3 {
+    color: var(--texto);
+    margin-bottom: 15px;
+}
+
+.informacoes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.informacoes i {
+    font-size: 22px;
+    color: #006CEA;
+}
+
+.informacoes div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.informacoes span {
+    color: var(--texto-secundario);
+}
+
+.informacoes strong {
+    color: var(--texto);
+}
+
+.modalDetalhes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modalDetalhes div {
+    background: var(--subcard);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.modalDetalhes i {
+    color: #006CEA;
+    font-size: 22px;
+}
+
+.modalDetalhes span {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+.modalDetalhes strong {
+    color: var(--texto);
+}
+
+.gradeCurricular {
+    margin-top: 20px;
+    padding: 18px;
+    border: 1px dashed #9db7ef;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.gradeCurricular > i {
+    font-size: 30px;
+    color: #006CEA;
+}
+
+.gradeCurricular div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.gradeCurricular strong {
+    color: var(--texto);
+}
+
+.gradeCurricular span {
+    color: var(--texto-secundario);
+}
+
+.gradeCurricular button {
+    border: none;
+    background: #e3ecff;
+    color: #0050d8;
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.gradeCurricular button:hover {
+    background: #0050d8;
+    color: #e3ecff;
+}
+
+.aviso {
+    background: var(--subcard);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.aviso h3 {
+    color: var(--texto);
+}
+
+.btnBaixo {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--borda);
+}
+
+.btnFechar {
+    padding: 13px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    background: var(--card);
+    color: var(--texto);
+    border: 1px solid #1E43B6;
+}
+
+.btnFechar:hover {
+    background: #1E43B6;
+    color: white;
+    border: 1px solid #02095A;
+}
+
+.fecharModal {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--texto);
+    z-index: 5;
+}
+
+/* ESCONDER CARDS */
+
+.oculto {
+    display: none;
+}
