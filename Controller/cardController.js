@@ -15,10 +15,10 @@ class CardController {
       });
 
     } catch (erro) {
-      console.error("ERRO AO CRIAR CARD:", error);
+      console.error("ERRO AO CRIAR CARD:", erro);
       return res.status(500).json({
         mensagem: "Erro ao criar o card",
-        error: error.message
+        erro: erro.message
       });
     }
   }
@@ -57,10 +57,10 @@ class CardController {
       return res.status(200).json(curso);
 
     } catch (erro) {
-      console.error("ERRO AO ENCONTRAR CARD:", error);
+      console.error("ERRO AO ENCONTRAR CARD:", erro);
       return res.status(500).json({
         mensagem: "Erro ao buscar o card",
-        erro: error.message
+        erro: erro.message
       });
     }
   }

@@ -19,7 +19,7 @@ class CardModel {
     } = dados;
 
     const sql = `
-      INSERT INTO cursos (
+      INSERT INTO curso (
         nome_curso,
         turno_curso,
         descricao_curso,
@@ -69,7 +69,7 @@ class CardModel {
   static async buscarPorId(id) {
     const sql = `
       SELECT * FROM curso
-      WHERE id = ?
+      WHERE id_curso = ?
     `;
 
     const [curso] = await db.execute(sql, [id]);
@@ -82,17 +82,17 @@ class CardModel {
   static async editar(id, dados) {
 
     const camposPermitidos = [
-      nome_curso,
-      turno_curso,
-      descricao_curso,
-      grade_curso,
-      modalidade_curso,
-      status_curso,
-      cargaHoraria_curso,
-      categoria_curso,
-      valor_curso,
-      imagem_curso,
-      local_curso
+      "nome_curso",
+      "turno_curso",
+      "descricao_curso",
+      "grade_curso",
+      "modalidade_curso",
+      "status_curso",
+      "cargaHoraria_curso",
+      "categoria_curso",
+      "valor_curso",
+      "imagem_curso",
+      "local_curso"
     ];
 
     const campos = [];
@@ -117,7 +117,7 @@ class CardModel {
     const sql = `
       UPDATE curso
       SET ${campos.join(", ")}
-      WHERE id = ?
+      WHERE id_curso = ?
     `;
 
     const [resultado] = await db.execute(sql, valores);
@@ -130,7 +130,7 @@ class CardModel {
   static async deletar(id) {
     const sql = `
       DELETE FROM curso
-      WHERE id = ?
+      WHERE id_curso = ?
     `;
 
     const [resultado] = await db.execute(sql, [id]);
