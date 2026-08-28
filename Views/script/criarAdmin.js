@@ -10,7 +10,7 @@ async function criarAdmin() {
     const senhaHash = await bcrypt.hash(senha, 10);
 
     const sql = `
-      INSERT INTO usuarios (nome_usuario, senha_usuario)
+      INSERT INTO usuario (nome_usuario, senha_usuario)
       VALUES (?, ?)
     `;
 
