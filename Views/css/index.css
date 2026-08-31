@@ -134,6 +134,7 @@ nav a:hover {
     color: #F95512;
 }
 
+
 /* MAIN */
 
 main {
@@ -862,4 +863,22 @@ ul {
 
 .oculto {
     display: none;
+}
+
+/* MOBILE NAVBAR*/
+
+#hamburguer{
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--texto);
+    padding: 0;
+    cursor: pointer;
+}
+
+/* -----------RESPONSIVE----------- */
+
+@media screen {
+    
 }
