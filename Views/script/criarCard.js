@@ -31,6 +31,8 @@ formulario.addEventListener("submit", async (event) => {
         turno_curso: turnosSelecionados.join(", "),
 
         descricao_curso: document.getElementById("descricao_curso").value,
+        
+        grade_curso: null,
 
         modalidade_curso: document.getElementById("modalidade_curso").value,
 
@@ -41,6 +43,8 @@ formulario.addEventListener("submit", async (event) => {
         categoria_curso: document.getElementById("categoria_curso").value,
 
         valor_curso: document.getElementById("valor_curso").value,
+
+        imagem_curso: null,
 
         local_curso: document.getElementById("local_curso").value
     };

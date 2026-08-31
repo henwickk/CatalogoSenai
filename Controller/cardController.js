@@ -4,23 +4,71 @@ class CardController {
 
   // Criar um novo card
   static async criar(req, res) {
+
     try {
+
       const dados = req.body;
+
+      // =========================
+      // IMAGEM
+      // =========================
+
+      if (req.files && req.files.imagem_curso) {
+
+        dados.imagem_curso =
+          req.files.imagem_curso[0].filename;
+
+      } else {
+
+        dados.imagem_curso = null;
+
+      }
+
+
+      // =========================
+      // GRADE
+      // =========================
+
+      if (req.files && req.files.grade_curso) {
+
+        dados.grade_curso =
+          req.files.grade_curso[0].filename;
+
+      } else {
+
+        dados.grade_curso = null;
+
+      }
+
+
+      // =========================
+      // SALVAR NO BANCO
+      // =========================
 
       const resultado = await CardModel.criar(dados);
 
       return res.status(201).json({
+
         mensagem: "Card criado com sucesso!",
+
         id: resultado.insertId
+
       });
 
     } catch (erro) {
+
       console.error("ERRO AO CRIAR CARD:", erro);
+
       return res.status(500).json({
+
         mensagem: "Erro ao criar o card",
+
         erro: erro.message
+
       });
+
     }
+
   }
 
 

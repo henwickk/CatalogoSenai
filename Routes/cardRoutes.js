@@ -2,10 +2,17 @@ const express = require("express");
 const router = express.Router();
 
 const CardController = require("../Controller/cardController");
-
+const upload = require("../upload");
 
 // Criar um card
-router.post("/", CardController.criar);
+router.post(
+    "/",
+    upload.fields([
+        { name: "imagem_curso", maxCount: 1 },
+        { name: "grade_curso", maxCount: 1 }
+    ]),
+    CardController.criar
+);
 
 // Listar todos os cards
 router.get("/", CardController.listarTodos);

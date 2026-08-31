@@ -23,7 +23,10 @@ app.use(
 );
 
 // Arquivos HTML, CSS e JS
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, "Views")));
+
+// Arquivos enviados
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Rotas
 app.use("/", usuarioRoutes);
