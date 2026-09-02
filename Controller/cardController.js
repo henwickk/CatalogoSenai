@@ -8,6 +8,8 @@ class CardController {
     try {
 
       const dados = req.body;
+      console.log("BODY:", req.body);
+      console.log("FILES:", req.files);
 
       // =========================
       // IMAGEM
