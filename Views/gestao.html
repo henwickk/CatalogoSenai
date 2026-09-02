@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SENAI - Gerenciar Cursos</title>
+
+  <link rel="stylesheet" href="/Views/css/gestao.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body>
+  <div class="layout">
+
+
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>SENAI</h1>
+        <span>CATÁLOGO DE CURSOS</span>
+      </div>
+
+      <nav class="menu">
+
+        <a href="#" class="menu-item active">
+          <i class="fa-solid fa-grip"></i>
+          <span>Gerenciar Cursos</span>
+        </a>
+
+        <a href="gerenciamentoCard.html" class="menu-item">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Cadastro Curso</span>
+        </a>
+
+
+        <a href="login.html" class="menu-item">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Sair</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="people">
+          <div class="person person1"></div>
+          <div class="person person2"></div>
+          <div class="person person3"></div>
+        </div>
+
+        <div class="sidebar-text">
+          <span>O FUTURO</span>
+          <span>SE CONSTRÓI</span>
+          <strong>AQUI</strong>
+        </div>
+      </div>
+    </aside>
+
+
+
+    <main class="main">
+
+
+      <header class="topbar">
+        <i class="fa-regular fa-bell bell"></i>
+
+        <div class="user">
+          <div class="avatar">A</div>
+
+          <span>Administrador</span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </header>
+
+
+
+      <section class="content">
+
+
+        <div class="page-header">
+          <div>
+            <h2>Gerenciar Cursos</h2>
+
+            <p>Visualize, edite ou exclua os cursos cadastrados.</p>
+          </div>
+        </div>
+
+
+
+        <div class="card">
+
+
+          <div class="search-area">
+            <div class="search-row">
+              <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" placeholder="Pesquisar curso..." />
+              </div>
+
+              <button class="filter-button">
+                <i class="fa-solid fa-filter"></i>
+
+                Filtros
+              </button>
+            </div>
+
+
+
+            <div class="filters">
+              <button class="filter active">Todos</button>
+
+              <button class="filter">Manhã</button>
+
+              <button class="filter">Tarde</button>
+
+              <button class="filter">Noite</button>
+
+              <button class="category">
+                Todas as categorias
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+
+
+
+          <div class="table-header">
+            <div>CURSO</div>
+
+            <div>CATEGORIA</div>
+
+            <div>TURNO</div>
+
+
+
+            <div>STATUS</div>
+
+            <div>AÇÕES</div>
+          </div>
+
+
+
+          <div class="course">
+            <div class="course-info">
+              <img src="img/0c5c7bb8a70b7617160a47cb3a97c99b.jpg" alt="Desenvolvimento Web" />
+
+              <div>
+                <h3>Confeiteiro</h3>
+              </div>
+            </div>
+
+            <div>Alimentação</div>
+
+            <div>
+              <span class="shift morning"> Manhã </span>
+            </div>
+
+
+
+            <div>
+              <span class="status published"> Publicado </span>
+            </div>
+
+            <div class="actions">
+
+              <button class="btnEdit">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+
+              <button class="delete">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="pagination">
+            <span> Mostrando 1 a 5 de 12 cursos </span>
+
+            <div class="pages">
+              <button>
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+
+              <button class="selected">1</button>
+
+              <button>2</button>
+
+              <button>3</button>
+
+              <button>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL -->
+
+  <section class="modalSection">
+    <div class="modalConteudo">
+
+      <!-- BOTAO DE FECHAR -->
+
+      <button class="fecharModal">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="ladoEsquerdo">
+
+        <!-- IMAGEM DO MODAL -->
+
+        <div class="img-modal">
+          <span class="modalidade-modal">Técnico</span>
+        </div>
+
+        <!-- INFORMAÇOES PRINCIPAIS -->
+
+        <div class="informacoesPrincipais">
+
+          <h3>Informações principais</h3>
+
+          <div class="informacoes">
+            <i class="bi bi-clock"></i>
+            <div>
+              <span>Turnos disponíveis</span>
+              <strong>Manhã, Tarde e Noite</strong>
+            </div>
+          </div>
+
+          <div class="informacoes">
+            <i class="bi bi-geo-alt"></i>
+            <div>
+              <span>Local</span>
+              <strong>SENAI Parnaíba</strong>
+            </div>
+          </div>
+
+          <div class="informacoes">
+            <i class="bi bi-currency-dollar"></i>
+            <div>
+              <span>Valor</span>
+              <strong>Gratuito</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- INFORMAÇOES DO CURSO -->
+
+      <div class="ladoDireito">
+        <!-- CABEÇALHO DO MODAL-->
+
+        <div class="modalHead">
+          <div>
+            <h2>Informática</h2>
+            <p>Curso técnico em informática</p>
+          </div>
+          <span class="modalStatus">
+            <i class="bi bi-check-circle-fill"></i>
+            Disponível
+          </span>
+
+        </div>
+        <div class="modalDescricao">
+          <h3>
+            <i class="bi bi-card-text"></i>
+            Descrição do curso
+          </h3>
+          <p>
+            O curso Técnico em Informática do SENAI forma
+            profissionais preparados para atuar no desenvolvimento,
+            manutenção e suporte a sistemas e redes.
+          </p>
+        </div>
+        <div class="modalDetalhes">
+          <div>
+            <i class="bi bi-mortarboard"></i>
+            <span>Modalidade</span>
+            <strong>Técnico</strong>
+          </div>
+
+          <div>
+            <i class="bi bi-hourglass"></i>
+            <span>Carga horária</span>
+            <strong>1.200h</strong>
+          </div>
+
+          <div>
+            <i class="bi bi-grid"></i>
+            <span>Categoria</span>
+            <strong>Tecnologia da informação</strong>
+          </div>
+        </div>
+
+        <div class="gradeCurricular">
+          <i class="bi bi-paperclip"></i>
+          <div>
+            <strong>Grade do curso</strong>
+            <span>Baixe o arquivo com a grade completa</span>
+          </div>
+          <button>
+            <i class="bi bi-download"></i>
+            Baixar grade (PDF)
+          </button>
+        </div>
+        <div class="aviso">
+          <h3>
+            <i class="bi bi-exclamation-triangle"></i>
+            Importante
+          </h3>
+          <p>Para realizar sua inscrição/matricula você deve ir a uma de nossas unidades e apresentar cópias
+            do RG, CPF, comprovante de Escolaridade, comprovante de endereço, e-mail, foto 3x4, CPF e RG do
+            resposável (se menor de idade). EX ALUNO SENAI POSSUI 50% DE DESCONTO EM CURSOS PAGOS.
+
+          </p>
+        </div>
+        <div class="btnBaixo">
+          <button class="btnFechar">
+            Fechar
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script/gestao.js"></script>
+</body>
+
+</html>
