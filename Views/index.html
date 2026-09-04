@@ -5,24 +5,512 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalógo Senai</title>
-    <link rel="stylesheet" href="../css/index.css">
-</head>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+
 
 <body>
-    <header>
-        <h1>Senai</h1>
-        <a href="">Home</a>
-        <a href="">Cursos</a>
-        <a href="">Contatos</a>
-        <button id="temaEscuro"></button>
-    </header>
-    <section>
 
-    </section>
+    <!-- HEADER -->
+
+    <header>
+        <a href="index.html" id="senaiLogo">
+            <img src="/Views/img/senai.svg" alt="">
+        </a>
+
+        <button id="hamburguer">
+            <i class="bi bi-list"></i>
+        </button>
+        
+        <nav>
+            <a href="#banner" class="animacao">Home</a>
+            <a href="#Cursos" class="animacao">Cursos</a>
+            <a href="#Sobre" class="animacao">Sobre</a>
+            <a href="#Contatos" class="animacao">Contatos</a>
+            <button id="temaEscuro" type="">
+                <i class="bi bi-moon-stars-fill"></i>
+            </button>
+        </nav>
+
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <!-- BANNER -->
+        <section id="banner">
+            <div id="infoBanner">
+                <div id="textoBanner">
+                    <h4>
+                        CATÁLOGO DE CURSOS
+                    </h4>
+
+                    <h1>
+                        SENAI PARNAÍBA
+                    </h1>
+                </div>
+
+                <p>Explore todos os cursos técnicos, profissionalizantes e de qualificação oferecidos pela unidade SENAI
+                    Parnaíba.</p>
+
+                <div id="infoCards">
+                    <div class="cards">
+                        <i class="bi bi-mortarboard"></i>
+                        <div class="card">
+                            <h3>+20</h3>
+                            <h4>CURSOS DISPONIVEIS</h4>
+                        </div>
+                    </div>
+
+                    <div class="cards">
+                        <i class="bi bi-grid"></i>
+                        <div class="card">
+                            <h3>7</h3>
+                            <h4>AREAS DISPONIVEIS</h4>
+                        </div>
+                    </div>
+
+                    <div class="cards">
+                        <i class="bi bi-award"></i>
+                        <div class="card">
+                            <h3>+10 ANOS</h3>
+                            <h4>TRANSFORMANDO VIDAS</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <a href="https://www.google.com/maps/place/SENAI+Senai/@-2.9081189,-41.7830287,17z/data=!3m1!4b1!4m6!3m5!1s0x7ec2fe7b0a81c43:0x46b78ca8ceae1148!8m2!3d-2.9081243!4d-41.7781578!16s%2Fg%2F1ptzbtjw8?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"
+                    id="localSenai">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <p>Unidade SENAI Parnaíba</p>
+                </a>
+            </div>
+            <div id="banner-img"></div>
+        </section>
+
+        <!-- CARD-CURSOS -->
+
+        <section id="cursosArea">
+
+            <!-- FILTRO -->
+
+            <div id="Cursos">
+                <div class="filtro">
+                    <h3>ORGANIZAR POR</h3>
+                    <select id="categoria">
+                        <option value="todos">Todas as categorias</option>
+                        <option value="tecnico">Cursos Técnicos</option>
+                        <option value="gratuito">Cursos Gratuitos</option>
+                        <option value="pago">Cursos Pagos</option>
+                    </select>
+                </div>
+                <div class="filtro">
+                    <h3>PROCURE UM CURSO</h3>
+                    <div id="filtroBox">
+                        <input type="search" id="inputPesquisa" placeholder="Pesquisar curso">
+                        <i class="bi bi-search"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="cursos">
+
+                <div class="card-curso">
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
+                        <button class="saiba-mais">
+                            Saiba-mais <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-curso">
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
+                        <button class="saiba-mais">
+                            Saiba-mais <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-curso">
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
+                        <button class="saiba-mais">
+                            Saiba-mais <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-curso">
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
+                        <button class="saiba-mais">
+                            Saiba-mais <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-curso">
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
+                        <button class="saiba-mais">
+                            Saiba-mais <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-curso">
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
+                        <button class="saiba-mais">
+                            Saiba-mais <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-curso">
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
+                        <button class="saiba-mais">
+                            Saiba-mais <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-curso">
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
+                        <button class="saiba-mais">
+                            Saiba-mais <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-curso">
+                    <img src="/Views/img/senai.jpg" alt="" class="img-curso">
+
+                    <div class="infosCurso">
+
+                        <div class="textoCurso">
+                            <h4>Informática</h4>
+                            <h5>Técnico</h5>
+                        </div>
+                        <button class="saiba-mais">
+                            Saiba-mais <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="filtro">
+                <button id="verTodos">Ver todos os cursos<i class="bi bi-chevron-down"></i></button>
+            </div>
+
+        </section>
+
+        <section id="Sobre">
+            <div id="DivSobreSenai">
+                <div id="resumo">
+                    <img src="/Views/img/senai.jpg" alt="">
+                    <div id="resumo1">
+                        <h3>Sobre o SENAI Parnaíba</h3>
+                        <p>Há mais de 10 anos transformando vidas através da educação profissional e preparando talentos
+                            para o mercado de trabalho.</p>
+                        <a
+                            href="https://www.google.com/maps/place/SENAI+Senai/@-2.9081189,-41.7830287,17z/data=!3m1!4b1!4m6!3m5!1s0x7ec2fe7b0a81c43:0x46b78ca8ceae1148!8m2!3d-2.9081243!4d-41.7781578!16s%2Fg%2F1ptzbtjw8?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D">
+
+                            <button id="conheca">Conheça nossa unidade
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+                <div id="infos">
+                    <div>
+                        <h4>Infraestrutura<br>Moderna</h4>
+                        <p>Laboratórios<br>com tecnologia<br>de ponta.</p>
+                    </div>
+                    <div>
+                        <h4>Professores<br>Qualificados</h4>
+                        <p>Especialistas com<br>experiência <br>mercado.</p>
+                    </div>
+                    <div>
+                        <h4>Conexão com o<br>Mercado</h4>
+                        <p>Parcerias com <br>empresas que <br>geram oportunidades.</p>
+                    </div>
+                    <div>
+                        <h4>Certificação<br>Reconhecida</h4>
+                        <p>Certificados com <br>validade nacional <br>e valorizados.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <!-- FOOTER -->
+
     <footer>
+        <section id="Contatos">
+            <div id="infosfooter">
+
+                <div id="senai" class="infoDivs">
+                    <div id="senaiimg"></div>
+                    <h2>CATÁLOGO DE CURSOS<br>SENAI PARNAÍBA</h2>
+                    <div id="socialMidia">
+                        <a class="icons" id="facebook"
+                            href="https://www.facebook.com/people/Senai-Parna%C3%ADba/100087170853809/#"><i
+                                class="bi bi-facebook"></i></a>
+                        <a class="icons" id="instagram" href="https://www.instagram.com/senaiparnaiba/"><i
+                                class="bi bi-instagram"></i></a>
+                        <a class="icons" id="whatsapp"
+                            href="https://api.whatsapp.com/send/?phone=5586995004221&text&type=phone_number&app_absent=0"><i
+                                class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div id="navegacao" class="infoDivs">
+                    <h2>NAVEGAÇÃO</h2>
+                    <ul>
+                        <li><a href="">Home</a>
+                        <li><a href="#Cursos">Cursos</a></li>
+                        <li><a href="#Sobre">Sobre</a></li>
+                        <li><a href="#Contatos">Contatos</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div id="categorias" class="infoDivs">
+                    <h2>CATEGORIAS</h2>
+                    <ul>
+                        <li>Todas as categorias</li>
+                        <li>Cursos Técnicos</li>
+                        <li>Cursos Gratuitos</li>
+                        <li>Cursos Pagos</li>
+                    </ul>
+                </div>
+
+                <div id="localizacao" class="infoDivs">
+                    <h2>UNIDADE PARNAÍBA</h2>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://www.google.com/maps/place/SENAI+Senai/@-2.9081189,-41.7830287,17z/data=!3m1!4b1!4m6!3m5!1s0x7ec2fe7b0a81c43:0x46b78ca8ceae1148!8m2!3d-2.9081243!4d-41.7781578!16s%2Fg%2F1ptzbtjw8?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"><i
+                                    class="bi bi-geo-alt-fill"></i> CFP José de Moraes Correia, Av. Capitão Claro, 199 -
+                                Centro, Parnaíba - PI, CEP 64200-500</a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.google.com/maps/place/SESI-SENAI+Ind%C3%BAstria+do+Conhecimento/data=!4m2!3m1!1s0x0:0xe4a8481bec0ee8af?sa=X&ved=1t:2428&ictx=111">
+                                <i class="bi bi-geo-alt-fill"></i>R. Anhanguera - Piauí, Parnaíba - PI, 64215-322</a>
+                        </li>
+                        <li><i class="bi bi-telephone"></i> (86) 3321-2640</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="copydiv">
+                <p>© 2026 SENAI Parnaíba. Todos os direitos reservados.</p>
+                <a href="login.html">
+                    <button id="btnAdm">Administração</button>
+                </a>
+                <p>Desenvolvido para transformar o futuro.</p>
+            </div>
+
+        </section>
 
     </footer>
 
+    <!-- MODAL -->
+
+    <section class="modalSection">
+        <div class="modalConteudo">
+
+            <!-- BOTAO DE FECHAR -->
+
+            <button class="fecharModal">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <div class="ladoEsquerdo">
+
+                <!-- IMAGEM DO MODAL -->
+
+                <div class="img-modal">
+                    <span class="modalidade-modal">Técnico</span>
+                </div>
+
+                <!-- INFORMAÇOES PRINCIPAIS -->
+
+                <div class="informacoesPrincipais">
+
+                    <h3>Informações principais</h3>
+
+                    <div class="informacoes">
+                        <i class="bi bi-clock"></i>
+                        <div>
+                            <span>Turnos disponíveis</span>
+                            <strong>Manhã, Tarde e Noite</strong>
+                        </div>
+                    </div>
+
+                    <div class="informacoes">
+                        <i class="bi bi-geo-alt"></i>
+                        <div>
+                            <span>Local</span>
+                            <strong>SENAI Parnaíba</strong>
+                        </div>
+                    </div>
+
+                    <div class="informacoes">
+                        <i class="bi bi-currency-dollar"></i>
+                        <div>
+                            <span>Valor</span>
+                            <strong>Gratuito</strong>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- INFORMAÇOES DO CURSO -->
+
+            <div class="ladoDireito">
+                <!-- CABEÇALHO DO MODAL-->
+
+                <div class="modalHead">
+                    <div>
+                        <h2>Informática</h2>
+                        <p>Curso técnico em informática</p>
+                    </div>
+                    <span class="status">
+                        <i class="bi bi-check-circle-fill"></i>
+                        Disponível
+                    </span>
+
+                </div>
+                <div class="modalDescricao">
+                    <h3>
+                        <i class="bi bi-card-text"></i>
+                        Descrição do curso
+                    </h3>
+                    <p>
+                        O curso Técnico em Informática do SENAI forma
+                        profissionais preparados para atuar no desenvolvimento,
+                        manutenção e suporte a sistemas e redes.
+                    </p>
+                </div>
+                <div class="modalDetalhes">
+                    <div>
+                        <i class="bi bi-mortarboard"></i>
+                        <span>Modalidade</span>
+                        <strong>Técnico</strong>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-hourglass"></i>
+                        <span>Carga horária</span>
+                        <strong>1.200h</strong>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-grid"></i>
+                        <span>Categoria</span>
+                        <strong>Tecnologia da informação</strong>
+                    </div>
+                </div>
+
+                <div class="gradeCurricular">
+                    <i class="bi bi-paperclip"></i>
+                    <div>
+                        <strong>Grade do curso</strong>
+                        <span>Baixe o arquivo com a grade completa</span>
+                    </div>
+                    <button>
+                        <i class="bi bi-download"></i>
+                        Baixar grade (PDF)
+                    </button>
+                </div>
+                <div class="aviso">
+                    <h3>
+                        <i class="bi bi-exclamation-triangle"></i>
+                        Importante
+                    </h3>
+                    <p>Para realizar sua inscrição/matricula você deve ir a uma de nossas unidades e apresentar cópias
+                        do RG, CPF, comprovante de Escolaridade, comprovante de endereço, e-mail, foto 3x4, CPF e RG do
+                        resposável (se menor de idade). EX ALUNO SENAI POSSUI 50% DE DESCONTO EM CURSOS PAGOS.
+
+                    </p>
+                </div>
+                <div class="btnBaixo">
+                    <button class="btnFechar">
+                        Fechar
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <script src="script/index.js"></script>
 </body>
 
 </html>

@@ -1,10 +1,884 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-header{
+:root {
+    --fundo: #f5f6fa;
+    --card: #fefefe;
+    --navbar: #fefefe;
 
+    --texto: #02095A;
+    --texto-secundario: #53618A;
+    --sobre: #E1E4EC;
+    --subcard: #eef3ff;
+    --borda: #dce4f5;
+}
+
+[data-theme="dark"] {
+    --fundo: #22252B;
+    --card: #2B2E35;
+    --navbar: #292C32;
+
+    --texto: #F1F3F7;
+    --texto-secundario: #B7BECB;
+    --sobre: #2B3038;
+    --subcard: #323740;
+    --borda: #3B414B;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    background: var(--fundo);
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #fefefe;
+}
+
+/* HEADER */
+
+header {
+    background: var(--navbar);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    max-width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+    transition: background-color 0.3s ease;
+}
+
+#senaiLogo {
+    width: 10%;
+}
+
+#senaiLogo img {
+    width: 100%;
+}
+
+nav {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    color: var(--texto);
+    font-size: 20px;
+    position: relative;
+    transition: color .3s ease;
+}
+
+nav a:hover {
+    color: #F95512;
+}
+
+.animacao::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 120%;
+    width: 97%;
+    height: 3px;
+    background: #F95512;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .4s;
+    transform-origin: right;
+}
+
+.animacao:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.animacao.ativo {
+    color: #F95512;
+}
+
+.animacao.ativo::after {
+    transform: scaleX(1);
+}
+
+#temaEscuro {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#temaEscuro i {
+    font-size: 25px;
+    color: var(--texto);
+    transition: color .3s ease;
+}
+
+#temaEscuro i:hover {
+    color: #F95512;
+}
+
+
+/* MAIN */
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* BANNER */
+
+#banner {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    background: #011748;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, .18);
+}
+
+#banner-img {
+    position: absolute;
+    overflow: hidden;
+    isolation: isolate;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url("/Views/img/senai.png");
+    background-size: cover;
+
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.4) 15%,
+            black 40%);
+}
+
+#infoBanner {
+    max-width: 35%;
+    height: 100%;
+    margin-left: 10%;
+    color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6%;
+    position: relative;
+    z-index: 1;
+}
+
+#textoBanner {
+    font-size: 35px
+}
+
+#textoBanner h4 {
+    color: #F95512;
+    margin-bottom: 3%;
+}
+
+#infoBanner p {
+    font-size: 20px;
+}
+
+#infoCards {
+    width: 100%;
+    display: flex;
+    gap: 2%;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: solid 2px #142953;
+    background: #0117487e;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.cards i {
+    font-size: 40px;
+    color: #1564EC;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card h3 {
+    font-size: 28px;
+}
+
+.card h4 {
+    font-size: 15px;
+    font-weight: 100;
+}
+
+#localSenai {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    color: #fefefe;
+}
+
+#localSenai i {
+    font-size: 25px;
+}
+
+/* FILTRO */
+
+#Cursos {
+    width: 60%;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--card);
+    border-radius: 15px;
+    transform: translateY(-25%);
+    margin-bottom: 1%;
+    transition: background-color .3s ease;
+}
+
+.filtro {
+    width: 40%;
+    text-align: center;
+}
+
+.filtro h3 {
+    text-align: start;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    color: var(--texto);
+}
+
+#filtroBox {
+    position: relative;
+}
+
+#categoria {
+    display: flex;
+    justify-self: center;
+}
+
+#categoria:hover {
+    border-color: #006CEA;
+}
+
+#categoria:focus {
+    border-color: #006CEA;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 108, 234, 0.15);
+}
+
+#inputPesquisa,
+#categoria {
+    width: 90%;
+    background: transparent;
+    outline: none;
+    border: solid #02095a5e 2px;
+    padding: 14px 8px;
+    border-radius: 8px;
+    color: var(--texto);
+    transition: .3s;
+}
+
+#inputPesquisa::placeholder {
+    color: var(--texto-secundario);
+}
+
+#inputPesquisa:hover {
+    border-color: #006CEA;
+}
+
+#inputPesquisa:focus {
+    border-color: #006CEA;
+    box-shadow: 0 0 0 2px rgba(0, 109, 233, 0.15);
+}
+
+#inputPesquisa::-webkit-search-cancel-button {
+    display: none;
+}
+
+#filtroBox i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 7%;
+    font-size: 20px;
+    color: var(--texto);
+}
+
+/* CARD-CURSOS */
+
+#cursosArea {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cursos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 3%;
+}
+
+.card-curso {
+    height: 350px;
+    background: var(--card);
+    border-radius: 14px;
+    font-size: 160%;
+    overflow: hidden;
+    transition: .35s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+}
+
+.card-curso:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
+}
+
+.img-curso {
+    width: 100%;
+    height: 50%;
+}
+
+.infosCurso {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 10%;
+}
+
+.textoCurso h5 {
+    color: #F95512;
+    margin-top: 10px;
+    font-size: 60%;
+    font-weight: 100;
+}
+
+.textoCurso h4 {
+    color: var(--texto);
+}
+
+.saiba-mais {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #006CEA;
+    font-size: 60%;
+    font-weight: bold;
+}
+
+#verTodos {
+    background: none;
+    border: solid #1E43B6 2px;
+    padding: 18px;
+    border-radius: 99px;
+    color: #1E43B6;
+    font-weight: 600;
+    margin-bottom: 10%;
+}
+
+#verTodos:hover {
+    background: #1E43B6;
+    color: #fefefe;
+}
+
+/* SOBRE SENAI */
+
+#Sobre,
+#DivSobreSenai,
+#resumo,
+#infos {
+    display: flex;
+    align-items: center;
+}
+
+#Sobre {
+    width: 100%;
+    min-height: 500px;
+    justify-content: center;
+    margin-bottom: 7%;
+}
+
+#DivSobreSenai {
+    width: 80%;
+    height: 30vh;
+    background: var(--sobre);
+    border-radius: 20px;
+    transition: background-color .3s ease;
+}
+
+#resumo {
+    justify-content: space-evenly;
+    height: 70%;
+}
+
+#resumo img {
+    width: 190px;
+    height: 250px;
+    border-radius: 140px 80px 10px 10px;
+}
+
+#resumo1 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#resumo1 h3 {
+    color: var(--texto);
+}
+
+#resumo1 p {
+    color: var(--texto-secundario);
+}
+
+#conheca {
+    width: 75%;
+    background: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #1E43B6;
+    border: solid #1E43B6 2px;
+    padding: 12px;
+    border-radius: 18px;
+    font-weight: 600;
+}
+
+#conheca:hover {
+    background: #1E43B6;
+    color: #fefefe;
+}
+
+#conheca i {
+    font-size: 20px;
+}
+
+#infos {
+    width: 100%;
+    height: 50%;
+    justify-content: space-around;
+}
+
+#infos h4 {
+    color: #005CAA;
+}
+
+#infos p {
+    color: var(--texto-secundario);
+}
+
+#infos div {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* FOOTER */
+
+footer {
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to right,
+            #002B66 0%,
+            #004A99 45%,
+            #005CAA 70%,
+            #2F80ED 100%);
+    color: #fefefe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0, 92, 170, 0.15);
+}
+
+#Contatos {
+    width: 80%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#infosfooter,
+#copydiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#infosfooter {
+    height: 85%;
+    border-bottom: solid 1px #fefefe;
+}
+
+#copydiv {
+    justify-content: space-between;
+}
+
+.infoDivs,
+ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12%;
+    list-style: none;
+}
+
+#senai {
+    justify-content: space-around;
+    gap: 0;
+}
+
+#senaiimg {
+    width: 40%;
+    height: 50px;
+    background: url(/Views/img/senai.svg);
+    background-size: cover;
+}
+
+#socialMidia {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+}
+
+#senai h2 {
+    font-size: 18px;
+}
+
+.icons {
+    font-size: 30px;
+    color: #fefefe;
+}
+
+#btnAdm {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fefefe;
+    text-align: center;
+}
+
+/* MODAL DOS CARDS */
+
+.modalSection {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 2000;
+}
+
+.modalSection.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalConteudo {
+    width: 80%;
+    max-width: 1000px;
+    height: 84vh;
+    background: var(--card);
+    border-radius: 15px;
+    position: relative;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    gap: 30px;
+    transform: scale(0.9);
+    transition: 0.3s;
+}
+
+.ladoDireito {
+    width: 94%;
+}
+
+.img-modal {
+    background: url(/Views/img/senai.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 280px;
+    border-radius: 14px;
+}
+
+.modalidade-modal {
+    display: inline-block;
+    margin: 15px;
+    background: #F95512;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modalHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.modalHead h2 {
+    color: var(--texto);
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+.modalHead p {
+    color: var(--texto-secundario);
+    margin-top: 5px;
+}
+
+.status {
+    background: #d9f7df;
+    color: #176b2b;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.modalDescricao h3,
+.aviso h3 {
+    color: var(--texto);
+    margin-bottom: 12px;
+}
+
+.modalDescricao h3 i,
+.aviso h3 i {
+    color: #006CEA;
+}
+
+.modalDescricao p,
+.aviso p {
+    color: var(--texto-secundario);
+    line-height: 1.5;
+}
+
+.informacoesPrincipais {
+    background: var(--subcard);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.informacoesPrincipais h3 {
+    color: var(--texto);
+    margin-bottom: 15px;
+}
+
+.informacoes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.informacoes i {
+    font-size: 22px;
+    color: #006CEA;
+}
+
+.informacoes div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.informacoes span {
+    color: var(--texto-secundario);
+}
+
+.informacoes strong {
+    color: var(--texto);
+}
+
+.modalDetalhes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modalDetalhes div {
+    background: var(--subcard);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.modalDetalhes i {
+    color: #006CEA;
+    font-size: 22px;
+}
+
+.modalDetalhes span {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+.modalDetalhes strong {
+    color: var(--texto);
+}
+
+.gradeCurricular {
+    margin-top: 20px;
+    padding: 18px;
+    border: 1px dashed #9db7ef;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.gradeCurricular > i {
+    font-size: 30px;
+    color: #006CEA;
+}
+
+.gradeCurricular div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.gradeCurricular strong {
+    color: var(--texto);
+}
+
+.gradeCurricular span {
+    color: var(--texto-secundario);
+}
+
+.gradeCurricular button {
+    border: none;
+    background: #e3ecff;
+    color: #0050d8;
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.gradeCurricular button:hover {
+    background: #0050d8;
+    color: #e3ecff;
+}
+
+.aviso {
+    background: var(--subcard);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.aviso h3 {
+    color: var(--texto);
+}
+
+.btnBaixo {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--borda);
+}
+
+.btnFechar {
+    padding: 13px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    background: var(--card);
+    color: var(--texto);
+    border: 1px solid #1E43B6;
+}
+
+.btnFechar:hover {
+    background: #1E43B6;
+    color: white;
+    border: 1px solid #02095A;
+}
+
+.fecharModal {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--texto);
+    z-index: 5;
+}
+
+/* ESCONDER CARDS */
+
+.oculto {
+    display: none;
+}
+
+/* MOBILE NAVBAR*/
+
+#hamburguer{
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--texto);
+    padding: 0;
+    cursor: pointer;
+}
+
+/* -----------RESPONSIVE----------- */
+
+@media screen {
+    
 }
