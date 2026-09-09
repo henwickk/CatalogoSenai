@@ -162,7 +162,7 @@ main {
     top: 0;
     width: 50%;
     height: 100%;
-    background-image: url("/Views/img/senai.png");
+    background-image: url("/img/senai.png");
     background-size: cover;
 
     mask-image: linear-gradient(to right,
@@ -567,7 +567,7 @@ ul {
 #senaiimg {
     width: 40%;
     height: 50px;
-    background: url(/Views/img/senai.svg);
+    background: url(/img/senai.svg);
     background-size: cover;
 }
 
@@ -636,7 +636,7 @@ ul {
 }
 
 .img-modal {
-    background: url(/Views/img/senai.png);
+    background: url(/img/senai.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
