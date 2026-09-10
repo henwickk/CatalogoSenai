@@ -158,3 +158,53 @@ function editarCurso(id) {
 // =========================
 
 carregarCursos();
+
+// =========================
+// TESTE DO MODAL
+// =========================
+
+const testarModal = document.getElementById("testarModal");
+
+const modalEditar = document.getElementById("modalEditar");
+
+const fecharModal = document.getElementById("fecharModal");
+
+const cancelarModal = document.getElementById("cancelarModal");
+
+const salvarModal = document.getElementById("salvarModal");
+
+
+// ABRIR MODAL
+
+testarModal.addEventListener("click", () => {
+
+    modalEditar.classList.add("ativo");
+
+});
+
+
+// FECHAR NO X
+
+fecharModal.addEventListener("click", () => {
+
+    modalEditar.classList.remove("ativo");
+
+});
+
+
+// FECHAR NO CANCELAR
+
+cancelarModal.addEventListener("click", () => {
+
+    modalEditar.classList.remove("ativo");
+
+});
+
+
+// SALVAR — POR ENQUANTO SÓ FECHA
+
+salvarModal.addEventListener("click", () => {
+
+    modalEditar.classList.remove("ativo");
+
+});
