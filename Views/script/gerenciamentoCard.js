@@ -139,7 +139,6 @@ async function excluirCurso(id) {
 
 }
 
-
 // =========================
 // EDITAR CURSO
 // =========================
@@ -148,39 +147,19 @@ function editarCurso(id) {
 
     console.log("Editar curso:", id);
 
-    alert("Curso selecionado para edição: " + id);
-
-}
-
-
-// =========================
-// CARREGAR AO ABRIR A PÁGINA
-// =========================
-
-carregarCursos();
-
-// =========================
-// TESTE DO MODAL
-// =========================
-
-const testarModal = document.getElementById("testarModal");
-
-const modalEditar = document.getElementById("modalEditar");
-
-const fecharModal = document.getElementById("fecharModal");
-
-const cancelarModal = document.getElementById("cancelarModal");
-
-const salvarModal = document.getElementById("salvarModal");
-
-
-// ABRIR MODAL
-
-testarModal.addEventListener("click", () => {
+    const modalEditar = document.getElementById("modalEditar");
 
     modalEditar.classList.add("ativo");
+}
 
-});
+// =========================
+// CONTROLES DO MODAL
+// =========================
+
+const modalEditar = document.getElementById("modalEditar");
+const fecharModal = document.getElementById("fecharModal");
+const cancelarModal = document.getElementById("cancelarModal");
+const salvarModal = document.getElementById("salvarModal");
 
 
 // FECHAR NO X
@@ -208,3 +187,11 @@ salvarModal.addEventListener("click", () => {
     modalEditar.classList.remove("ativo");
 
 });
+
+
+// =========================
+// CARREGAR AO ABRIR A PÁGINA
+// =========================
+
+carregarCursos();
+

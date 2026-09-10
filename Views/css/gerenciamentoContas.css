@@ -1,0 +1,1229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7f9;
+    color: #182033;
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 178px;
+    height: 100vh;
+
+    background: #062451;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* LOGO */
+
+.logo {
+    padding: 27px 24px 25px;
+}
+
+.logo h1 {
+    font-size: 27pt;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.logo span {
+    display: block;
+
+    font-size: 8pt;
+
+    margin-top: -2px;
+
+    letter-spacing: .8px;
+}
+
+
+/* MENU */
+
+.menu {
+    padding: 0 12px;
+}
+
+.menu-item {
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 0 13px;
+
+    margin-bottom: 5px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 10pt;
+
+    border-radius: 6px;
+}
+
+.menu-item i {
+    width: 14px;
+    text-align: center;
+}
+
+.menu-item.active {
+    background: #1557c8;
+}
+
+.menu-item:hover {
+    background: #1557c8;
+}
+
+
+
+/* PARTE INFERIOR */
+
+.sidebar-bottom {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 300px;
+
+    background: linear-gradient(to top,
+            #031d43,
+            rgba(3, 29, 67, .4),
+            transparent);
+}
+
+
+/* PESSOAS */
+
+.people {
+    position: absolute;
+
+    bottom: 100px;
+
+    width: 100%;
+
+    height: 120px;
+}
+
+.person {
+    position: absolute;
+
+    bottom: 0;
+
+    border-radius: 50% 50% 0 0;
+
+    background: #0d448e;
+}
+
+.person1 {
+    left: 12px;
+
+    width: 45px;
+    height: 75px;
+}
+
+.person2 {
+    left: 54px;
+
+    width: 65px;
+    height: 110px;
+}
+
+.person3 {
+    right: 10px;
+
+    width: 45px;
+    height: 75px;
+}
+
+
+/* TEXTO */
+
+.sidebar-text {
+    position: absolute;
+
+    left: 24px;
+    bottom: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: 12pt;
+
+    line-height: 1.4;
+}
+
+.sidebar-text strong {
+    font-size: 16px;
+}
+
+.sidebar-text b {
+    color: #ff6800;
+
+    font-size: 20pt;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    margin-left: 178px;
+
+    width: calc(100% - 178px);
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    height: 57px;
+
+    background: white;
+
+    border-bottom: 1px solid #e7e8eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 20px;
+
+    padding: 0 27px;
+}
+
+.bell {
+    font-size: 16pt;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 10pt;
+}
+
+.user i {
+    font-size: 8pt;
+}
+
+.avatar {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #0d3478;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    padding: 22px 30px 30px;
+}
+
+
+/* TÍTULO */
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 17px;
+}
+
+.page-header h2 {
+    font-size: 20pt;
+
+    margin-bottom: 5px;
+}
+
+.page-header p {
+    font-size: 10pt;
+
+    color: #687083;
+}
+
+
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background: white;
+
+    border: 1px solid #e3e5e9;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+.search-area {
+    padding: 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.search-row {
+    display: flex;
+
+    gap: 13px;
+}
+
+.search {
+    flex: 1;
+
+    height: 31px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 11px;
+
+    border: 1px solid #dfe2e7;
+
+    border-radius: 7px;
+
+    color: #687083;
+}
+
+.search i {
+    margin-right: 10px;
+
+    font-size: 12pt;
+}
+
+.search input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 10pt;
+}
+
+.filter-button {
+    height: 31px;
+
+    padding: 0 13px;
+
+    border: 1px solid #dfe2e7;
+
+    background: white;
+
+    border-radius: 7px;
+
+    font-size: 10pt;
+}
+
+.filter-button i {
+    margin-right: 6px;
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.filters {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 11px;
+}
+
+.filter {
+    padding: 6px 13px;
+
+    border: 1px solid #e1e4e8;
+
+    background: white;
+
+    border-radius: 14px;
+
+    font-size: 9pt;
+}
+
+.filter.active {
+    background: #1261d1;
+
+    color: white;
+
+    border-color: #1261d1;
+}
+
+.category {
+    margin-left: 12px;
+
+    padding: 6px 13px;
+
+    background: white;
+
+    border: 1px solid #e1e4e8;
+
+    border-radius: 6px;
+
+    font-size: 9pt;
+}
+
+.category i {
+    margin-left: 35px;
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+.table-header,
+.course {
+    display: grid;
+
+    grid-template-columns:
+        minmax(270px, 2.5fr) 1fr 1fr .7fr .75fr;
+
+    align-items: center;
+}
+
+
+/* CABEÇALHO */
+
+.table-header {
+    height: 37px;
+
+    padding: 0 14px;
+
+    font-size: 8pt;
+
+    color: #687083;
+
+    text-transform: uppercase;
+}
+
+
+/* CURSO */
+
+.course {
+    min-height: 70px;
+
+    padding: 8px 14px;
+
+    border-top: 1px solid #e8e9ec;
+
+    font-size: 9pt;
+}
+
+
+/* =========================
+   INFORMAÇÕES DO CURSO
+========================= */
+
+.course-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.course-info img {
+    width: 77px;
+    height: 51px;
+
+    border-radius: 5px;
+
+    object-fit: cover;
+}
+
+.course-info h3 {
+    font-size: 11pt;
+
+    margin-bottom: 4px;
+}
+
+.course-info p {
+    max-width: 210px;
+
+    font-size: 8pt;
+
+    line-height: 1.35;
+
+    color: #687083;
+}
+
+
+/* =========================
+   TURNOS
+========================= */
+
+.shift {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    font-size: 8pt;
+}
+
+.morning {
+    background: #e8f0ff;
+
+    color: #2763ba;
+}
+
+.afternoon {
+    background: #fff1e7;
+
+    color: #bd661d;
+}
+
+.night {
+    background: #f0eafd;
+
+    color: #6348aa;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    font-size: 8pt;
+}
+
+.published {
+    background: #e5f6eb;
+
+    color: #21824d;
+}
+
+.draft {
+    background: #fff3dc;
+
+    color: #a77b1b;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.actions {
+    display: flex;
+
+    gap: 8px;
+}
+
+.actions button {
+    width: 29px;
+    height: 29px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #edf3ff;
+
+    color: #1857b8;
+}
+
+.actions .delete {
+    background: #fff0f0;
+
+    color: #d84949;
+}
+
+
+/* =========================
+   PAGINAÇÃO
+========================= */
+
+.pagination {
+    height: 51px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 14px;
+
+    border-top: 1px solid #e8e9ec;
+
+    font-size: 9pt;
+
+    color: #687083;
+}
+
+.pages {
+    display: flex;
+
+    gap: 7px;
+}
+
+.pages button {
+    width: 26px;
+    height: 26px;
+
+    background: white;
+
+    border: 1px solid #e2e4e8;
+
+    border-radius: 5px;
+}
+
+.pages .selected {
+    background: #155ac6;
+
+    color: white;
+
+    border-color: #155ac6;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 65px;
+    }
+
+    .logo {
+        padding: 20px 10px;
+    }
+
+    .logo h1 {
+        font-size: 18px;
+    }
+
+    .logo span,
+    .menu-item span,
+    .submenu,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .menu-item {
+        justify-content: center;
+    }
+
+    .main {
+        margin-left: 65px;
+
+        width: calc(100% - 65px);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .table-header {
+        display: none;
+    }
+
+    .course {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        padding: 15px;
+    }
+
+    .actions {
+        margin-top: 5px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .content {
+        padding: 15px;
+    }
+
+    .page-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .search-row {
+        flex-direction: column;
+    }
+
+    .filter-button {
+        width: 100%;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+    }
+
+    .category {
+        margin-left: 0;
+    }
+
+}
+
+/* =========================
+   BOTÃO TEMPORÁRIO
+========================= */
+
+#testarModal {
+    position: fixed;
+
+    bottom: 20px;
+    right: 20px;
+
+    padding: 12px 18px;
+
+    background: #155ac6;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    z-index: 1000;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-editar {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(8, 18, 35, 0.55);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.2s ease;
+
+    z-index: 999;
+}
+
+
+/* MODAL ABERTO */
+
+.modal-editar.ativo {
+
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================
+   CAIXA DO MODAL
+========================= */
+
+.modal-conteudo {
+
+    width: 930px;
+
+    max-height: 90vh;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2);
+
+    overflow-y: auto;
+}
+
+
+/* =========================
+   TOPO
+========================= */
+
+.modal-topo {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px 30px 18px;
+
+    border-bottom: 1px solid #e8e9ed;
+}
+
+
+.modal-topo h2 {
+
+    font-size: 22px;
+
+    color: #182033;
+}
+
+
+.fechar-modal {
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 20px;
+
+    color: #687083;
+
+    cursor: pointer;
+
+    border-radius: 6px;
+}
+
+
+.fechar-modal:hover {
+
+    background: #f1f3f6;
+
+    color: #182033;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.modal-formulario {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 22px;
+
+    row-gap: 20px;
+
+    padding: 24px 30px;
+}
+
+
+.campo {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.campo label {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #263453;
+}
+
+
+.campo label span {
+
+    color: #e34d4d;
+}
+
+
+/* INPUTS */
+
+.campo input,
+.campo select,
+.campo textarea {
+
+    width: 100%;
+
+    border: 1px solid #d9dee7;
+
+    border-radius: 6px;
+
+    background: white;
+
+    color: #263044;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    outline: none;
+}
+
+
+.campo input,
+.campo select {
+
+    height: 40px;
+
+    padding: 0 12px;
+}
+
+
+.campo textarea {
+
+    min-height: 100px;
+
+    resize: vertical;
+
+    padding: 11px 12px;
+
+    line-height: 1.4;
+}
+
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+
+    border-color: #2864d7;
+
+    box-shadow:
+        0 0 0 2px rgba(40, 100, 215, 0.08);
+}
+
+
+/* TEXTOS PEQUENOS */
+
+.campo small {
+
+    font-size: 11px;
+
+    color: #737b8c;
+}
+
+
+/* CAMPO OCUPANDO AS DUAS COLUNAS */
+
+.campo-completo {
+
+    grid-column: 1 / -1;
+}
+
+
+/* =========================
+   TURNOS
+========================= */
+
+.turnos {
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.turnos label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    color: #394258;
+
+    cursor: pointer;
+}
+
+
+.turnos input {
+
+    width: 19px;
+    height: 19px;
+
+    accent-color: #2864d7;
+}
+
+
+/* =========================
+   ARQUIVOS
+========================= */
+
+.arquivo {
+
+    min-height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 8px 10px;
+
+    border: 1px solid #d9dee7;
+
+    border-radius: 6px;
+}
+
+
+.arquivo-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+
+.arquivo-icone {
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8eef9;
+
+    color: #536c9e;
+
+    border-radius: 5px;
+
+    font-size: 17px;
+}
+
+
+.arquivo-icone.pdf {
+
+    background: #f3f5fa;
+
+    color: #263b67;
+}
+
+
+.arquivo-info strong {
+
+    display: block;
+
+    font-size: 12px;
+
+    color: #30394b;
+}
+
+
+.arquivo-info small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 10px;
+}
+
+
+.arquivo>button:not(.btn-excluir-arquivo) {
+
+    height: 34px;
+
+    padding: 0 12px;
+
+    border: 1px solid #6683c0;
+
+    background: white;
+
+    color: #31589d;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.btn-excluir-arquivo {
+
+    width: 32px;
+    height: 34px;
+
+    border: none;
+
+    background: #fff0f0;
+
+    color: #d84949;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.modal-rodape {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    padding: 18px 30px 24px;
+
+    border-top: 1px solid #e8e9ed;
+}
+
+
+.modal-rodape button {
+
+    height: 40px;
+
+    padding: 0 20px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.btn-cancelar {
+
+    background: white;
+
+    border: 1px solid #d9dee7;
+
+    color: #394258;
+}
+
+
+.btn-cancelar:hover {
+
+    background: #f5f6f8;
+}
+
+
+.btn-salvar {
+
+    background: #2864d7;
+
+    border: 1px solid #2864d7;
+
+    color: white;
+}
+
+
+.btn-salvar:hover {
+
+    background: #1e53bb;
+}

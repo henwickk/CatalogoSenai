@@ -744,30 +744,6 @@ body {
 }
 
 /* =========================
-   BOTÃO TEMPORÁRIO
-========================= */
-
-#testarModal {
-    position: fixed;
-
-    bottom: 20px;
-    right: 20px;
-
-    padding: 12px 18px;
-
-    background: #155ac6;
-    color: white;
-
-    border: none;
-    border-radius: 6px;
-
-    cursor: pointer;
-
-    z-index: 1000;
-}
-
-
-/* =========================
    MODAL
 ========================= */
 

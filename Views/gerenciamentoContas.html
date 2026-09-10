@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SENAI - Gerenciar Conta</title>
+
+  <link rel="stylesheet" href="css/gerenciamentoContas.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body>
+  <div class="layout">
+
+
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>SENAI</h1>
+        <span>CATÁLOGO DE CURSOS</span>
+      </div>
+
+      <nav class="menu">
+
+        <a href="gestao.html" class="menu-item">
+          <i class="fa-solid fa-grip"></i>
+          <span>Cadastro Curso</span>
+        </a>
+
+        <a href="gerenciamentoCard.html" class="menu-item">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Gerenciar Cursos</span>
+        </a>
+
+        <a href="gerenciamentoContas.html" class="menu-item active">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Gerenciar Contas</span>
+        </a>
+
+        <a href="login.html" class="menu-item">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Sair</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="people">
+          <div class="person person1"></div>
+          <div class="person person2"></div>
+          <div class="person person3"></div>
+        </div>
+
+        <div class="sidebar-text">
+          <span>O FUTURO</span>
+          <span>SE CONSTRÓI</span>
+          <strong>AQUI</strong>
+        </div>
+      </div>
+    </aside>
+
+
+
+    <main class="main">
+
+
+      <header class="topbar">
+        <i class="fa-regular fa-bell bell"></i>
+
+        <div class="user">
+          <div class="avatar">A</div>
+
+          <span>Administrador</span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </header>
+
+
+
+      <section class="content">
+
+
+        <div class="page-header">
+          <div>
+            <h2>Gerenciar Cursos</h2>
+
+            <p>Visualize, edite ou exclua os cursos cadastrados.</p>
+          </div>
+        </div>
+
+
+
+        <div class="card">
+
+
+          <div class="search-area">
+            <div class="search-row">
+              <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" placeholder="Pesquisar curso..." />
+              </div>
+
+              <button class="filter-button">
+                <i class="fa-solid fa-filter"></i>
+
+                Filtros
+              </button>
+            </div>
+
+
+
+            <div class="filters">
+              <button class="filter active">Todos</button>
+
+              <button class="filter">Manhã</button>
+
+              <button class="filter">Tarde</button>
+
+              <button class="filter">Noite</button>
+
+              <button class="category">
+                Todas as categorias
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+
+
+
+          <div class="table-header">
+            <div>CURSO</div>
+
+            <div>CATEGORIA</div>
+
+            <div>TURNO</div>
+
+
+
+            <div>STATUS</div>
+
+            <div>AÇÕES</div>
+          </div>
+
+          <div id="lista-cursos"></div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/Views/script/gerenciamentoContas.js"></script>
+</body>
+
+</html>
