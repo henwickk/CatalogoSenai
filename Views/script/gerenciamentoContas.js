@@ -1,13 +1,13 @@
 const modalConta = document.getElementById("modalConta");
-
 const btnNovaConta = document.getElementById("btnNovaConta");
 const fecharModal = document.getElementById("fecharModal");
 const cancelarModal = document.getElementById("cancelarModal");
-
 const tituloModal = document.getElementById("tituloModal");
 
 
-// ABRIR MODAL PARA NOVA CONTA
+// =========================
+// ABRIR MODAL - NOVA CONTA
+// =========================
 
 btnNovaConta.addEventListener("click", () => {
 
@@ -18,7 +18,9 @@ btnNovaConta.addEventListener("click", () => {
 });
 
 
-// FECHAR
+// =========================
+// FECHAR MODAL
+// =========================
 
 fecharModal.addEventListener("click", () => {
 
@@ -34,7 +36,9 @@ cancelarModal.addEventListener("click", () => {
 });
 
 
+// =========================
 // FECHAR CLICANDO FORA
+// =========================
 
 modalConta.addEventListener("click", (evento) => {
 
@@ -45,25 +49,3 @@ modalConta.addEventListener("click", (evento) => {
     }
 
 });
-
-
-// EDITAR
-
-function editarUsuario(id) {
-
-    console.log("Editar usuário:", id);
-
-    tituloModal.textContent = "Editar conta";
-
-    modalConta.classList.add("ativo");
-
-}
-
-
-// EXCLUIR
-
-function excluirUsuario(id) {
-
-    console.log("Excluir usuário:", id);
-
-}

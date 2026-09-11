@@ -16,7 +16,10 @@
 
   <div class="layout">
 
-    <!-- SIDEBAR -->
+    <!-- =========================
+             SIDEBAR
+        ========================== -->
+
     <aside class="sidebar">
 
       <div class="logo">
@@ -67,39 +70,48 @@
     </aside>
 
 
-    <!-- CONTEÚDO PRINCIPAL -->
+    <!-- =========================
+             CONTEÚDO PRINCIPAL
+        ========================== -->
+
     <main class="main">
 
       <!-- TOPBAR -->
+
       <header class="topbar">
 
-        <i class="bi bi-bell bell"></i>
-
         <div class="user">
-          <div class="avatar">A</div>
 
-          <span>Administrador</span>
+          <div class="avatar" id="usuarioAvatar">
+            A
+          </div>
 
-          <i class="bi bi-chevron-down"></i>
+          <span id="usuarioNome">
+            Administrador supremo
+          </span>
+
         </div>
 
       </header>
 
 
       <!-- CONTEÚDO -->
+
       <section class="conteudo">
 
         <div class="page-header">
 
           <div>
+
             <h2>Gerenciar Contas</h2>
 
             <p>
-              Visualize, edite ou exclua os administradores cadastrados.
+              Visualize, edite ou exclua os usuários cadastrados.
             </p>
+
           </div>
 
-          <button class="btn-nova-conta" id="btnNovaConta">
+          <button type="button" class="btn-nova-conta" id="btnNovaConta">
             <i class="bi bi-plus-lg"></i>
             Nova conta
           </button>
@@ -107,88 +119,52 @@
         </div>
 
 
-        <!-- CARD -->
+        <!-- =========================
+                     CARD DE CONTAS
+                ========================== -->
+
         <div class="card-contas">
 
           <!-- PESQUISA -->
+
           <div class="barra-pesquisa">
 
             <div class="campo-pesquisa">
+
               <i class="bi bi-search"></i>
 
               <input type="text" id="pesquisaUsuario" placeholder="Pesquisar usuário...">
+
             </div>
 
           </div>
 
 
           <!-- CABEÇALHO DA TABELA -->
+
           <div class="table-header">
 
             <span>USUÁRIO</span>
-            <span>NÍVEL DE ACESSO</span>
+
             <span>CURSOS CADASTRADOS</span>
+
             <span>STATUS</span>
-            <span>AÇÕES</span>
+
+            <span>AÇÃO</span>
 
           </div>
 
 
-          <!-- LISTA -->
+          <!-- =========================
+                         LISTA DE USUÁRIOS
+                    ========================== -->
+
           <div id="lista-usuarios">
 
+
             <!-- USUÁRIO 1 -->
-            <div class="usuario">
 
-              <div class="usuario-info">
-
-                <div class="avatar-tabela">
-                  A
-                </div>
-
-                <div>
-                  <strong>Administrador</strong>
-                  <small>administrador</small>
-                </div>
-
-              </div>
-
-
-              <div class="nivel master">
-                <i class="bi bi-shield-fill-check"></i>
-                Administrador Master
-              </div>
-
-
-              <div class="cursos-cadastrados">
-                8 cursos
-              </div>
-
-
-              <div>
-                <span class="status ativo">
-                  Ativo
-                </span>
-              </div>
-
-
-              <div class="acoes">
-
-                <button class="edit" onclick="editarUsuario(1)" title="Editar conta">
-                  <i class="bi bi-pencil"></i>
-                </button>
-
-                <button class="delete" onclick="excluirUsuario(1)" title="Excluir conta">
-                  <i class="bi bi-trash"></i>
-                </button>
-
-              </div>
-
-            </div>
-
-
-            <!-- USUÁRIO 2 -->
-            <div class="usuario">
+            <div class="usuario" data-usuario-id="1">
 
               <div class="usuario-info">
 
@@ -196,17 +172,14 @@
                   J
                 </div>
 
-                <div>
-                  <strong>João Silva</strong>
-                  <small>joao.silva</small>
+                <div class="usuario-dados">
+
+                  <strong class="usuario-nome">
+                    João Silva
+                  </strong>
+
                 </div>
 
-              </div>
-
-
-              <div class="nivel">
-                <i class="bi bi-person-fill"></i>
-                Administrador
               </div>
 
 
@@ -215,21 +188,19 @@
               </div>
 
 
-              <div>
+              <div class="usuario-status">
+
                 <span class="status ativo">
                   Ativo
                 </span>
+
               </div>
 
 
               <div class="acoes">
 
-                <button class="edit" onclick="editarUsuario(2)" title="Editar conta">
-                  <i class="bi bi-pencil"></i>
-                </button>
-
-                <button class="delete" onclick="excluirUsuario(2)" title="Excluir conta">
-                  <i class="bi bi-trash"></i>
+                <button type="button" class="delete btn-desativar" title="Desativar conta">
+                  Desativar conta
                 </button>
 
               </div>
@@ -237,8 +208,9 @@
             </div>
 
 
-            <!-- USUÁRIO 3 -->
-            <div class="usuario">
+            <!-- USUÁRIO 2 -->
+
+            <div class="usuario" data-usuario-id="2">
 
               <div class="usuario-info">
 
@@ -246,17 +218,14 @@
                   M
                 </div>
 
-                <div>
-                  <strong>Maria Santos</strong>
-                  <small>maria.santos</small>
+                <div class="usuario-dados">
+
+                  <strong class="usuario-nome">
+                    Maria Santos
+                  </strong>
+
                 </div>
 
-              </div>
-
-
-              <div class="nivel">
-                <i class="bi bi-person-fill"></i>
-                Administrador
               </div>
 
 
@@ -265,21 +234,19 @@
               </div>
 
 
-              <div>
+              <div class="usuario-status">
+
                 <span class="status ativo">
                   Ativo
                 </span>
+
               </div>
 
 
               <div class="acoes">
 
-                <button class="edit" onclick="editarUsuario(3)" title="Editar conta">
-                  <i class="bi bi-pencil"></i>
-                </button>
-
-                <button class="delete" onclick="excluirUsuario(3)" title="Excluir conta">
-                  <i class="bi bi-trash"></i>
+                <button type="button" class="delete btn-desativar" title="Desativar conta">
+                  Desativar conta
                 </button>
 
               </div>
@@ -289,16 +256,21 @@
           </div>
 
 
-          <!-- RODAPÉ -->
+          <!-- =========================
+                         RODAPÉ
+                    ========================== -->
+
           <div class="table-footer">
 
             <span id="contadorContas">
-              3 contas cadastradas
+              2 contas cadastradas
             </span>
 
             <div class="paginacao">
 
-              <button class="pagina ativa">1</button>
+              <button type="button" class="pagina ativa">
+                1
+              </button>
 
             </div>
 
@@ -313,7 +285,10 @@
   </div>
 
 
-  <!-- MODAL -->
+  <!-- =========================
+         MODAL NOVA CONTA
+    ========================== -->
+
   <div class="modal-section" id="modalConta">
 
     <div class="modal-conteudo">
@@ -321,14 +296,18 @@
       <div class="modal-header">
 
         <div>
-          <h3 id="tituloModal">Nova conta</h3>
+
+          <h3 id="tituloModal">
+            Nova conta
+          </h3>
 
           <p>
-            Cadastre um novo administrador para acessar o sistema.
+            Cadastre um novo usuário para acessar o sistema.
           </p>
+
         </div>
 
-        <button id="fecharModal" class="fechar-modal">
+        <button type="button" id="fecharModal" class="fechar-modal" title="Fechar">
           <i class="bi bi-x-lg"></i>
         </button>
 
@@ -369,37 +348,16 @@
 
         </div>
 
-
-        <div class="campo">
-
-          <label for="nivelUsuario">
-            Nível de acesso
-          </label>
-
-          <select id="nivelUsuario">
-
-            <option value="admin">
-              Administrador
-            </option>
-
-            <option value="master">
-              Administrador Master
-            </option>
-
-          </select>
-
-        </div>
-
       </div>
 
 
       <div class="modal-footer">
 
-        <button class="btn-cancelar" id="cancelarModal">
+        <button type="button" class="btn-cancelar" id="cancelarModal">
           Cancelar
         </button>
 
-        <button class="btn-salvar" id="salvarConta">
+        <button type="button" class="btn-salvar" id="salvarConta">
           <i class="bi bi-check-lg"></i>
           Salvar conta
         </button>

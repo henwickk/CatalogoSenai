@@ -97,12 +97,10 @@ body {
     width: 100%;
     height: 300px;
 
-    background: linear-gradient(
-        to top,
-        #031d43,
-        rgba(3, 29, 67, .4),
-        transparent
-    );
+    background: linear-gradient(to top,
+            #031d43,
+            rgba(3, 29, 67, .4),
+            transparent);
 }
 
 .people {
@@ -194,10 +192,6 @@ body {
     gap: 20px;
 
     padding: 0 27px;
-}
-
-.bell {
-    font-size: 16pt;
 }
 
 .user {
@@ -354,11 +348,7 @@ body {
     display: grid;
 
     grid-template-columns:
-        2fr
-        1.4fr
-        1.2fr
-        .8fr
-        .6fr;
+        2fr 1.4fr 1.2fr .8fr;
 
     align-items: center;
 }
@@ -438,32 +428,6 @@ body {
 
 
 /* =========================
-   NÍVEL
-========================= */
-
-.nivel {
-    display: flex;
-    align-items: center;
-
-    gap: 7px;
-
-    font-size: 12px;
-
-    color: #505767;
-}
-
-.nivel i {
-    color: #1557c8;
-}
-
-.nivel.master {
-    font-weight: 600;
-
-    color: #182033;
-}
-
-
-/* =========================
    CURSOS
 ========================= */
 
@@ -507,7 +471,7 @@ body {
 }
 
 .acoes button {
-    width: 31px;
+    width: 100px;
     height: 31px;
 
     border: none;
@@ -521,18 +485,10 @@ body {
     justify-content: center;
 }
 
-.edit {
-    background: #edf3ff;
-    color: #1557c8;
-}
-
 .delete {
     background: #fff0f0;
     color: #d43b3b;
-}
 
-.edit:hover {
-    background: #dce8ff;
 }
 
 .delete:hover {
@@ -699,8 +655,7 @@ body {
     font-weight: bold;
 }
 
-.campo input,
-.campo select {
+.campo input {
     height: 40px;
 
     padding: 0 11px;
@@ -716,8 +671,7 @@ body {
     background: white;
 }
 
-.campo input:focus,
-.campo select:focus {
+.campo input:focus {
     border-color: #1557c8;
 }
 
@@ -797,11 +751,7 @@ body {
     .table-header,
     .usuario {
         grid-template-columns:
-            2fr
-            1.3fr
-            1fr
-            .7fr
-            .6fr;
+            2fr 1.3fr 1fr .7fr;
     }
 
     .conteudo {

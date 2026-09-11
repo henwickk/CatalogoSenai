@@ -214,10 +214,6 @@ body {
   padding: 0 27px;
 }
 
-.bell {
-  font-size: 16pt;
-}
-
 .user {
   display: flex;
   align-items: center;
