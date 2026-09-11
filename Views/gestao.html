@@ -26,12 +26,12 @@
 
             <a href="gestao.html" class="menu-item active">
                 <i class="bi bi-book"></i>
-                <span>Cadastro Curso</span>
+                <span>Gerenciar Cursos</span>
             </a>
 
-            <a href="gerenciamentoContas.html" class="menu-item">
-                <i class="bi bi-person-gear"></i>
-                <span>Gerenciar Contas</span>
+            <a href="#" class="menu-item active">
+                <i class="bi bi-card-list"></i>
+                <span>Gerenciar Cursos</span>
             </a>
 
             <a href="login.html" class="menu-item">
@@ -223,7 +223,7 @@
 
                     <div class="shift-list">
 
-                        <button class="shift active" type="button" data-value="Manhã">
+                        <button class="shift" type="button" data-value="Manhã">
                             <i class="bi bi-sun"></i>
                             <span>Manhã</span>
                         </button>
@@ -256,7 +256,7 @@
 
                     <div class="upload-area">
 
-                        <div class="upload-icon">
+                        <div class="upload-icon" id="grade-upload-icon">
                             📄
                         </div>
 
@@ -270,36 +270,24 @@
                             <i class="bi bi-arrow-bar-up"></i> Selecionar arquivo
                         </label>
 
-                        <input type="file" id="grade-file" name="grade_curso" accept=".pdf,.png,.jpg,.jpeg">
+                        <input type="file" id="grade-file" name="grade_curso" accept=".pdf,application/pdf">
+
+                        <div id="grade-file-preview" class="selected-file" hidden>
+                            <div class="file-left">
+                                <div class="file-icon">📄</div>
+                                <div>
+                                    <strong id="grade-file-name"></strong>
+                                    <span id="grade-file-size"></span>
+                                </div>
+                            </div>
+                            <button type="button" class="remove-button" id="remove-grade-file">Remover</button>
+                        </div>
 
                         <span class="file-info">
-                            PDF, PNG ou JPG • Máx. 10 MB
+                            PDF 
                         </span>
 
                     </div>
-
-                    <div class="selected-file">
-
-                        <div class="file-left">
-
-                            <div class="file-icon">
-                                📄
-                            </div>
-
-                            <div>
-                                <strong>grade-curso.pdf</strong>
-                                <span>PDF • 2,4 MB</span>
-                            </div>
-
-                        </div>
-
-                        <button class="remove-button">
-                            🗑 &nbsp; Remover
-                        </button>
-
-                    </div>
-
-                </div>
 
             </section>
 

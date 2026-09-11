@@ -376,7 +376,7 @@ svg {
   position: relative;
 
   width: 180px;
-  height: 132px;
+  height: 180px;
 
   border: 1px dashed #2759dc;
   border-radius: 8px;
@@ -479,8 +479,7 @@ svg {
 }
 
 .row-top {
-  grid-template-columns:
-    minmax(260px, 1fr) 165px 310px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .row-second {
@@ -489,7 +488,11 @@ svg {
 
 .row-third {
   grid-template-columns:
-    .90fr .72fr .8fr .82fr;
+    .90fr .72fr calc(50% - 50px);
+}
+
+.amount {
+  width: 100%;
 }
 
 
@@ -1018,6 +1021,34 @@ svg {
   align-items: center;
   justify-content: center;
   gap: 6px;
+
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.save:hover {
+  background: #345dd0;
+  box-shadow: 0 6px 14px rgba(41, 77, 184, .25);
+  transform: translateY(-2px);
+}
+
+.save:active {
+  transform: translateY(0) scale(.98);
+}
+
+.save.is-saving {
+  animation: save-pulse 1s ease-in-out infinite;
+}
+
+@keyframes save-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(41, 77, 184, .35);
+  }
+
+  50% {
+    box-shadow: 0 0 0 7px rgba(41, 77, 184, 0);
+  }
 }
 
 .save svg {
@@ -1042,6 +1073,10 @@ svg {
 
   .row-third {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .amount {
+    width: 100%;
   }
 
 }
@@ -1116,7 +1151,12 @@ svg {
 #preview-imagem {
   display: none;
   width: 100%;
-  height: 50vh;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+.image-upload.has-image i,
+.image-upload.has-image span {
+  display: none;
 }
