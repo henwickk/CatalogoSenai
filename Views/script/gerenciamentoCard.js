@@ -60,14 +60,14 @@ async function carregarCursos() {
                         class="edit"
                         onclick="editarCurso(${curso.id_curso})"
                     >
-                        <i class="fa-solid fa-pen"></i>
+                        <i class="bi bi-pencil-square"></i>
                     </button>
 
                     <button
                         class="delete"
                         onclick="excluirCurso(${curso.id_curso})"
                     >
-                        <i class="fa-regular fa-trash-can"></i>
+                        <i class="bi bi-trash3"></i>
                     </button>
 
                 </div>
