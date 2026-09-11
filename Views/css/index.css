@@ -457,13 +457,13 @@ main {
     transform: scale(1.04);
 }
 
-.badge-modalidade {
+.disponivel {
     position: absolute;
 
     top: 14px;
     left: 14px;
 
-    background: #F95512;
+    background: #159447;
     color: white;
 
     padding: 6px 14px;
@@ -472,6 +472,10 @@ main {
 
     font-size: 12px;
     font-weight: bold;
+} 
+
+.disponivel.indisponivel{
+    background: #e22222;
 }
 
 /* INFORMAÇÕES */
