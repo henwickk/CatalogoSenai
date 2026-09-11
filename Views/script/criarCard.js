@@ -1,4 +1,5 @@
 const formulario = document.getElementById("formCard");
+const botaoSalvar = formulario.querySelector(".save");
 
 console.log("CRIAR CARD JS CARREGADO!");
 
@@ -25,6 +26,7 @@ turnos.forEach((turno) => {
 formulario.addEventListener("submit", async (event) => {
 
     event.preventDefault();
+    botaoSalvar.classList.add("is-saving");
 
     // Pega os turnos selecionados
     const turnosSelecionados = [...document.querySelectorAll(".shift.active")]
@@ -153,6 +155,10 @@ formulario.addEventListener("submit", async (event) => {
         console.error("ERRO NO FETCH:", erro);
 
         alert("Não foi possível conectar ao servidor");
+
+    } finally {
+
+        botaoSalvar.classList.remove("is-saving");
 
     }
 
