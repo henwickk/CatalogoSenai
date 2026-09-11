@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gerenciar Contas</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="/css/gerenciamentoContas.css">
+</head>
+
+<body>
+
+  <div class="layout">
+
+    <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+    <aside class="sidebar">
+
+      <div class="logo">
+        <h1>SENAI</h1>
+        <span>CATÁLOGO DE CURSOS</span>
+      </div>
+
+      <nav class="menu">
+
+        <a href="/gerenciamentoCard.html" class="menu-item">
+          <i class="bi bi-card-list"></i>
+          Gerenciar Cursos
+        </a>
+
+        <a href="/gestao.html" class="menu-item">
+          <i class="bi bi-book"></i>
+          Cadastro Curso
+        </a>
+
+        <a href="/gerenciamentoContas.html" class="menu-item active">
+          <i class="bi bi-person-gear"></i>
+          Gerenciar Contas
+        </a>
+
+        <a href="/login.html" class="menu-item">
+          <i class="bi bi-box-arrow-left"></i>
+          Sair
+        </a>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <div class="people">
+          <div class="person person1"></div>
+          <div class="person person2"></div>
+          <div class="person person3"></div>
+        </div>
+
+        <div class="sidebar-text">
+          <span>O FUTURO</span>
+          <span>SE CONSTRÓI</span>
+          <strong>AQUI</strong>
+        </div>
+
+      </div>
+
+    </aside>
+
+
+    <!-- =========================
+             CONTEÚDO PRINCIPAL
+        ========================== -->
+
+    <main class="main">
+
+      <!-- TOPBAR -->
+
+      <header class="topbar">
+
+        <div class="user">
+
+          <div class="avatar" id="usuarioAvatar">
+            A
+          </div>
+
+          <span id="usuarioNome">
+            Administrador supremo
+          </span>
+
+        </div>
+
+      </header>
+
+
+      <!-- CONTEÚDO -->
+
+      <section class="conteudo">
+
+        <div class="page-header">
+
+          <div>
+
+            <h2>Gerenciar Contas</h2>
+
+            <p>
+              Visualize, edite ou exclua os usuários cadastrados.
+            </p>
+
+          </div>
+
+          <button type="button" class="btn-nova-conta" id="btnNovaConta">
+            <i class="bi bi-plus-lg"></i>
+            Nova conta
+          </button>
+
+        </div>
+
+
+        <!-- =========================
+                     CARD DE CONTAS
+                ========================== -->
+
+        <div class="card-contas">
+
+          <!-- PESQUISA -->
+
+          <div class="barra-pesquisa">
+
+            <div class="campo-pesquisa">
+
+              <i class="bi bi-search"></i>
+
+              <input type="text" id="pesquisaUsuario" placeholder="Pesquisar usuário...">
+
+            </div>
+
+          </div>
+
+
+          <!-- CABEÇALHO DA TABELA -->
+
+          <div class="table-header">
+
+            <span>USUÁRIO</span>
+
+            <span>CURSOS CADASTRADOS</span>
+
+            <span>STATUS</span>
+
+            <span>AÇÃO</span>
+
+          </div>
+
+
+          <!-- =========================
+                         LISTA DE USUÁRIOS
+                    ========================== -->
+
+          <div id="lista-usuarios">
+
+
+            <!-- USUÁRIO 1 -->
+
+            <div class="usuario" data-usuario-id="1">
+
+              <div class="usuario-info">
+
+                <div class="avatar-tabela">
+                  J
+                </div>
+
+                <div class="usuario-dados">
+
+                  <strong class="usuario-nome">
+                    João Silva
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="cursos-cadastrados">
+                5 cursos
+              </div>
+
+
+              <div class="usuario-status">
+
+                <span class="status ativo">
+                  Ativo
+                </span>
+
+              </div>
+
+
+              <div class="acoes">
+
+                <button type="button" class="delete btn-desativar" title="Desativar conta">
+                  Desativar conta
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- USUÁRIO 2 -->
+
+            <div class="usuario" data-usuario-id="2">
+
+              <div class="usuario-info">
+
+                <div class="avatar-tabela">
+                  M
+                </div>
+
+                <div class="usuario-dados">
+
+                  <strong class="usuario-nome">
+                    Maria Santos
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="cursos-cadastrados">
+                3 cursos
+              </div>
+
+
+              <div class="usuario-status">
+
+                <span class="status ativo">
+                  Ativo
+                </span>
+
+              </div>
+
+
+              <div class="acoes">
+
+                <button type="button" class="delete btn-desativar" title="Desativar conta">
+                  Desativar conta
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =========================
+                         RODAPÉ
+                    ========================== -->
+
+          <div class="table-footer">
+
+            <span id="contadorContas">
+              2 contas cadastradas
+            </span>
+
+            <div class="paginacao">
+
+              <button type="button" class="pagina ativa">
+                1
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================
+         MODAL NOVA CONTA
+    ========================== -->
+
+  <div class="modal-section" id="modalConta">
+
+    <div class="modal-conteudo">
+
+      <div class="modal-header">
+
+        <div>
+
+          <h3 id="tituloModal">
+            Nova conta
+          </h3>
+
+          <p>
+            Cadastre um novo usuário para acessar o sistema.
+          </p>
+
+        </div>
+
+        <button type="button" id="fecharModal" class="fechar-modal" title="Fechar">
+          <i class="bi bi-x-lg"></i>
+        </button>
+
+      </div>
+
+
+      <div class="formulario">
+
+        <div class="campo">
+
+          <label for="nomeUsuario">
+            Nome do usuário
+          </label>
+
+          <input type="text" id="nomeUsuario" placeholder="Digite o nome do usuário">
+
+        </div>
+
+
+        <div class="campo">
+
+          <label for="senhaUsuario">
+            Senha
+          </label>
+
+          <input type="password" id="senhaUsuario" placeholder="Digite a senha">
+
+        </div>
+
+
+        <div class="campo">
+
+          <label for="confirmarSenha">
+            Confirmar senha
+          </label>
+
+          <input type="password" id="confirmarSenha" placeholder="Confirme a senha">
+
+        </div>
+
+      </div>
+
+
+      <div class="modal-footer">
+
+        <button type="button" class="btn-cancelar" id="cancelarModal">
+          Cancelar
+        </button>
+
+        <button type="button" class="btn-salvar" id="salvarConta">
+          <i class="bi bi-check-lg"></i>
+          Salvar conta
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="/script/gerenciamentoContas.js"></script>
+
+</body>
+
+</html>

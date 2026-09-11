@@ -7,16 +7,17 @@
 
   <title>SENAI - Gerenciar Cursos</title>
 
-  <link rel="stylesheet" href="/Views/css/gerenciamentoCard.css" />
+  <link rel="stylesheet" href="css/gerenciamentoCard.css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
 </head>
 
 <body>
+
   <div class="layout">
 
-
     <aside class="sidebar">
+
       <div class="logo">
         <h1>SENAI</h1>
         <span>CATÁLOGO DE CURSOS</span>
@@ -24,24 +25,30 @@
 
       <nav class="menu">
 
-        <a href="#" class="menu-item">
-          <i class="fa-solid fa-grip"></i>
-          <span>Cadastro Curso</span>
-        </a>
-
-        <a href="#" class="menu-item active">
-          <i class="fa-solid fa-book-open"></i>
+        <a href="gerenciamentoCard.html" class="menu-item active">
+          <i class="bi bi-card-list"></i>
           <span>Gerenciar Cursos</span>
         </a>
 
+        <a href="gestao.html" class="menu-item">
+          <i class="bi bi-book"></i>
+          <span>Cadastro Curso</span>
+        </a>
 
-        <a href="#" class="menu-item">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <a href="gerenciamentoContas.html" class="menu-item">
+          <i class="bi bi-person-gear"></i>
+          <span>Gerenciar Contas</span>
+        </a>
+
+        <a href="login.html" class="menu-item">
+          <i class="bi bi-box-arrow-left"></i>
           <span>Sair</span>
         </a>
+
       </nav>
 
       <div class="sidebar-bottom">
+
         <div class="people">
           <div class="person person1"></div>
           <div class="person person2"></div>
@@ -53,100 +60,460 @@
           <span>SE CONSTRÓI</span>
           <strong>AQUI</strong>
         </div>
-      </div>
-    </aside>
 
+      </div>
+
+    </aside>
 
 
     <main class="main">
 
-
       <header class="topbar">
-        <i class="fa-regular fa-bell bell"></i>
 
         <div class="user">
+
           <div class="avatar">A</div>
 
-          <span>Administrador</span>
-
-          <i class="fa-solid fa-chevron-down"></i>
+          <span>Administrador supremo</span>
         </div>
-      </header>
 
+      </header>
 
 
       <section class="content">
 
-
         <div class="page-header">
+
           <div>
             <h2>Gerenciar Cursos</h2>
-
             <p>Visualize, edite ou exclua os cursos cadastrados.</p>
           </div>
-        </div>
 
+        </div>
 
 
         <div class="card">
 
-
           <div class="search-area">
+
             <div class="search-row">
+
               <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <i class="bi bi-search"></i>
 
                 <input type="text" placeholder="Pesquisar curso..." />
+
               </div>
 
               <button class="filter-button">
-                <i class="fa-solid fa-filter"></i>
+
+                <i class="bi bi-funnel"></i>
 
                 Filtros
-              </button>
-            </div>
 
+              </button>
+
+            </div>
 
 
             <div class="filters">
-              <button class="filter active">Todos</button>
 
-              <button class="filter">Manhã</button>
+              <button class="filter active">
+                Todos
+              </button>
 
-              <button class="filter">Tarde</button>
+              <button class="filter">
+                Manhã
+              </button>
 
-              <button class="filter">Noite</button>
+              <button class="filter">
+                Tarde
+              </button>
+
+              <button class="filter">
+                Noite
+              </button>
 
               <button class="category">
-                Todas as categorias
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-            </div>
-          </div>
 
+                Todas as categorias
+
+                <i class="bi bi-chevron-down"></i>
+
+              </button>
+
+            </div>
+
+          </div>
 
 
           <div class="table-header">
+
             <div>CURSO</div>
-
             <div>CATEGORIA</div>
-
             <div>TURNO</div>
-
-
-
             <div>STATUS</div>
-
             <div>AÇÕES</div>
+
           </div>
+
 
           <div id="lista-cursos"></div>
 
         </div>
+
       </section>
+
     </main>
+
   </div>
-  <script src="/Views/script/gerenciamentoCard.js"></script>
+
+
+  <!-- BOTÃO TEMPORÁRIO PARA TESTAR O MODAL -->
+
+  <!-- =========================
+         MODAL EDITAR CURSO
+    ========================= -->
+
+  <div class="modal-editar" id="modalEditar">
+
+    <div class="modal-conteudo">
+
+      <!-- TOPO -->
+
+      <div class="modal-topo">
+
+        <h2>Editar curso</h2>
+
+        <button type="button" class="fechar-modal" id="fecharModal">
+
+          <i class="bi bi-x-lg"></i>
+
+        </button>
+
+      </div>
+
+
+      <!-- FORMULÁRIO -->
+
+      <div class="modal-formulario">
+
+        <!-- NOME DO CURSO -->
+
+        <div class="campo">
+
+          <label>
+            Nome do curso <span>*</span>
+          </label>
+
+          <input type="text" value="Confeiteiro">
+
+        </div>
+
+
+        <!-- MODALIDADE -->
+
+        <div class="campo">
+
+          <label>
+            Modalidade <span>*</span>
+          </label>
+
+          <select>
+
+            <option>Qualificação</option>
+            <option>Profissionalizante</option>
+            <option>Técnico</option>
+            <option>Aperfeiçoamento</option>
+
+          </select>
+
+        </div>
+
+
+        <!-- DESCRIÇÃO -->
+
+        <div class="campo">
+
+          <label>
+            Descrição <span>*</span>
+          </label>
+
+          <textarea>Curso de qualificação profissional para formação de confeiteiros, com foco em técnicas de preparo de massas, recheios, coberturas e decoração.</textarea>
+
+          <small>142/1000</small>
+
+        </div>
+
+
+        <!-- CARGA HORÁRIA -->
+
+        <div class="campo">
+
+          <label>
+            Carga horária (h) <span>*</span>
+          </label>
+
+          <input type="number" value="200">
+
+        </div>
+
+
+        <!-- CATEGORIA -->
+
+        <div class="campo">
+
+          <label>
+            Categoria <span>*</span>
+          </label>
+
+          <select>
+
+            <option>Alimentação</option>
+            <option>Construção</option>
+            <option>Informática</option>
+            <option>Gestão</option>
+            <option>Indústria</option>
+
+          </select>
+
+        </div>
+
+
+        <!-- TURNOS -->
+
+        <div class="campo">
+
+          <label>
+            Turnos disponíveis <span>*</span>
+          </label>
+
+          <div class="turnos">
+
+            <label>
+
+              <input type="checkbox" checked>
+
+              <span>Manhã</span>
+
+            </label>
+
+            <label>
+
+              <input type="checkbox">
+
+              <span>Tarde</span>
+
+            </label>
+
+            <label>
+
+              <input type="checkbox">
+
+              <span>Noite</span>
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <!-- LOCAL -->
+
+        <div class="campo">
+
+          <label>
+            Local <span>*</span>
+          </label>
+
+          <input type="text" value="SENAI Parnaíba">
+
+        </div>
+
+
+        <!-- VALOR -->
+
+        <div class="campo">
+
+          <label>
+            Valor
+          </label>
+
+          <input type="number" value="0.00" step="0.01">
+
+          <small>
+            Deixe 0,00 para cursos gratuitos
+          </small>
+
+        </div>
+
+
+        <!-- IMAGEM -->
+
+        <div class="campo">
+
+          <label>
+            Imagem do curso
+          </label>
+
+          <div class="arquivo">
+
+            <div class="arquivo-info">
+
+              <div class="arquivo-icone">
+
+                <i class="bi bi-image"></i>
+
+              </div>
+
+              <div>
+
+                <strong>
+                  Desenvolvimento Web.png
+                </strong>
+
+                <small>
+                  128 KB
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <button type="button">
+              Trocar imagem
+            </button>
+
+
+            <button type="button" class="btn-excluir-arquivo">
+
+              <i class="bi bi-trash"></i>
+
+            </button>
+
+          </div>
+
+          <small>
+            Formatos aceitos: JPG, PNG. Tamanho máx: 5MB.
+          </small>
+
+        </div>
+
+
+        <!-- PDF -->
+
+        <div class="campo">
+
+          <label>
+            Grade do curso (PDF)
+          </label>
+
+          <div class="arquivo">
+
+            <div class="arquivo-info">
+
+              <div class="arquivo-icone pdf">
+
+                <i class="bi bi-file-earmark-pdf"></i>
+
+              </div>
+
+              <div>
+
+                <strong>
+                  grade_confeiteiro.pdf
+                </strong>
+
+                <small>
+                  245 KB
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <button type="button">
+              Trocar arquivo
+            </button>
+
+
+            <button type="button" class="btn-excluir-arquivo">
+
+              <i class="bi bi-trash"></i>
+
+            </button>
+
+          </div>
+
+          <small>
+            Formato aceito: PDF. Tamanho máx: 10MB.
+          </small>
+
+        </div>
+
+
+        <!-- INFORMAÇÕES -->
+
+        <div class="campo campo-completo">
+
+          <label>
+            Informações / Documentos importantes
+          </label>
+
+          <textarea>Para realização da inscrição é necessário apresentar RG, CPF e comprovante de escolaridade.
+
+Ex-alunos SENAI possuem 50% de desconto em cursos pagos.</textarea>
+
+          <small>151/1000</small>
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div class="campo">
+
+          <label>
+            Status do curso <span>*</span>
+          </label>
+
+          <select>
+
+            <option>Publicado</option>
+            <option>Rascunho</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <!-- RODAPÉ -->
+
+      <div class="modal-rodape">
+
+        <button type="button" class="btn-cancelar" id="cancelarModal">
+          Cancelar
+        </button>
+
+        <button type="button" class="btn-salvar" id="salvarModal">
+          Salvar alterações
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="script/gerenciamentoCard.js"></script>
+
 </body>
 
 </html>

@@ -1,128 +1,346 @@
+// =========================
 // MODO ESCURO
-const botaoTema = document.querySelector("#temaEscuro");
-const iconeTema = botaoTema.querySelector("i");
+// =========================
+
+const botaoTema = document.querySelector("#temaEscuro")
+const iconeTema = botaoTema.querySelector("i")
 
 function aplicarTema(tema) {
 
     if (tema === "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
 
-        iconeTema.classList.remove("bi-moon-stars-fill");
-        iconeTema.classList.add("bi-sun-fill");
+        document.documentElement.setAttribute("data-theme", "dark")
+
+        iconeTema.classList.remove("bi-moon-stars-fill")
+        iconeTema.classList.add("bi-sun-fill")
 
     } else {
-        document.documentElement.removeAttribute("data-theme");
 
-        iconeTema.classList.remove("bi-sun-fill");
-        iconeTema.classList.add("bi-moon-stars-fill");
+        document.documentElement.removeAttribute("data-theme")
+
+        iconeTema.classList.remove("bi-sun-fill")
+        iconeTema.classList.add("bi-moon-stars-fill")
     }
 }
 
-const temaSalvo = localStorage.getItem("tema");
+const temaSalvo = localStorage.getItem("tema")
 
 if (temaSalvo) {
-    aplicarTema(temaSalvo);
+    aplicarTema(temaSalvo)
 }
 
 botaoTema.addEventListener("click", () => {
 
     const temaAtual =
-        document.documentElement.getAttribute("data-theme");
+        document.documentElement.getAttribute("data-theme")
 
-    const novoTema = temaAtual === "dark" ? "light" : "dark";
+    const novoTema =
+        temaAtual === "dark" ? "light" : "dark"
 
-    localStorage.setItem("tema", novoTema);
+    localStorage.setItem("tema", novoTema)
 
-    aplicarTema(novoTema);
-});
+    aplicarTema(novoTema)
+})
 
-//  ANIMAÇÃO DO NAVBAR
-const secoes = document.querySelectorAll("#banner, #Cursos, #Sobre, #Contatos");
-const linksNav = document.querySelectorAll("nav .animacao");
+
+// =========================
+// ANIMAÇÃO DO NAVBAR
+// =========================
+
+const secoes = document.querySelectorAll(
+    "#banner, #Cursos, #Sobre, #Contatos"
+)
+
+const linksNav = document.querySelectorAll(
+    "nav .animacao"
+)
 
 function atualizarNavbar() {
-    let secaoAtual = "";
+
+    let secaoAtual = ""
 
     secoes.forEach(secao => {
-        const topo = secao.getBoundingClientRect().top;
+
+        const topo =
+            secao.getBoundingClientRect().top
 
         if (topo <= 200) {
-            secaoAtual = secao.id;
+            secaoAtual = secao.id
         }
-    });
+
+    })
 
     // Quando chegar no final da página
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
-        secaoAtual = "Contatos";
+
+    if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50
+    ) {
+        secaoAtual = "Contatos"
     }
 
     linksNav.forEach(link => {
-        link.classList.remove("ativo");
 
-        if (link.getAttribute("href") === `#${secaoAtual}`) {
-            link.classList.add("ativo");
+        link.classList.remove("ativo")
+
+        if (
+            link.getAttribute("href") ===
+            `#${secaoAtual}`
+        ) {
+            link.classList.add("ativo")
         }
-    });
+
+    })
 }
 
-window.addEventListener("scroll", atualizarNavbar);
+window.addEventListener(
+    "scroll",
+    atualizarNavbar
+)
 
-atualizarNavbar();
+atualizarNavbar()
 
-// MODAL
-const modal = document.querySelector(".modalSection")
-const btnsSaibaMais = document.querySelectorAll(".saiba-mais")
-const fecharModal = document.querySelector(".fecharModal")
-const btnFechar = document.querySelector(".btnFechar")
+
+// =========================
+// MODAL DOS CURSOS
+// =========================
+
+const modal =
+    document.querySelector(".modalSection")
+
+const btnsSaibaMais =
+    document.querySelectorAll(".saiba-mais")
+
+const fecharModal =
+    document.querySelector(".fecharModal")
+
+const btnFechar =
+    document.querySelector(".btnFechar")
+
 
 btnsSaibaMais.forEach(botao => {
+
     botao.addEventListener("click", () => {
+
         modal.classList.add("ativo")
+
+        document.body.style.overflow = "hidden"
     })
 
-});
+})
+
 
 fecharModal.addEventListener("click", () => {
-    modal.classList.remove("ativo");
+
+    modal.classList.remove("ativo")
+
+    document.body.style.overflow = ""
 })
+
 
 btnFechar.addEventListener("click", () => {
-    modal.classList.remove("ativo");
+
+    modal.classList.remove("ativo")
+
+    document.body.style.overflow = ""
 })
 
-// ESCONDER CARDS
 
-const cardsCurso = document.querySelectorAll(".card-curso")
-const verTodos = document.querySelector("#verTodos")
-cardsCurso.forEach((card, indice) => {
-            if (indice >= 8) {
-                // esconder card
-                card.classList.add("oculto");
-                verTodos.innerHTML = 'Ver todos os cursos <i class="bi bi-chevron-down"></i></i>'
-            }
-        });
+// Fechar clicando fora do modal
+
+modal.addEventListener("click", evento => {
+
+    if (evento.target === modal) {
+
+        modal.classList.remove("ativo")
+
+        document.body.style.overflow = ""
+    }
+
+})
+
+
+// Fechar com ESC
+
+document.addEventListener("keydown", evento => {
+
+    if (
+        evento.key === "Escape" &&
+        modal.classList.contains("ativo")
+    ) {
+
+        modal.classList.remove("ativo")
+
+        document.body.style.overflow = ""
+    }
+
+})
+
+
+// =========================
+// ESCONDER CARDS
+// =========================
+
+const cardsCurso =
+    document.querySelectorAll(".card-curso")
+
+const verTodos =
+    document.querySelector("#verTodos")
 
 let cursosAbertos = false
-verTodos.addEventListener("click", () => {
-    if (cursosAbertos) {
-        cardsCurso.forEach((card, indice) => {
-            if (indice >= 8) {
-                // esconder card
-                card.classList.add("oculto");
-                verTodos.innerHTML = 'Ver todos os cursos <i class="bi bi-chevron-down"></i>';
-            }
-        });
-    }else {
-            cardsCurso.forEach((card, indice) => {
 
-                if (indice >= 8) {
-                    card.classList.remove("oculto");
-                    verTodos.innerHTML = 'Ver menos <i class="bi bi-chevron-up"></i>';
-                }
 
-            });
+function definirLimiteCards() {
+
+    const limite =
+        window.innerWidth <= 768 ? 4 : 8
+
+    cardsCurso.forEach((card, indice) => {
+
+        if (
+            !cursosAbertos &&
+            indice >= limite
+        ) {
+
+            card.classList.add("oculto")
+
+        } else {
+
+            card.classList.remove("oculto")
         }
-    cursosAbertos = !cursosAbertos;
-});
+
+    })
 
 
+    if (cursosAbertos) {
+
+        verTodos.innerHTML =
+            'Ver menos <i class="bi bi-chevron-up"></i>'
+
+    } else {
+
+        verTodos.innerHTML =
+            'Ver todos os cursos <i class="bi bi-chevron-down"></i>'
+    }
+}
+
+
+definirLimiteCards()
+
+
+verTodos.addEventListener("click", () => {
+
+    cursosAbertos = !cursosAbertos
+
+    definirLimiteCards()
+})
+
+
+window.addEventListener("resize", () => {
+
+    if (!cursosAbertos) {
+        definirLimiteCards()
+    }
+
+})
+
+
+// =========================
+// NAVBAR MOBILE
+// =========================
+
+const hamburguer =
+    document.querySelector("#hamburguer")
+
+const nav =
+    document.querySelector("header nav")
+
+const iconeHamburguer =
+    hamburguer.querySelector("i")
+
+
+hamburguer.addEventListener("click", () => {
+
+    nav.classList.toggle("menuAberto")
+
+    if (
+        nav.classList.contains("menuAberto")
+    ) {
+
+        iconeHamburguer.classList.remove(
+            "bi-list"
+        )
+
+        iconeHamburguer.classList.add(
+            "bi-x-lg"
+        )
+
+    } else {
+
+        iconeHamburguer.classList.remove(
+            "bi-x-lg"
+        )
+
+        iconeHamburguer.classList.add(
+            "bi-list"
+        )
+    }
+
+})
+
+
+// =========================
+// FECHAR MENU AO CLICAR
+// =========================
+
+const linksMenu =
+    nav.querySelectorAll("a")
+
+
+linksMenu.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        nav.classList.remove("menuAberto")
+
+        iconeHamburguer.classList.remove(
+            "bi-x-lg"
+        )
+
+        iconeHamburguer.classList.add(
+            "bi-list"
+        )
+
+    })
+
+})
+
+
+// =========================
+// FECHAR MENU CLICANDO FORA
+// =========================
+
+document.addEventListener("click", evento => {
+
+    if (
+
+        nav.classList.contains("menuAberto") &&
+
+        !nav.contains(evento.target) &&
+
+        !hamburguer.contains(evento.target)
+
+    ) {
+
+        nav.classList.remove("menuAberto")
+
+        iconeHamburguer.classList.remove(
+            "bi-x-lg"
+        )
+
+        iconeHamburguer.classList.add(
+            "bi-list"
+        )
+    }
+
+})

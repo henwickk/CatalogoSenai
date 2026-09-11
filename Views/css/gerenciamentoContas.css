@@ -1,0 +1,819 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7f9;
+    color: #182033;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 178px;
+    height: 100vh;
+
+    background: #062451;
+    color: white;
+
+    overflow: hidden;
+}
+
+.logo {
+    padding: 27px 24px 25px;
+}
+
+.logo h1 {
+    font-size: 27pt;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.logo span {
+    display: block;
+
+    font-size: 8pt;
+    margin-top: -2px;
+
+    letter-spacing: .8px;
+}
+
+.menu {
+    padding: 0 12px;
+}
+
+.menu-item {
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 0 13px;
+
+    margin-bottom: 5px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 10pt;
+
+    border-radius: 6px;
+}
+
+.menu-item i {
+    width: 14px;
+    text-align: center;
+}
+
+.menu-item.active,
+.menu-item:hover {
+    background: #1557c8;
+}
+
+
+.sidebar-bottom {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 300px;
+
+    background: linear-gradient(to top,
+            #031d43,
+            rgba(3, 29, 67, .4),
+            transparent);
+}
+
+.people {
+    position: absolute;
+
+    bottom: 100px;
+
+    width: 100%;
+    height: 120px;
+}
+
+.person {
+    position: absolute;
+
+    bottom: 0;
+
+    border-radius: 50% 50% 0 0;
+
+    background: #0d448e;
+}
+
+.person1 {
+    left: 12px;
+
+    width: 45px;
+    height: 75px;
+}
+
+.person2 {
+    left: 54px;
+
+    width: 65px;
+    height: 110px;
+}
+
+.person3 {
+    right: 10px;
+
+    width: 45px;
+    height: 75px;
+}
+
+.sidebar-text {
+    position: absolute;
+
+    left: 24px;
+    bottom: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: 12pt;
+    line-height: 1.4;
+}
+
+.sidebar-text strong {
+    font-size: 16px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    margin-left: 178px;
+
+    width: calc(100% - 178px);
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    height: 57px;
+
+    background: white;
+
+    border-bottom: 1px solid #e7e8eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 20px;
+
+    padding: 0 27px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 10pt;
+}
+
+.user i {
+    font-size: 8pt;
+}
+
+.avatar {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #0d3478;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo {
+    padding: 32px;
+}
+
+.page-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.page-header h2 {
+    font-size: 24px;
+
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    color: #72798a;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   BOTÃO NOVA CONTA
+========================= */
+
+.btn-nova-conta {
+    border: none;
+
+    background: #1557c8;
+    color: white;
+
+    padding: 11px 17px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.btn-nova-conta:hover {
+    background: #0d47ad;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card-contas {
+    background: white;
+
+    border: 1px solid #e7e8eb;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+.barra-pesquisa {
+    padding: 18px;
+
+    border-bottom: 1px solid #e7e8eb;
+}
+
+.campo-pesquisa {
+    width: 320px;
+
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 12px;
+
+    border: 1px solid #dfe2e7;
+
+    border-radius: 6px;
+
+    color: #777;
+}
+
+.campo-pesquisa input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+.table-header,
+.usuario {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1.4fr 1.2fr .8fr;
+
+    align-items: center;
+}
+
+.table-header {
+    min-height: 45px;
+
+    padding: 0 20px;
+
+    background: #fafbfc;
+
+    border-bottom: 1px solid #e7e8eb;
+
+    color: #7a8190;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+.usuario {
+    min-height: 72px;
+
+    padding: 0 20px;
+
+    border-bottom: 1px solid #eef0f3;
+}
+
+.usuario:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================
+   USUÁRIO
+========================= */
+
+.usuario-info {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+.avatar-tabela {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e7eefc;
+
+    color: #1557c8;
+
+    font-weight: bold;
+}
+
+.usuario-info strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.usuario-info small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8a909d;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   CURSOS
+========================= */
+
+.cursos-cadastrados {
+    font-size: 13px;
+
+    color: #4f5665;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.status.ativo {
+    background: #e6f7ed;
+
+    color: #16834b;
+}
+
+
+/* =========================
+   AÇÕES
+========================= */
+
+.acoes {
+    display: flex;
+
+    gap: 7px;
+}
+
+.acoes button {
+    width: 100px;
+    height: 31px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete {
+    background: #fff0f0;
+    color: #d43b3b;
+
+}
+
+.delete:hover {
+    background: #ffe0e0;
+}
+
+
+/* =========================
+   FOOTER DA TABELA
+========================= */
+
+.table-footer {
+    min-height: 55px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid #e7e8eb;
+
+    color: #7a8190;
+
+    font-size: 12px;
+}
+
+.paginacao {
+    display: flex;
+    gap: 5px;
+}
+
+.pagina {
+    width: 29px;
+    height: 29px;
+
+    border: 1px solid #dfe2e7;
+
+    background: white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.pagina.ativa {
+    background: #1557c8;
+
+    border-color: #1557c8;
+
+    color: white;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-section {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .45);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.modal-section.ativo {
+    display: flex;
+}
+
+.modal-conteudo {
+    width: 100%;
+    max-width: 560px;
+
+    background: white;
+
+    border-radius: 9px;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, .2);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   MODAL HEADER
+========================= */
+
+.modal-header {
+    padding: 22px 24px;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #e7e8eb;
+}
+
+.modal-header h3 {
+    font-size: 19px;
+
+    margin-bottom: 5px;
+}
+
+.modal-header p {
+    font-size: 12px;
+
+    color: #7a8190;
+}
+
+.fechar-modal {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #777;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    border-radius: 5px;
+}
+
+.fechar-modal:hover {
+    background: #f1f2f4;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.formulario {
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.campo label {
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.campo input {
+    height: 40px;
+
+    padding: 0 11px;
+
+    border: 1px solid #dfe2e7;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    font-size: 13px;
+
+    background: white;
+}
+
+.campo input:focus {
+    border-color: #1557c8;
+}
+
+
+/* =========================
+   MODAL FOOTER
+========================= */
+
+.modal-footer {
+    padding: 17px 24px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    border-top: 1px solid #e7e8eb;
+}
+
+.btn-cancelar,
+.btn-salvar {
+    height: 38px;
+
+    padding: 0 16px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.btn-cancelar {
+    border: 1px solid #dfe2e7;
+
+    background: white;
+
+    color: #555;
+}
+
+.btn-salvar {
+    border: none;
+
+    background: #1557c8;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.btn-salvar:hover {
+    background: #0d47ad;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 150px;
+    }
+
+    .main {
+        margin-left: 150px;
+
+        width: calc(100% - 150px);
+    }
+
+    .table-header,
+    .usuario {
+        grid-template-columns:
+            2fr 1.3fr 1fr .7fr;
+    }
+
+    .conteudo {
+        padding: 22px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        margin-left: 0;
+
+        width: 100%;
+    }
+
+    .page-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .btn-nova-conta {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .campo-pesquisa {
+        width: 100%;
+    }
+
+    .table-header {
+        display: none;
+    }
+
+    .usuario {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+        padding: 18px;
+    }
+
+    .acoes {
+        align-self: flex-end;
+    }
+
+    .table-footer {
+        padding: 15px;
+
+        gap: 10px;
+    }
+
+}

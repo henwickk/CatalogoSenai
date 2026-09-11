@@ -139,7 +139,6 @@ async function excluirCurso(id) {
 
 }
 
-
 // =========================
 // EDITAR CURSO
 // =========================
@@ -148,9 +147,46 @@ function editarCurso(id) {
 
     console.log("Editar curso:", id);
 
-    alert("Curso selecionado para edição: " + id);
+    const modalEditar = document.getElementById("modalEditar");
 
+    modalEditar.classList.add("ativo");
 }
+
+// =========================
+// CONTROLES DO MODAL
+// =========================
+
+const modalEditar = document.getElementById("modalEditar");
+const fecharModal = document.getElementById("fecharModal");
+const cancelarModal = document.getElementById("cancelarModal");
+const salvarModal = document.getElementById("salvarModal");
+
+
+// FECHAR NO X
+
+fecharModal.addEventListener("click", () => {
+
+    modalEditar.classList.remove("ativo");
+
+});
+
+
+// FECHAR NO CANCELAR
+
+cancelarModal.addEventListener("click", () => {
+
+    modalEditar.classList.remove("ativo");
+
+});
+
+
+// SALVAR — POR ENQUANTO SÓ FECHA
+
+salvarModal.addEventListener("click", () => {
+
+    modalEditar.classList.remove("ativo");
+
+});
 
 
 // =========================
@@ -158,3 +194,4 @@ function editarCurso(id) {
 // =========================
 
 carregarCursos();
+

@@ -8,7 +8,6 @@
     --fundo: #f5f6fa;
     --card: #fefefe;
     --navbar: #fefefe;
-
     --texto: #02095A;
     --texto-secundario: #53618A;
     --sobre: #E1E4EC;
@@ -20,12 +19,16 @@
     --fundo: #22252B;
     --card: #2B2E35;
     --navbar: #292C32;
-
     --texto: #F1F3F7;
     --texto-secundario: #B7BECB;
     --sobre: #2B3038;
     --subcard: #323740;
     --borda: #3B414B;
+}
+
+[data-theme="dark"] #categoria option {
+    background-color: #2B2E35;
+    color: #F1F3F7;
 }
 
 html {
@@ -36,7 +39,7 @@ body {
     width: 100%;
     background: var(--fundo);
     font-family: 'Roboto', sans-serif;
-    transition: background-color 0.3s ease;
+    transition: background-color .3s ease;
 }
 
 button:hover {
@@ -48,20 +51,24 @@ a {
     color: #fefefe;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
     background: var(--navbar);
     position: sticky;
     top: 0;
     z-index: 1000;
-    max-width: 100%;
+    width: 100%;
     height: 8vh;
+
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
-    transition: background-color 0.3s ease;
+    transition: background-color .3s ease;
 }
 
 #senaiLogo {
@@ -75,6 +82,7 @@ header {
 nav {
     width: 40%;
     height: 100%;
+
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -98,8 +106,10 @@ nav a:hover {
     top: 120%;
     width: 97%;
     height: 3px;
+
     background: #F95512;
     border-radius: 5px;
+
     transform: scaleX(0);
     transition: transform .4s;
     transform-origin: right;
@@ -121,7 +131,6 @@ nav a:hover {
 #temaEscuro {
     background: none;
     border: none;
-    cursor: pointer;
 }
 
 #temaEscuro i {
@@ -134,8 +143,9 @@ nav a:hover {
     color: #F95512;
 }
 
-
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 main {
     width: 100%;
@@ -144,13 +154,17 @@ main {
     align-items: center;
 }
 
-/* BANNER */
+/* =========================
+   BANNER
+========================= */
 
 #banner {
     width: 100%;
     height: 80vh;
     position: relative;
+
     background: #011748;
+
     box-shadow: 0 25px 45px rgba(0, 0, 0, .18);
 }
 
@@ -158,34 +172,44 @@ main {
     position: absolute;
     overflow: hidden;
     isolation: isolate;
+
     right: 0;
     top: 0;
+
     width: 50%;
     height: 100%;
-    background-image: url("/Views/img/senai.png");
+
+    background-image: url("/img/senai.png");
     background-size: cover;
 
-    mask-image: linear-gradient(to right,
-            transparent 0%,
-            rgba(0, 0, 0, 0.4) 15%,
-            black 40%);
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, .4) 15%,
+        black 40%
+    );
 }
 
 #infoBanner {
     max-width: 35%;
     height: 100%;
+
     margin-left: 10%;
+
     color: #fefefe;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     gap: 6%;
+
     position: relative;
     z-index: 1;
 }
 
 #textoBanner {
-    font-size: 35px
+    font-size: 35px;
 }
 
 #textoBanner h4 {
@@ -193,23 +217,28 @@ main {
     margin-bottom: 3%;
 }
 
-#infoBanner p {
+#infoBanner > p {
     font-size: 20px;
 }
 
 #infoCards {
     width: 100%;
+
     display: flex;
     gap: 2%;
 }
 
 .cards {
     width: 100%;
+
     display: flex;
     align-items: center;
+
     gap: 15px;
+
     border: solid 2px #142953;
     background: #0117487e;
+
     border-radius: 10px;
     padding: 20px;
 }
@@ -238,6 +267,7 @@ main {
     display: flex;
     align-items: center;
     gap: 20px;
+
     font-size: 20px;
     color: #fefefe;
 }
@@ -246,18 +276,27 @@ main {
     font-size: 25px;
 }
 
-/* FILTRO */
+/* =========================
+   FILTRO
+========================= */
 
 #Cursos {
     width: 60%;
+
     padding: 2%;
+
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+
     background: var(--card);
+
     border-radius: 15px;
+
     transform: translateY(-25%);
+
     margin-bottom: 1%;
+
     transition: background-color .3s ease;
 }
 
@@ -270,6 +309,7 @@ main {
     text-align: start;
     margin-left: 5%;
     margin-bottom: 3%;
+
     color: var(--texto);
 }
 
@@ -282,39 +322,49 @@ main {
     justify-self: center;
 }
 
-#categoria:hover {
-    border-color: #006CEA;
-}
-
-#categoria:focus {
-    border-color: #006CEA;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 108, 234, 0.15);
-}
-
 #inputPesquisa,
 #categoria {
     width: 90%;
+
     background: transparent;
     outline: none;
+
     border: solid #02095a5e 2px;
+
     padding: 14px 8px;
+
     border-radius: 8px;
+
     color: var(--texto);
+
     transition: .3s;
+}
+
+#categoria {
+    background-color: var(--card);
+    color: var(--texto);
+}
+
+#categoria option {
+    background-color: var(--card);
+    color: var(--texto);
 }
 
 #inputPesquisa::placeholder {
     color: var(--texto-secundario);
 }
 
-#inputPesquisa:hover {
+#inputPesquisa:hover,
+#categoria:hover {
     border-color: #006CEA;
 }
 
-#inputPesquisa:focus {
+#inputPesquisa:focus,
+#categoria:focus {
     border-color: #006CEA;
-    box-shadow: 0 0 0 2px rgba(0, 109, 233, 0.15);
+    outline: none;
+
+    box-shadow: 0 0 0 3px rgba(0, 108, 234, .15);
 }
 
 #inputPesquisa::-webkit-search-cancel-button {
@@ -323,17 +373,24 @@ main {
 
 #filtroBox i {
     position: absolute;
+
     top: 50%;
-    transform: translateY(-50%);
     right: 7%;
+
+    transform: translateY(-50%);
+
     font-size: 20px;
+
     color: var(--texto);
 }
 
-/* CARD-CURSOS */
+/* =========================
+   CURSOS
+========================= */
 
 #cursosArea {
     width: 75%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -341,20 +398,34 @@ main {
 
 #cursos {
     width: 100%;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
     gap: 25px;
+
     margin-bottom: 3%;
 }
 
+/* =========================
+   CARD CURSO
+========================= */
+
 .card-curso {
-    height: 350px;
+    height: 390px;
+
     background: var(--card);
+
     border-radius: 14px;
-    font-size: 160%;
+
     overflow: hidden;
+
     transition: .35s;
+
     box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+
+    display: flex;
+    flex-direction: column;
 }
 
 .card-curso:hover {
@@ -362,47 +433,170 @@ main {
     box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
 }
 
+/* IMAGEM */
+
+.imagemCurso {
+    position: relative;
+
+    width: 100%;
+    height: 43%;
+
+    overflow: hidden;
+}
+
 .img-curso {
     width: 100%;
-    height: 50%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .4s ease;
 }
+
+.card-curso:hover .img-curso {
+    transform: scale(1.04);
+}
+
+.disponivel {
+    position: absolute;
+
+    top: 14px;
+    left: 14px;
+
+    background: #159447;
+    color: white;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+} 
+
+.disponivel.indisponivel{
+    background: #e22222;
+}
+
+/* INFORMAÇÕES */
 
 .infosCurso {
-    height: 50%;
+    height: 57%;
+
+    padding: 16px 18px;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    margin-left: 10%;
-}
-
-.textoCurso h5 {
-    color: #F95512;
-    margin-top: 10px;
-    font-size: 60%;
-    font-weight: 100;
+    justify-content: space-between;
 }
 
 .textoCurso h4 {
     color: var(--texto);
+    font-size: 20px;
+}
+
+.textoCurso p {
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+/* DADOS */
+
+.dadosCurso {
+    display: flex;
+    gap: 15px;
+}
+
+.dadosCurso span {
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.dadosCurso i {
+    color: #006CEA;
+    font-size: 16px;
+}
+
+/* TURNOS */
+
+.turnosCurso {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+
+    padding-top: 8px;
+
+    border-top: 1px solid var(--borda);
+}
+
+.turnosCurso i {
+    color: #006CEA;
+}
+
+/* RODAPÉ */
+
+.rodapeCurso {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rodapeCurso strong {
+    color: #159447;
+    font-size: 14px;
 }
 
 .saiba-mais {
     display: flex;
+    align-items: center;
+
+    gap: 5px;
+
     background: none;
     border: none;
-    cursor: pointer;
+
     color: #006CEA;
-    font-size: 60%;
+
+    font-size: 13px;
     font-weight: bold;
+
+    transition: .3s;
 }
+
+.saiba-mais:hover {
+    color: #F95512;
+    transform: translateX(3px);
+}
+
+/* VER TODOS */
 
 #verTodos {
     background: none;
+
     border: solid #1E43B6 2px;
+
     padding: 18px;
+
     border-radius: 99px;
+
     color: #1E43B6;
+
     font-weight: 600;
+
     margin-bottom: 10%;
 }
 
@@ -411,7 +605,9 @@ main {
     color: #fefefe;
 }
 
-/* SOBRE SENAI */
+/* =========================
+   SOBRE
+========================= */
 
 #Sobre,
 #DivSobreSenai,
@@ -424,15 +620,20 @@ main {
 #Sobre {
     width: 100%;
     min-height: 500px;
+
     justify-content: center;
+
     margin-bottom: 7%;
 }
 
 #DivSobreSenai {
     width: 80%;
     height: 30vh;
+
     background: var(--sobre);
+
     border-radius: 20px;
+
     transition: background-color .3s ease;
 }
 
@@ -444,12 +645,16 @@ main {
 #resumo img {
     width: 190px;
     height: 250px;
+
     border-radius: 140px 80px 10px 10px;
+
+    object-fit: cover;
 }
 
 #resumo1 {
     width: 50%;
     height: 100%;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -465,14 +670,21 @@ main {
 
 #conheca {
     width: 75%;
+
     background: none;
+
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     color: #1E43B6;
+
     border: solid #1E43B6 2px;
+
     padding: 12px;
+
     border-radius: 18px;
+
     font-weight: 600;
 }
 
@@ -488,6 +700,7 @@ main {
 #infos {
     width: 100%;
     height: 50%;
+
     justify-content: space-around;
 }
 
@@ -502,33 +715,44 @@ main {
 #infos div {
     width: 20%;
     height: 100%;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    height: 40vh;
     width: 100%;
-    background: linear-gradient(to right,
-            #002B66 0%,
-            #004A99 45%,
-            #005CAA 70%,
-            #2F80ED 100%);
+    height: 40vh;
+
+    background: linear-gradient(
+        to right,
+        #002B66 0%,
+        #004A99 45%,
+        #005CAA 70%,
+        #2F80ED 100%
+    );
+
     color: #fefefe;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 15px 35px rgba(0, 92, 170, 0.15);
+
+    box-shadow: 0 15px 35px rgba(0, 92, 170, .15);
 }
 
 #Contatos {
     width: 80%;
     height: 85%;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: space-between;
 }
@@ -536,26 +760,28 @@ footer {
 #infosfooter,
 #copydiv {
     width: 100%;
+
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 #infosfooter {
     height: 85%;
-    border-bottom: solid 1px #fefefe;
-}
 
-#copydiv {
-    justify-content: space-between;
+    border-bottom: solid 1px #fefefe;
 }
 
 .infoDivs,
 ul {
     height: 100%;
     width: 100%;
+
     display: flex;
     flex-direction: column;
+
     gap: 12%;
+
     list-style: none;
 }
 
@@ -567,15 +793,19 @@ ul {
 #senaiimg {
     width: 40%;
     height: 50px;
-    background: url(/Views/img/senai.svg);
-    background-size: cover;
+
+    background: url("/img/senai.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #socialMidia {
     width: 50%;
+
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     font-size: 20px;
 }
 
@@ -591,23 +821,29 @@ ul {
 #btnAdm {
     background: none;
     border: none;
-    cursor: pointer;
+
     color: #fefefe;
-    text-align: center;
 }
 
-/* MODAL DOS CARDS */
+/* =========================
+   MODAL
+========================= */
 
 .modalSection {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+
+    background: rgba(0, 0, 0, .6);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     opacity: 0;
     visibility: hidden;
-    transition: 0.3s;
+
+    transition: .3s;
+
     z-index: 2000;
 }
 
@@ -620,15 +856,27 @@ ul {
     width: 80%;
     max-width: 1000px;
     height: 84vh;
+
     background: var(--card);
+
     border-radius: 15px;
+
     position: relative;
+
     padding: 30px;
+
     display: grid;
     grid-template-columns: 35% 65%;
+
     gap: 30px;
-    transform: scale(0.9);
-    transition: 0.3s;
+
+    transform: scale(.9);
+
+    transition: .3s;
+}
+
+.modalSection.ativo .modalConteudo {
+    transform: scale(1);
 }
 
 .ladoDireito {
@@ -636,22 +884,31 @@ ul {
 }
 
 .img-modal {
-    background: url(/Views/img/senai.png);
+    background: url("/img/senai.png");
+
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
     width: 100%;
     height: 280px;
+
     border-radius: 14px;
 }
 
 .modalidade-modal {
     display: inline-block;
+
     margin: 15px;
+
     background: #F95512;
+
     color: white;
+
     padding: 6px 18px;
+
     border-radius: 20px;
+
     font-size: 14px;
     font-weight: bold;
 }
@@ -660,6 +917,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     margin-bottom: 25px;
 }
 
@@ -677,8 +935,11 @@ ul {
 .status {
     background: #d9f7df;
     color: #176b2b;
+
     padding: 9px 16px;
+
     border-radius: 20px;
+
     font-weight: bold;
     font-size: 14px;
 }
@@ -702,8 +963,11 @@ ul {
 
 .informacoesPrincipais {
     background: var(--subcard);
+
     border-radius: 14px;
+
     padding: 20px;
+
     margin-top: 25px;
 }
 
@@ -715,8 +979,11 @@ ul {
 .informacoes {
     display: flex;
     align-items: center;
+
     gap: 15px;
+
     padding: 12px 0;
+
     border-bottom: 1px solid var(--borda);
 }
 
@@ -741,18 +1008,26 @@ ul {
 
 .modalDetalhes {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 15px;
+
     margin-top: 20px;
 }
 
 .modalDetalhes div {
     background: var(--subcard);
+
     border: 1px solid var(--borda);
+
     border-radius: 12px;
+
     padding: 18px;
+
     display: flex;
     flex-direction: column;
+
     gap: 7px;
 }
 
@@ -772,11 +1047,16 @@ ul {
 
 .gradeCurricular {
     margin-top: 20px;
+
     padding: 18px;
+
     border: 1px dashed #9db7ef;
+
     border-radius: 12px;
+
     display: flex;
     align-items: center;
+
     gap: 15px;
 }
 
@@ -801,10 +1081,14 @@ ul {
 
 .gradeCurricular button {
     border: none;
+
     background: #e3ecff;
     color: #0050d8;
+
     padding: 12px 18px;
+
     border-radius: 20px;
+
     font-weight: bold;
 }
 
@@ -815,70 +1099,780 @@ ul {
 
 .aviso {
     background: var(--subcard);
-    border-radius: 14px;
-    padding: 20px;
-    margin-top: 25px;
-}
 
-.aviso h3 {
-    color: var(--texto);
+    border-radius: 14px;
+
+    padding: 20px;
+
+    margin-top: 25px;
 }
 
 .btnBaixo {
     display: flex;
     justify-content: flex-end;
+
     gap: 15px;
+
     margin-top: 30px;
+
     padding-top: 20px;
+
     border-top: 1px solid var(--borda);
 }
 
 .btnFechar {
     padding: 13px 30px;
+
     border-radius: 10px;
+
     font-weight: bold;
+
     background: var(--card);
     color: var(--texto);
+
     border: 1px solid #1E43B6;
 }
 
 .btnFechar:hover {
     background: #1E43B6;
     color: white;
-    border: 1px solid #02095A;
 }
 
 .fecharModal {
     position: absolute;
+
     top: 18px;
     right: 20px;
+
     background: none;
     border: none;
+
     font-size: 22px;
+
     color: var(--texto);
+
     z-index: 5;
 }
 
-/* ESCONDER CARDS */
+/* =========================
+   ESCONDER CARDS
+========================= */
 
 .oculto {
     display: none;
 }
 
-/* MOBILE NAVBAR*/
+/* =========================
+   MOBILE NAVBAR
+========================= */
 
-#hamburguer{
+#hamburguer {
     display: none;
+
     background: none;
     border: none;
+
     font-size: 2rem;
+
     color: var(--texto);
+
     padding: 0;
-    cursor: pointer;
 }
 
-/* -----------RESPONSIVE----------- */
+/* =========================
+   RESPONSIVE
+========================= */
 
-@media screen {
-    
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    body {
+        padding-top: 70px;
+    }
+
+    /* NAVBAR */
+
+    header {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 70px;
+
+        padding: 0 1.2rem;
+
+        justify-content: space-between;
+    }
+
+    #senaiLogo {
+        width: 30%;
+        max-width: 120px;
+    }
+
+    #hamburguer {
+        display: block;
+        font-size: 1.8rem;
+        z-index: 1001;
+    }
+
+    header nav {
+        position: fixed;
+
+        top: 70px;
+        right: 0;
+
+        width: 80vw;
+        max-width: 320px;
+
+        height: calc(100vh - 70px);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        padding: 2rem 1.5rem;
+
+        gap: 1.5rem;
+
+        background: var(--navbar);
+
+        box-shadow: -8px 0 25px rgba(0, 0, 0, .18);
+
+        transform: translateX(100%);
+
+        transition: transform .3s ease;
+    }
+
+    header nav.menuAberto {
+        transform: translateX(0);
+    }
+
+    header nav a {
+        width: 100%;
+        font-size: 1rem;
+        padding: .6rem 0;
+    }
+
+    header nav a::after {
+        top: 100%;
+    }
+
+    #temaEscuro {
+        margin-top: .5rem;
+    }
+
+    /* BANNER */
+
+    #banner {
+        width: 100%;
+        height: auto;
+        min-height: 650px;
+
+        display: flex;
+        align-items: stretch;
+    }
+
+    #banner-img {
+        width: 100%;
+        height: 100%;
+        min-height: 650px;
+
+        right: 0;
+        top: 0;
+
+        opacity: .55;
+
+        mask-image: none;
+    }
+
+    #infoBanner {
+        width: 100%;
+        max-width: none;
+        height: auto;
+
+        margin-left: 0;
+
+        padding: 4rem 1.3rem 2rem;
+
+        justify-content: center;
+
+        gap: 2rem;
+    }
+
+    #textoBanner {
+        font-size: 1rem;
+    }
+
+    #textoBanner h4 {
+        font-size: 1rem;
+        margin-bottom: .8rem;
+    }
+
+    #textoBanner h1 {
+        font-size: 2.5rem;
+        line-height: 1;
+    }
+
+    #infoBanner > p {
+        max-width: 300px;
+
+        font-size: 1rem;
+
+        line-height: 1.45;
+    }
+
+    /* CARDS BANNER */
+
+    #infoCards {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: .5rem;
+    }
+
+    .cards {
+        width: 100%;
+        min-width: 0;
+
+        padding: .7rem .4rem;
+
+        gap: .35rem;
+    }
+
+    .cards i {
+        font-size: 1.5rem;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    .card h4 {
+        font-size: .6rem;
+        line-height: 1.1;
+    }
+
+    #localSenai {
+        font-size: 1rem;
+        gap: .7rem;
+    }
+
+    #localSenai i {
+        font-size: 1.4rem;
+    }
+
+    /* CURSOS */
+
+    #cursosArea {
+        width: 100%;
+
+        padding: 0 1rem 2rem;
+    }
+
+    #Cursos {
+        width: 100%;
+
+        padding: 1rem;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 1rem;
+
+        transform: translateY(-20px);
+
+        margin-bottom: 0;
+    }
+
+    .filtro {
+        width: 100%;
+        text-align: left;
+    }
+
+    .filtro h3 {
+        margin-left: 0;
+        margin-bottom: .5rem;
+
+        font-size: .8rem;
+    }
+
+    #inputPesquisa,
+    #categoria {
+        width: 100%;
+        padding: 12px 10px;
+    }
+
+    #filtroBox i {
+        right: 4%;
+    }
+
+    /* GRID */
+
+    #cursos {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: .8rem;
+
+        margin-top: .5rem;
+    }
+
+    /* CARD MOBILE */
+
+    .card-curso {
+        width: 100%;
+
+        height: 310px;
+
+        min-width: 0;
+
+        border-radius: 12px;
+    }
+
+    .imagemCurso {
+        height: 39%;
+    }
+
+    .badge-modalidade {
+        top: 8px;
+        left: 8px;
+
+        padding: 5px 9px;
+
+        font-size: 9px;
+    }
+
+    .infosCurso {
+        height: 61%;
+
+        padding: 10px 11px;
+    }
+
+    .textoCurso h4 {
+        font-size: .95rem;
+    }
+
+    .textoCurso p {
+        font-size: .65rem;
+
+        margin-top: 3px;
+    }
+
+    .dadosCurso {
+        gap: 6px;
+
+        flex-direction: column;
+    }
+
+    .dadosCurso span {
+        font-size: .65rem;
+    }
+
+    .dadosCurso i {
+        font-size: .8rem;
+    }
+
+    .turnosCurso {
+        font-size: .62rem;
+
+        padding-top: 5px;
+
+        gap: 4px;
+    }
+
+    .turnosCurso i {
+        font-size: .75rem;
+    }
+
+    .rodapeCurso {
+        gap: 5px;
+    }
+
+    .rodapeCurso strong {
+        font-size: .7rem;
+    }
+
+    .saiba-mais {
+        font-size: .68rem;
+
+        gap: 3px;
+    }
+
+    /* VER TODOS */
+
+    #verTodos {
+        width: 100%;
+
+        margin-top: .5rem;
+        margin-bottom: 3rem;
+
+        padding: 13px;
+    }
+
+    /* SOBRE */
+
+    #Sobre {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 1rem;
+
+        margin-bottom: 2rem;
+    }
+
+    #DivSobreSenai {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 1rem;
+
+        border-radius: 18px;
+    }
+
+    #resumo {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 1rem;
+    }
+
+    #resumo img {
+        width: 100%;
+        height: 180px;
+
+        object-fit: cover;
+
+        border-radius: 18px;
+    }
+
+    #resumo1 {
+        width: 100%;
+        height: auto;
+
+        gap: 1rem;
+    }
+
+    #resumo1 h3 {
+        font-size: 1.4rem;
+    }
+
+    #resumo1 p {
+        font-size: .9rem;
+        line-height: 1.5;
+    }
+
+    #conheca {
+        width: 100%;
+    }
+
+    /* BENEFÍCIOS */
+
+    #infos {
+        width: 100%;
+        height: auto;
+
+        margin-top: 1.5rem;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 1rem;
+    }
+
+    #infos div {
+        width: 100%;
+        height: auto;
+
+        gap: .5rem;
+    }
+
+    #infos h4 {
+        font-size: .85rem;
+    }
+
+    #infos p {
+        font-size: .75rem;
+        line-height: 1.4;
+    }
+
+    /* FOOTER */
+
+    footer {
+        width: 100%;
+        height: auto;
+
+        padding: 2.5rem 1.2rem 1.5rem;
+    }
+
+    #Contatos {
+        width: 100%;
+        height: auto;
+
+        gap: 2rem;
+    }
+
+    #infosfooter {
+        width: 100%;
+        height: auto;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 2rem 1.5rem;
+
+        padding-bottom: 1.5rem;
+    }
+
+    #senai {
+        grid-column: 1 / -1;
+
+        width: 100%;
+
+        align-items: center;
+
+        text-align: center;
+
+        padding-bottom: 1rem;
+
+        border-bottom: 1px solid rgba(255, 255, 255, .35);
+    }
+
+    #senaiimg {
+        width: 125px;
+        height: 40px;
+
+        margin-bottom: .5rem;
+    }
+
+    #senai h2 {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+    #socialMidia {
+        width: auto;
+
+        justify-content: center;
+
+        gap: 1.2rem;
+    }
+
+    #socialMidia i {
+        font-size: 1.4rem;
+    }
+
+    #navegacao,
+    #categorias {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    #navegacao h2,
+    #categorias h2,
+    #localizacao h2 {
+        font-size: .9rem;
+        margin-bottom: .3rem;
+    }
+
+    #navegacao ul,
+    #categorias ul {
+        gap: .55rem;
+    }
+
+    #navegacao li,
+    #categorias li {
+        font-size: .8rem;
+    }
+
+    #localizacao {
+        grid-column: 1 / -1;
+
+        width: 100%;
+
+        padding-top: 1rem;
+
+        border-top: 1px solid rgba(255, 255, 255, .25);
+    }
+
+    #localizacao ul {
+        gap: .7rem;
+    }
+
+    #localizacao li {
+        font-size: .78rem;
+        line-height: 1.5;
+    }
+
+    #copydiv {
+        width: 100%;
+
+        padding-top: 1.2rem;
+
+        border-top: 1px solid rgba(255, 255, 255, .35);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: .7rem;
+
+        text-align: center;
+    }
+
+    #copydiv p {
+        font-size: .7rem;
+        line-height: 1.4;
+    }
+
+    #btnAdm {
+        display: none;
+    }
+
+    /* MODAL */
+
+    .modalSection {
+        padding: .7rem;
+    }
+
+    .modalConteudo {
+        width: 100%;
+        max-width: none;
+
+        height: 94vh;
+
+        padding: 1rem;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 1rem;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        border-radius: 16px;
+    }
+
+    .ladoEsquerdo,
+    .ladoDireito {
+        width: 100%;
+        padding: 0;
+    }
+
+    .img-modal {
+        width: 100%;
+        height: 190px;
+    }
+
+    .modalHead {
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: .8rem;
+
+        margin-bottom: 1rem;
+    }
+
+    .modalHead h2 {
+        font-size: 1.5rem;
+    }
+
+    .modalHead p {
+        font-size: .85rem;
+    }
+
+    .modalDescricao p {
+        font-size: .85rem;
+        line-height: 1.5;
+    }
+
+    .modalDetalhes {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: .6rem;
+    }
+
+    .modalDetalhes div {
+        padding: .8rem;
+    }
+
+    .modalDetalhes span {
+        font-size: .7rem;
+    }
+
+    .modalDetalhes strong {
+        font-size: .8rem;
+    }
+
+    .informacoesPrincipais {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .informacoes {
+        gap: .7rem;
+    }
+
+    .gradeCurricular {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    .gradeCurricular div {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .gradeCurricular button {
+        width: 100%;
+    }
+
+    .aviso {
+        padding: 1rem;
+    }
+
+    .aviso p {
+        font-size: .8rem;
+        line-height: 1.5;
+    }
+
+    .btnBaixo {
+        justify-content: center;
+    }
+
+    .btnFechar {
+        width: 100%;
+    }
+
+    .fecharModal {
+        top: 10px;
+        right: 12px;
+    }
 }
