@@ -1274,7 +1274,7 @@ ul {
     #banner {
         width: 100%;
         height: auto;
-        min-height: 650px;
+        min-height: 600px;
 
         display: flex;
         align-items: stretch;
