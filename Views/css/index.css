@@ -884,8 +884,6 @@ ul {
 }
 
 .img-modal {
-    background: url("/img/senai.png");
-
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -896,9 +894,10 @@ ul {
     border-radius: 14px;
 }
 
+
 .modalidade-modal {
     display: inline-block;
-
+    z-index: 1000;
     margin: 15px;
 
     background: #F95512;

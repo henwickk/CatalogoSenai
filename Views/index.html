@@ -144,7 +144,7 @@
             <div id="cursos">
 
                 <!-- CARD 1 -->
-                <div class="card-curso">
+                <!-- <div class="card-curso">
 
                     <div class="imagemCurso">
                         <img src="/img/senai.jpg"
@@ -206,7 +206,7 @@
 
                     </div>
 
-                </div>
+                </div> -->
 
                 <!--
                     ADICIONE OS OUTROS CURSOS AQUI
@@ -420,9 +420,9 @@
     </footer>
 
     <!-- MODAL -->
-    <section class="modalSection">
+    <section class="modalSection" id="modalCurso">
 
-        <div class="modalConteudo">
+        <div class="modalConteudo" >
 
             <button class="fecharModal">
                 <i class="bi bi-x-lg"></i>
@@ -431,8 +431,8 @@
             <div class="ladoEsquerdo">
 
                 <div class="img-modal">
-
-                    <span class="modalidade-modal">
+                    <img class="img-modal" id="modalImagem" src="" alt="Imagem do curso">
+                    <span class="modalidade-modal" id="modalModalidade">
                         Técnico
                     </span>
 
@@ -448,7 +448,7 @@
 
                         <div>
                             <span>Turnos disponíveis</span>
-                            <strong>Manhã, Tarde e Noite</strong>
+                            <strong id="modalTurnos">Manhã, Tarde e Noite</strong>
                         </div>
 
                     </div>
@@ -459,7 +459,7 @@
 
                         <div>
                             <span>Local</span>
-                            <strong>SENAI Parnaíba</strong>
+                            <strong id="modalLocal">SENAI Parnaíba</strong>
                         </div>
 
                     </div>
@@ -470,7 +470,7 @@
 
                         <div>
                             <span>Valor</span>
-                            <strong>Gratuito</strong>
+                            <strong id="modalValor"></strong>
                         </div>
 
                     </div>
@@ -484,11 +484,11 @@
                 <div class="modalHead">
 
                     <div>
-                        <h2>Informática</h2>
-                        <p>Curso técnico em informática</p>
+                        <h2 id="modalNome"></h2>
+                        <p id="modalResumo"></p>
                     </div>
 
-                    <span class="status">
+                    <span class="status" id="modalStatus">
                         <i class="bi bi-check-circle-fill"></i>
                         Disponível
                     </span>
@@ -502,10 +502,8 @@
                         Descrição do curso
                     </h3>
 
-                    <p>
-                        O curso Técnico em Informática do SENAI forma
-                        profissionais preparados para atuar no desenvolvimento,
-                        manutenção e suporte a sistemas e redes.
+                    <p id="modalDescricao">
+                        
                     </p>
 
                 </div>
@@ -515,19 +513,19 @@
                     <div>
                         <i class="bi bi-mortarboard"></i>
                         <span>Modalidade</span>
-                        <strong>Técnico</strong>
+                        <strong id="modalDetalheModalidade">Técnico</strong>
                     </div>
 
                     <div>
                         <i class="bi bi-hourglass"></i>
                         <span>Carga horária</span>
-                        <strong>1.200h</strong>
+                        <strong id="modalCargaHoraria">1.200h</strong>
                     </div>
 
                     <div>
                         <i class="bi bi-grid"></i>
                         <span>Categoria</span>
-                        <strong>Tecnologia da informação</strong>
+                        <strong id="modalCategoria"></strong>
                     </div>
 
                 </div>
@@ -581,6 +579,7 @@
     </section>
 
     <script src="/script/index.js"></script>
+    <script src="/script/indexCard.js"></script>
 
 </body>
 </html>
