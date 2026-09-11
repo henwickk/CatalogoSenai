@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: #f2f2f2;
@@ -13,7 +13,7 @@ body{
     padding-top: 200px;
 }
 
-.login{
+.login {
     width: 400px;
     background-color: #fff;
     padding: 40px;
@@ -21,34 +21,34 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input{
+input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.perfil{
-    width:70px;
-    height:70px;
-    background:#1d2393;
-    color:#ff7a00;
-    border-radius:50%;
-    margin:auto;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-bottom:20px;
+.perfil {
+    width: 70px;
+    height: 70px;
+    background: #1d2393;
+    color: #ff7a00;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.perfil img{
-    max-width:100%;
-    height:auto;
-    border-radius:50%;
+.perfil img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
 }
 
 
-.box{
+.box {
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
@@ -57,41 +57,42 @@ input{
     margin-bottom: 15px;
 }
 
-.box i{
-    color:#1d2393;
-    font-size:18px;
+.box i {
+    color: #1d2393;
+    font-size: 18px;
     margin-right: 10px;
 }
 
-.box input{
-    outline:none;
-    flex:1;
+.box input {
+    outline: none;
+    flex: 1;
     border: none;
-    font-size:18px;
-}
-.esqueci{
-    float:right;
-    color:#ff7a00;
-    text-decoration:none;
-    margin-bottom:25px;
+    font-size: 18px;
 }
 
-button{
-    width:100%;
-    background:#1d2393;
-    color:white;
-    border:none;
-    border-radius:12px;
-    padding:18px;
-    font-size:15px;
-    cursor:pointer;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    transition:.3s;
+.esqueci {
+    float: right;
+    color: #ff7a00;
+    text-decoration: none;
+    margin-bottom: 25px;
 }
 
-button:hover{
-    background:#10207a;
+button {
+    width: 100%;
+    background: #1d2393;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 18px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: .3s;
+}
+
+button:hover {
+    background: #10207a;
 }
