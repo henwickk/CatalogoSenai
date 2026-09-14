@@ -2,179 +2,387 @@ const CardModel = require("../Models/cardModel");
 
 class CardController {
 
-  // Criar um novo card
-  static async criar(req, res) {
+    // =========================
+    // CRIAR CARD
+    // =========================
+    static async criar(req, res) {
 
-    try {
+        try {
 
-      const dados = req.body;
-      console.log("BODY:", req.body);
-      console.log("FILES:", req.files);
+            // Verifica se está logado
+            if (!req.session.usuario) {
+                return res.status(401).json({
+                    mensagem: "Usuário não está logado"
+                });
+            }
 
-      // =========================
-      // IMAGEM
-      // =========================
+            const dados = req.body;
 
-      if (req.files && req.files.imagem_curso) {
+            console.log("BODY:", req.body);
+            console.log("FILES:", req.files);
 
-        dados.imagem_curso =
-          req.files.imagem_curso[0].filename;
+            // =========================
+            // IMAGEM
+            // =========================
+            if (req.files && req.files.imagem_curso) {
 
-      } else {
+                dados.imagem_curso =
+                    req.files.imagem_curso[0].filename;
 
-        dados.imagem_curso = null;
+            } else {
 
-      }
+                dados.imagem_curso = null;
 
-
-      // =========================
-      // GRADE
-      // =========================
-
-      if (req.files && req.files.grade_curso) {
-
-        dados.grade_curso =
-          req.files.grade_curso[0].filename;
-
-      } else {
-
-        dados.grade_curso = null;
-
-      }
+            }
 
 
-      // =========================
-      // SALVAR NO BANCO
-      // =========================
+            // =========================
+            // GRADE
+            // =========================
+            if (req.files && req.files.grade_curso) {
 
-      const resultado = await CardModel.criar(dados);
+                dados.grade_curso =
+                    req.files.grade_curso[0].filename;
 
-      return res.status(201).json({
+            } else {
 
-        mensagem: "Card criado com sucesso!",
+                dados.grade_curso = null;
 
-        id: resultado.insertId
+            }
 
-      });
 
-    } catch (erro) {
+            // =========================
+            // USUÁRIO LOGADO
+            // =========================
+            dados.fk_usuario =
+                req.session.usuario.id_usuario;
 
-      console.error("ERRO AO CRIAR CARD:", erro);
 
-      return res.status(500).json({
+            // =========================
+            // SALVAR NO BANCO
+            // =========================
+            const resultado =
+                await CardModel.criar(dados);
 
-        mensagem: "Erro ao criar o card",
 
-        erro: erro.message
+            return res.status(201).json({
 
-      });
+                mensagem: "Card criado com sucesso!",
+
+                id: resultado.insertId
+
+            });
+
+        } catch (erro) {
+
+            console.error("ERRO AO CRIAR CARD:", erro);
+
+            return res.status(500).json({
+
+                mensagem: "Erro ao criar o card"
+
+            });
+
+        }
 
     }
 
-  }
+
+    // =========================
+    // LISTAR CARDS
+    // =========================
+    static async listarTodos(req, res) {
+
+        try {
+
+            // Verifica login
+            if (!req.session.usuario) {
+
+                return res.status(401).json({
+
+                    mensagem: "Usuário não está logado"
+
+                });
+
+            }
 
 
-  // Listar todos os cards
-  static async listarTodos(req, res) {
-    try {
-      const cursos = await CardModel.listarTodos();
+            const usuario =
+                req.session.usuario;
 
-      return res.status(200).json(cursos);
 
-    } catch (erro) {
-      console.error("ERRO AO LISTAR CARDS:", erro);
-      return res.status(500).json({
-        mensagem: "Erro ao buscar os cards",
-        erro: erro.message
-      });
+            let cursos;
+
+
+            // ADMIN → TODOS
+            if (usuario.tipo_usuario === "admin") {
+
+                cursos =
+                    await CardModel.listarTodos();
+
+            }
+
+            // USUÁRIO → SOMENTE OS DELE
+            else {
+
+                cursos =
+                    await CardModel.listarPorUsuario(
+                        usuario.id_usuario
+                    );
+
+            }
+
+
+            return res.status(200).json(cursos);
+
+
+        } catch (erro) {
+
+            console.error(
+                "ERRO AO LISTAR CARDS:",
+                erro
+            );
+
+            return res.status(500).json({
+
+                mensagem: "Erro ao buscar os cards"
+
+            });
+
+        }
+
     }
-  }
 
 
-  // Buscar card por ID
-  static async buscarPorId(req, res) {
-    try {
-      const { id } = req.params;
+    // =========================
+    // BUSCAR CARD POR ID
+    // =========================
+    static async buscarPorId(req, res) {
 
-      const curso = await CardModel.buscarPorId(id);
+        try {
 
-      if (!curso) {
-        return res.status(404).json({
-          mensagem: "Card não encontrado"
-        });
-      }
+            if (!req.session.usuario) {
 
-      return res.status(200).json(curso);
+                return res.status(401).json({
 
-    } catch (erro) {
-      console.error("ERRO AO ENCONTRAR CARD:", erro);
-      return res.status(500).json({
-        mensagem: "Erro ao buscar o card",
-        erro: erro.message
-      });
+                    mensagem: "Usuário não está logado"
+
+                });
+
+            }
+
+            const { id } = req.params;
+
+            const curso =
+                await CardModel.buscarPorId(id);
+
+
+            if (!curso) {
+
+                return res.status(404).json({
+
+                    mensagem: "Card não encontrado"
+
+                });
+
+            }
+
+
+            // Usuário normal não pode acessar
+            // curso de outro usuário
+            if (
+                req.session.usuario.tipo_usuario !== "admin" &&
+                curso.fk_usuario !==
+                    req.session.usuario.id_usuario
+            ) {
+
+                return res.status(403).json({
+
+                    mensagem:
+                        "Você não tem permissão para acessar este card"
+
+                });
+
+            }
+
+
+            return res.status(200).json(curso);
+
+
+        } catch (erro) {
+
+            console.error(
+                "ERRO AO ENCONTRAR CARD:",
+                erro
+            );
+
+            return res.status(500).json({
+
+                mensagem: "Erro ao buscar o card"
+
+            });
+
+        }
+
     }
-  }
 
 
-  // Editar parcialmente um card (PATCH)
-  static async editar(req, res) {
-    try {
-      const { id } = req.params;
-      const dados = req.body;
+    // =========================
+    // EDITAR CARD
+    // =========================
+    static async editar(req, res) {
 
-      const resultado = await CardModel.editar(id, dados);
+        try {
 
-      // Nenhum campo válido foi enviado
-      if (resultado === null) {
-        return res.status(400).json({
-          mensagem: "Nenhum campo válido foi enviado para atualização"
-        });
-      }
+            if (!req.session.usuario) {
 
-      // Card não encontrado
-      if (resultado.affectedRows === 0) {
-        return res.status(404).json({
-          mensagem: "Card não encontrado"
-        });
-      }
+                return res.status(401).json({
 
-      return res.status(200).json({
-        mensagem: "Card atualizado com sucesso!"
-      });
+                    mensagem: "Usuário não está logado"
 
-    } catch (erro) {
-      return res.status(500).json({
-        mensagem: "Erro ao atualizar o card",
-        erro: erro.message
-      });
+                });
+
+            }
+
+
+            const { id } = req.params;
+
+            const dados = req.body;
+
+            const usuario =
+                req.session.usuario;
+
+
+            const resultado =
+                await CardModel.editar(
+                    id,
+                    dados,
+                    usuario.id_usuario,
+                    usuario.tipo_usuario
+                );
+
+
+            if (resultado === null) {
+
+                return res.status(400).json({
+
+                    mensagem:
+                        "Nenhum campo válido foi enviado para atualização"
+
+                });
+
+            }
+
+
+            if (resultado.affectedRows === 0) {
+
+                return res.status(403).json({
+
+                    mensagem:
+                        "Você não tem permissão para editar este card"
+
+                });
+
+            }
+
+
+            return res.status(200).json({
+
+                mensagem:
+                    "Card atualizado com sucesso!"
+
+            });
+
+
+        } catch (erro) {
+
+            console.error(
+                "ERRO AO EDITAR CARD:",
+                erro
+            );
+
+            return res.status(500).json({
+
+                mensagem:
+                    "Erro ao atualizar o card"
+
+            });
+
+        }
+
     }
-  }
 
 
-  // Deletar um card
-  static async deletar(req, res) {
-    try {
-      const { id } = req.params;
+    // =========================
+    // DELETAR CARD
+    // =========================
+    static async deletar(req, res) {
 
-      const resultado = await CardModel.deletar(id);
+        try {
 
-      if (resultado.affectedRows === 0) {
-        return res.status(404).json({
-          mensagem: "Card não encontrado"
-        });
-      }
+            if (!req.session.usuario) {
 
-      return res.status(200).json({
-        mensagem: "Card deletado com sucesso!"
-      });
+                return res.status(401).json({
 
-    } catch (erro) {
-      return res.status(500).json({
-        mensagem: "Erro ao deletar o card",
-        erro: erro.message
-      });
+                    mensagem:
+                        "Usuário não está logado"
+
+                });
+
+            }
+
+
+            const { id } = req.params;
+
+            const usuario =
+                req.session.usuario;
+
+
+            const resultado =
+                await CardModel.deletar(
+                    id,
+                    usuario.id_usuario,
+                    usuario.tipo_usuario
+                );
+
+
+            if (resultado.affectedRows === 0) {
+
+                return res.status(403).json({
+
+                    mensagem:
+                        "Você não tem permissão para excluir este card"
+
+                });
+
+            }
+
+
+            return res.status(200).json({
+
+                mensagem:
+                    "Card deletado com sucesso!"
+
+            });
+
+
+        } catch (erro) {
+
+            console.error(
+                "ERRO AO DELETAR CARD:",
+                erro
+            );
+
+            return res.status(500).json({
+
+                mensagem:
+                    "Erro ao deletar o card"
+
+            });
+
+        }
+
     }
-  }
 
 }
 

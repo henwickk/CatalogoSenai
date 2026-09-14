@@ -1,29 +1,38 @@
 const bcrypt = require("bcrypt");
-const db = require("../config/db");
+const db = require("../../db/db");
 
 async function criarAdmin() {
-  try {
-    const nome_usuario = "admin";
-    const senha_usuario = "senai@2026";
+    try {
 
-    // Cria o hash da senha
-    const senhaHash = await bcrypt.hash(senha, 10);
+        const nome_usuario = "admin";
+        const senha_usuario = "senai@2026";
+        const tipo_usuario = "admin";
+        const status_usuario = "ativo";
 
-    const sql = `
-      INSERT INTO usuario (nome_usuario, senha_usuario)
-      VALUES (?, ?)
-    `;
+        const senhaHash = await bcrypt.hash(senha_usuario, 10);
 
-    await db.execute(sql, [nome_usuario, senha_usuarioHash]);
+        const sql = `
+            INSERT INTO usuario 
+            (nome_usuario, senha_usuario, tipo_usuario, status_usuario)
+            VALUES (?, ?, ?, ?)
+        `;
 
-    console.log("Admin criado com sucesso!");
+        await db.execute(sql, [
+            nome_usuario,
+            senhaHash,
+            tipo_usuario,
+            status_usuario
+        ]);
 
-  } catch (erro) {
-    console.error("Erro ao criar admin:", erro.message);
+        console.log("Admin criado com sucesso!");
 
-  } finally {
-    await db.end();
-  }
+    } catch (erro) {
+
+        console.error("Erro ao criar admin:", erro.message);
+
+    } finally {
+        await db.end();
+    }
 }
 
 criarAdmin();
