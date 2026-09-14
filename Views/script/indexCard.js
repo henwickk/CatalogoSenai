@@ -4,105 +4,11 @@ const containerCursos = document.getElementById("cursos");
 
 const modalCurso = document.getElementById("modalCurso");
 
+const botaoBaixarGrade = document.getElementById("baixarGrade");
+
 console.log("MODAL ENCONTRADO:", modalCurso);
 
-// async function carregarCursos() {
-//     try {
-//         const resposta = await fetch("http://localhost:3000/cards/");
 
-//         if (!resposta.ok) {
-//             throw new Error("Erro ao buscar os cursos");
-//         }
-
-//         const cursos = await resposta.json();
-
-//         console.log("CURSOS RECEBIDOS:", cursos);
-
-//         containerCursos.innerHTML = "";
-
-//         cursos.forEach((curso) => {
-
-//             const card = document.createElement("div");
-//             card.classList.add("card-curso");
-
-//             // Define o status de disponibilidade
-//             const disponivel =
-//                 curso.status_curso === "Ativo";
-
-//             card.innerHTML = `
-//                 <div class="imagemCurso">
-
-//                     <img
-//                         src="/uploads/img/${curso.imagem_curso}"
-//                         alt="Curso de ${curso.nome_curso}"
-//                         class="img-curso"
-//                     >
-
-//                     <span class="disponivel ${disponivel ? "" : "indisponivel"}">
-//                         ${disponivel ? "Disponível" : "Indisponível"}
-//                     </span>
-
-//                 </div>
-
-//                 <div class="infosCurso">
-
-//                     <div class="textoCurso">
-
-//                         <h4>${curso.nome_curso}</h4>
-
-//                         <p>
-//                             ${curso.categoria_curso}
-//                         </p>
-
-//                     </div>
-
-//                     <div class="dadosCurso">
-
-//                         <span>
-//                             <i class="bi bi-clock"></i>
-//                             ${curso.cargaHoraria_curso}h
-//                         </span>
-
-//                         <span>
-//                             ${curso.modalidade_curso}
-//                         </span>
-
-//                     </div>
-
-//                     <div class="turnosCurso">
-
-//                         <i class="bi bi-calendar3"></i>
-
-//                         <span>
-//                             ${curso.turno_curso}
-//                         </span>
-
-//                     </div>
-
-//                     <div class="rodapeCurso">
-
-//                         <strong>
-//                             ${Number(curso.valor_curso) === 0
-//                                         ? "Gratuito"
-//                                         : `R$ ${Number(curso.valor_curso).toFixed(2).replace(".", ",")}`
-//                                     }
-//                         </strong>
-
-//                         <button class="saiba-mais" type="button">
-//                             Saiba mais
-//                             <i class="bi bi-arrow-right"></i>
-//                         </button>
-
-//                     </div>
-//             `;
-
-//             containerCursos.appendChild(card);
-//         });
-
-//     } catch (erro) {
-//         console.error("ERRO AO CARREGAR OS CURSOS:", erro);
-//     }
-// }
 
 async function carregarCursos() {
     try {
@@ -273,6 +179,25 @@ function abrirModal(curso) {
     // Imagem
     document.getElementById("modalImagem").src =
         `/uploads/img/${curso.imagem_curso}`;
+
+    // Botao baixar Grade
+
+    botaoBaixarGrade.onclick = () => {
+
+        if (!curso.grade_curso) {
+            alert("Este curso não possui uma grade disponível.");
+            return;
+        }
+
+        const link = document.createElement("a");
+
+        link.href = `/uploads/grades/${curso.grade_curso}`;
+        link.download = curso.grade_curso;
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
 
     // Abre o modal
     modalCurso.classList.add("ativo");
