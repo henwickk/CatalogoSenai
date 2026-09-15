@@ -115,7 +115,7 @@ class CardController {
 
 
             // ADMIN → TODOS
-            if (usuario.tipo_usuario === "admin") {
+            if (usuario.tipo_usuario === "Administrador") {
 
                 cursos =
                     await CardModel.listarTodos();
@@ -191,9 +191,9 @@ class CardController {
             // Usuário normal não pode acessar
             // curso de outro usuário
             if (
-                req.session.usuario.tipo_usuario !== "admin" &&
+                req.session.usuario.tipo_usuario !== "Administrador" &&
                 curso.fk_usuario !==
-                    req.session.usuario.id_usuario
+                req.session.usuario.id_usuario
             ) {
 
                 return res.status(403).json({
@@ -251,6 +251,16 @@ class CardController {
 
             const usuario =
                 req.session.usuario;
+
+            if (req.files && req.files.imagem_curso) {
+                dados.imagem_curso =
+                    req.files.imagem_curso[0].filename;
+            }
+
+            if (req.files && req.files.grade_curso) {
+                dados.grade_curso =
+                    req.files.grade_curso[0].filename;
+            }
 
 
             const resultado =

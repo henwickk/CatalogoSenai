@@ -21,7 +21,14 @@ router.get("/", CardController.listarTodos);
 router.get("/:id", CardController.buscarPorId);
 
 // Editar parcialmente um card
-router.patch("/:id", CardController.editar);
+router.patch(
+    "/:id",
+    upload.fields([
+        { name: "imagem_curso", maxCount: 1 },
+        { name: "grade_curso", maxCount: 1 }
+    ]),
+    CardController.editar
+);
 
 // Deletar um card
 router.delete("/:id", CardController.deletar);
