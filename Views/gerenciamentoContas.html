@@ -39,14 +39,14 @@
           Cadastro Curso
         </a>
 
-        <a href="/gerenciamentoContas.html" class="menu-item active">
+        <a href="/gerenciamentoContas.html" class="menu-item active" id="menu-contas">
           <i class="bi bi-person-gear"></i>
-          Gerenciar Contas
+          <span>Gerenciar Contas</span>
         </a>
 
-        <a href="/login.html" class="menu-item">
+        <a href="#" class="menu-item" id="btnLogout">
           <i class="bi bi-box-arrow-left"></i>
-          Sair
+          <span>Sair</span>
         </a>
 
       </nav>
@@ -82,13 +82,8 @@
 
         <div class="user">
 
-          <div class="avatar" id="usuarioAvatar">
-            A
-          </div>
-
-          <span id="usuarioNome">
-            Administrador
-          </span>
+          <div class="avatar" id="avatar-usuario">A</div>
+          <span id="nome-usuario">Administrador</span>
 
         </div>
 
@@ -160,99 +155,6 @@
                     ========================== -->
 
           <div id="lista-usuarios">
-
-
-            <!-- USUÁRIO 1 -->
-
-            <div class="usuario" data-usuario-id="1">
-
-              <div class="usuario-info">
-
-                <div class="avatar-tabela">
-                  J
-                </div>
-
-                <div class="usuario-dados">
-
-                  <strong class="usuario-nome">
-                    João Silva
-                  </strong>
-
-                </div>
-
-              </div>
-
-
-              <div class="cursos-cadastrados">
-                5 cursos
-              </div>
-
-
-              <div class="usuario-status">
-
-                <span class="status ativo">
-                  Ativo
-                </span>
-
-              </div>
-
-
-              <div class="acoes">
-
-                <button type="button" class="delete btn-desativar" title="Desativar conta">
-                  Desativar conta
-                </button>
-
-              </div>
-
-            </div>
-
-
-            <!-- USUÁRIO 2 -->
-
-            <div class="usuario" data-usuario-id="2">
-
-              <div class="usuario-info">
-
-                <div class="avatar-tabela">
-                  M
-                </div>
-
-                <div class="usuario-dados">
-
-                  <strong class="usuario-nome">
-                    Maria Santos
-                  </strong>
-
-                </div>
-
-              </div>
-
-
-              <div class="cursos-cadastrados">
-                3 cursos
-              </div>
-
-
-              <div class="usuario-status">
-
-                <span class="status ativo">
-                  Ativo
-                </span>
-
-              </div>
-
-
-              <div class="acoes">
-
-                <button type="button" class="delete btn-desativar" title="Desativar conta">
-                  Desativar conta
-                </button>
-
-              </div>
-
-            </div>
-
           </div>
 
 
@@ -263,7 +165,7 @@
           <div class="table-footer">
 
             <span id="contadorContas">
-              2 contas cadastradas
+              0 contas cadastradas
             </span>
 
             <div class="paginacao">
@@ -370,6 +272,7 @@
 
 
   <script src="/script/gerenciamentoContas.js"></script>
+  <script src="/script/usuarioLogado.js"></script>
 
 </body>
 

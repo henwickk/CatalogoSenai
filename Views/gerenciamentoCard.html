@@ -35,12 +35,12 @@
           <span>Cadastro Curso</span>
         </a>
 
-        <a href="gerenciamentoContas.html" class="menu-item">
+        <a href="gerenciamentoContas.html" class="menu-item" id="menu-contas">
           <i class="bi bi-person-gear"></i>
           <span>Gerenciar Contas</span>
         </a>
 
-        <a href="login.html" class="menu-item">
+        <a href="#" class="menu-item" id="btnLogout">
           <i class="bi bi-box-arrow-left"></i>
           <span>Sair</span>
         </a>
@@ -71,10 +71,8 @@
       <header class="topbar">
 
         <div class="user">
-
-          <div class="avatar">A</div>
-
-          <span>Administrador</span>
+          <div class="avatar" id="avatar-usuario">A</div>
+          <span id="nome-usuario">Administrador</span>
         </div>
 
       </header>
@@ -208,7 +206,7 @@
             Nome do curso <span>*</span>
           </label>
 
-          <input type="text" value="Confeiteiro">
+          <input type="text" id="editarNomeCurso">
 
         </div>
 
@@ -221,13 +219,11 @@
             Modalidade <span>*</span>
           </label>
 
-          <select>
-
+          <select id="editarModalidade">
             <option>Qualificação</option>
             <option>Profissionalizante</option>
             <option>Técnico</option>
             <option>Aperfeiçoamento</option>
-
           </select>
 
         </div>
@@ -241,7 +237,7 @@
             Descrição <span>*</span>
           </label>
 
-          <textarea>Curso de qualificação profissional para formação de confeiteiros, com foco em técnicas de preparo de massas, recheios, coberturas e decoração.</textarea>
+          <textarea id="editarDescricao"></textarea>
 
           <small>142/1000</small>
 
@@ -256,7 +252,7 @@
             Carga horária (h) <span>*</span>
           </label>
 
-          <input type="number" value="200">
+          <input type="number" id="editarCargaHoraria">
 
         </div>
 
@@ -269,14 +265,13 @@
             Categoria <span>*</span>
           </label>
 
-          <select>
-
+          <select id="editarCategoria">
             <option>Alimentação</option>
             <option>Construção</option>
             <option>Informática</option>
             <option>Gestão</option>
             <option>Indústria</option>
-
+            <option>Administração</option>
           </select>
 
         </div>
@@ -293,27 +288,18 @@
           <div class="turnos">
 
             <label>
-
-              <input type="checkbox" checked>
-
+              <input type="checkbox" id="editarManha">
               <span>Manhã</span>
-
             </label>
 
             <label>
-
-              <input type="checkbox">
-
+              <input type="checkbox" id="editarTarde">
               <span>Tarde</span>
-
             </label>
 
             <label>
-
-              <input type="checkbox">
-
+              <input type="checkbox" id="editarNoite">
               <span>Noite</span>
-
             </label>
 
           </div>
@@ -329,7 +315,7 @@
             Local <span>*</span>
           </label>
 
-          <input type="text" value="SENAI Parnaíba">
+          <input type="text" id="editarLocal">
 
         </div>
 
@@ -342,7 +328,7 @@
             Valor
           </label>
 
-          <input type="number" value="0.00" step="0.01">
+          <input type="number" id="editarValor" step="0.01">
 
           <small>
             Deixe 0,00 para cursos gratuitos
@@ -371,12 +357,12 @@
 
               <div>
 
-                <strong>
-                  Desenvolvimento Web.png
+                <strong id="nomeImagemEditar">
+                  Nenhuma imagem selecionada
                 </strong>
 
-                <small>
-                  128 KB
+                <small id="tamanhoImagemEditar">
+                  —
                 </small>
 
               </div>
@@ -384,9 +370,11 @@
             </div>
 
 
-            <button type="button">
+            <button type="button" id="trocarImagem">
               Trocar imagem
             </button>
+
+            <input type="file" id="editarImagem" accept=".jpg,.jpeg,.png" style="display: none;">
 
 
             <button type="button" class="btn-excluir-arquivo">
@@ -424,12 +412,12 @@
 
               <div>
 
-                <strong>
-                  grade_confeiteiro.pdf
+                <strong id="nomeGradeEditar">
+                  Nenhuma grade selecionada
                 </strong>
 
-                <small>
-                  245 KB
+                <small id="tamanhoGradeEditar">
+                  —
                 </small>
 
               </div>
@@ -437,9 +425,11 @@
             </div>
 
 
-            <button type="button">
+            <button type="button" id="trocarGrade">
               Trocar arquivo
             </button>
+
+            <input type="file" id="editarGrade" accept=".pdf" style="display: none;">
 
 
             <button type="button" class="btn-excluir-arquivo">
@@ -482,11 +472,11 @@ Ex-alunos SENAI possuem 50% de desconto em cursos pagos.</textarea>
             Status do curso <span>*</span>
           </label>
 
-          <select>
-
+          <select id="editarStatus">
+            <option>Em andamento</option>
             <option>Publicado</option>
             <option>Rascunho</option>
-
+            <option>Encerrado</option>
           </select>
 
         </div>
@@ -512,8 +502,60 @@ Ex-alunos SENAI possuem 50% de desconto em cursos pagos.</textarea>
 
   </div>
 
+  <div id="modalSenha" class="modal-senha-overlay">
+
+    <div class="modal-senha">
+
+      <div class="modal-senha-header">
+        <h2>Alterar senha</h2>
+
+        <button type="button" id="fecharModalSenha">
+          &times;
+        </button>
+      </div>
+
+      <div class="modal-senha-conteudo">
+
+        <div class="campo-senha">
+          <label for="senhaAtual">Senha atual</label>
+          <input type="password" id="senhaAtual" placeholder="Digite sua senha atual">
+        </div>
+
+        <div class="campo-senha">
+          <label for="novaSenha">Nova senha</label>
+          <input type="password" id="novaSenha" placeholder="Digite a nova senha">
+        </div>
+
+        <div class="campo-senha">
+          <label for="confirmarNovaSenha">
+            Confirmar nova senha
+          </label>
+
+          <input type="password" id="confirmarNovaSenha" placeholder="Digite novamente a nova senha">
+        </div>
+
+      </div>
+
+      <div class="modal-senha-acoes">
+
+        <button type="button" id="cancelarModalSenha" class="btn-cancelar-senha">
+          Cancelar
+        </button>
+
+        <button type="button" id="salvarSenha" class="btn-salvar-senha">
+          Alterar senha
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
 
   <script src="script/gerenciamentoCard.js"></script>
+  <script src="/script/usuarioLogado.js"></script>
+  <script src="/script/alterarSenha.js"></script>
 
 </body>
 

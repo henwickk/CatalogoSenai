@@ -158,7 +158,7 @@ class CardModel {
         `;
 
         // Usuário normal só pode editar o próprio curso
-        if (tipo_usuario !== "admin") {
+        if (tipo_usuario !== "Administrador") {
             sql += ` AND fk_usuario = ?`;
             valores.push(id_usuario);
         }
@@ -180,7 +180,7 @@ class CardModel {
         const valores = [id];
 
         // Usuário normal só pode deletar o próprio curso
-        if (tipo_usuario !== "admin") {
+        if (tipo_usuario !== "Administrador") {
             sql += ` AND fk_usuario = ?`;
             valores.push(id_usuario);
         }

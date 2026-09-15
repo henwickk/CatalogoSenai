@@ -1,4 +1,5 @@
 const formulario = document.getElementById("formCard");
+
 const botaoSalvar = formulario.querySelector(".save");
 
 console.log("CRIAR CARD JS CARREGADO!");
@@ -13,7 +14,9 @@ const turnos = document.querySelectorAll(".shift");
 turnos.forEach((turno) => {
 
     turno.addEventListener("click", () => {
+
         turno.classList.toggle("active");
+
     });
 
 });
@@ -26,10 +29,16 @@ turnos.forEach((turno) => {
 formulario.addEventListener("submit", async (event) => {
 
     event.preventDefault();
+
     botaoSalvar.classList.add("is-saving");
 
-    // Pega os turnos selecionados
-    const turnosSelecionados = [...document.querySelectorAll(".shift.active")]
+
+    // =========================
+    // TURNOS SELECIONADOS
+    // =========================
+
+    const turnosSelecionados =
+        [...document.querySelectorAll(".shift.active")]
         .map((turno) => turno.dataset.value);
 
 
@@ -38,6 +47,7 @@ formulario.addEventListener("submit", async (event) => {
     // =========================
 
     const dados = new FormData();
+
 
     dados.append(
         "nome_curso",
@@ -89,10 +99,16 @@ formulario.addEventListener("submit", async (event) => {
     // IMAGEM
     // =========================
 
-    const imagem = document.getElementById("imagem_curso").files[0];
+    const imagem =
+        document.getElementById("imagem_curso").files[0];
 
     if (imagem) {
-        dados.append("imagem_curso", imagem);
+
+        dados.append(
+            "imagem_curso",
+            imagem
+        );
+
     }
 
 
@@ -100,67 +116,94 @@ formulario.addEventListener("submit", async (event) => {
     // GRADE
     // =========================
 
-    const grade = document.getElementById("grade-file").files[0];
+    const grade =
+        document.getElementById("grade-file").files[0];
 
     if (grade) {
-        dados.append("grade_curso", grade);
+
+        dados.append(
+            "grade_curso",
+            grade
+        );
+
     }
 
 
-    // Mostra no console
     console.log("DADOS DO CARD:", dados);
 
 
     try {
 
-        const resposta = await fetch("http://localhost:3000/cards/", {
+        const resposta = await fetch(
+            "/cards/",
+            {
+                method: "POST",
+                body: dados,
+                credentials: "include"
+            }
+        );
 
-            method: "POST",
 
-            // NÃO colocar Content-Type aqui!
-            body: dados
-
-        });
+        const resultado =
+            await resposta.json();
 
 
-        const resultado = await resposta.json();
-
-        console.log("RESPOSTA DO SERVIDOR:", resultado);
+        console.log(
+            "RESPOSTA DO SERVIDOR:",
+            resultado
+        );
 
 
         if (!resposta.ok) {
 
             alert(
                 "Erro: " +
-                (resultado.erro || "Erro ao cadastrar")
+                (resultado.mensagem ||
+                 resultado.erro ||
+                 "Erro ao cadastrar")
             );
 
             return;
+
         }
 
 
-        alert("Card criado com sucesso!");
+        alert(
+            "Card criado com sucesso!"
+        );
+
 
         formulario.reset();
 
 
         // Desmarca os turnos
-        document.querySelectorAll(".shift.active").forEach((turno) => {
-            turno.classList.remove("active");
-        });
+
+        document
+            .querySelectorAll(".shift.active")
+            .forEach((turno) => {
+
+                turno.classList.remove("active");
+
+            });
 
 
     } catch (erro) {
 
-        console.error("ERRO NO FETCH:", erro);
+        console.error(
+            "ERRO NO FETCH:",
+            erro
+        );
 
-        alert("Não foi possível conectar ao servidor");
+        alert(
+            "Não foi possível conectar ao servidor"
+        );
 
     } finally {
 
-        botaoSalvar.classList.remove("is-saving");
+        botaoSalvar.classList.remove(
+            "is-saving"
+        );
 
     }
 
 });
-

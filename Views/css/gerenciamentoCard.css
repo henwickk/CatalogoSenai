@@ -1199,3 +1199,135 @@ body {
 
     background: #1e53bb;
 }
+
+/* ============================= */
+/* MODAL ALTERAR SENHA */
+/* ============================= */
+
+.modal-senha-overlay {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+}
+
+.modal-senha-overlay.ativo {
+    display: flex;
+}
+
+.modal-senha {
+    width: 420px;
+    max-width: 90%;
+
+    background: #fff;
+    border-radius: 12px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+.modal-senha-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 24px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.modal-senha-header h2 {
+    margin: 0;
+
+    color: #02095A;
+    font-size: 20px;
+}
+
+.modal-senha-header button {
+    border: none;
+    background: none;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    color: #666;
+}
+
+.modal-senha-conteudo {
+    padding: 24px;
+}
+
+.campo-senha {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-bottom: 18px;
+}
+
+.campo-senha label {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #333;
+}
+
+.campo-senha input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #ddd;
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.campo-senha input:focus {
+    border-color: #005CAA;
+}
+
+.modal-senha-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    padding: 18px 24px;
+
+    border-top: 1px solid #eee;
+}
+
+.btn-cancelar-senha,
+.btn-salvar-senha {
+    border: none;
+    border-radius: 7px;
+
+    padding: 10px 16px;
+
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-cancelar-senha {
+    background: #eee;
+    color: #333;
+}
+
+.btn-salvar-senha {
+    background: #005CAA;
+    color: white;
+}

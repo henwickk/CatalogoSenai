@@ -4,9 +4,9 @@ const db = require("../../db/db");
 async function criarAdmin() {
     try {
 
-        const nome_usuario = "admin";
+        const nome_usuario = "Administrador";
         const senha_usuario = "senai@2026";
-        const tipo_usuario = "admin";
+        const tipo_usuario = "Administrador";
         const status_usuario = "ativo";
 
         const senhaHash = await bcrypt.hash(senha_usuario, 10);
