@@ -6,11 +6,13 @@ const modalCurso = document.getElementById("modalCurso");
 
 const botaoBaixarGrade = document.getElementById("baixarGrade");
 
+let cursos = [];
+
 console.log("MODAL ENCONTRADO:", modalCurso);
 
 
-
 async function carregarCursos() {
+
     try {
 
         console.log("COMEÇANDO A BUSCAR CURSOS...");
@@ -23,92 +25,167 @@ async function carregarCursos() {
             throw new Error("Erro ao buscar os cursos");
         }
 
-        const cursos = await resposta.json();
+        cursos = await resposta.json();
 
         console.log("CURSOS RECEBIDOS:", cursos);
 
-        containerCursos.innerHTML = "";
-
-        cursos.forEach((curso) => {
-
-            console.log("CRIANDO CARD:", curso);
-
-            const card = document.createElement("div");
-
-            card.classList.add("card-curso");
-
-            card.innerHTML = `
-                <div class="imagemCurso">
-                    <img
-                        src="/uploads/img/${curso.imagem_curso}"
-                        alt="Curso de ${curso.nome_curso}"
-                        class="img-curso"
-                    >
-
-                    <span class="${curso.status_curso === "Disponível"
-                    ? "disponivel"
-                    : "indisponivel"
-                }">
-    ${curso.status_curso}
-</span>
-                </div>
-
-                <div class="infosCurso">
-
-                    <div class="textoCurso">
-                        <h4>${curso.nome_curso}</h4>
-                        <p>${curso.categoria_curso}</p>
-                    </div>
-
-                    <div class="dadosCurso">
-                        <span>
-                            <i class="bi bi-clock"></i>
-                            ${curso.cargaHoraria_curso}h
-                        </span>
-
-                        <span>
-                            ${curso.modalidade_curso}
-                        </span>
-                    </div>
-
-                    <div class="turnosCurso">
-                        <i class="bi bi-calendar3"></i>
-                        <span>${curso.turno_curso}</span>
-                    </div>
-
-                    <div class="rodapeCurso">
-
-                        <strong>
-                            ${Number(curso.valor_curso) === 0
-                    ? "Gratuito"
-                    : `R$ ${Number(curso.valor_curso)
-                        .toFixed(2)
-                        .replace(".", ",")}`
-                }
-                        </strong>
-
-                        <button class="saiba-mais" type="button">
-                            Saiba mais
-                            <i class="bi bi-arrow-right"></i>
-                        </button>
-
-                    </div>
-
-                </div>
-            `;
-
-            containerCursos.appendChild(card);
-
-            const botaoSaibaMais = card.querySelector(".saiba-mais");
-
-            botaoSaibaMais.addEventListener("click", () => {
-                abrirModal(curso);
-            });
-        });
+        renderizarCursos(cursos);
 
     } catch (erro) {
+
         console.error("ERRO AO CARREGAR OS CURSOS:", erro);
+
     }
+}
+
+
+function renderizarCursos(listaCursos) {
+
+    containerCursos.innerHTML = "";
+
+    listaCursos.forEach((curso) => {
+
+        console.log("CRIANDO CARD:", curso);
+
+        const card = document.createElement("div");
+
+        card.classList.add("card-curso");
+
+        card.innerHTML = `
+            <div class="imagemCurso">
+
+                <img
+                    src="/uploads/img/${curso.imagem_curso}"
+                    alt="Curso de ${curso.nome_curso}"
+                    class="img-curso"
+                >
+
+                <span class="${curso.status_curso === "Disponível"
+                ? "disponivel"
+                : "indisponivel"
+            }">
+                    ${curso.status_curso}
+                </span>
+
+            </div>
+
+            <div class="infosCurso">
+
+                <div class="textoCurso">
+
+                    <h4>${curso.nome_curso}</h4>
+
+                    <p>${curso.categoria_curso}</p>
+
+                </div>
+
+                <div class="dadosCurso">
+
+                    <span>
+                        <i class="bi bi-clock"></i>
+                        ${curso.cargaHoraria_curso}h
+                    </span>
+
+                    <span>
+                        ${curso.modalidade_curso}
+                    </span>
+
+                </div>
+
+                <div class="turnosCurso">
+
+                    <i class="bi bi-calendar3"></i>
+
+                    <span>
+                        ${curso.turno_curso}
+                    </span>
+
+                </div>
+
+                <div class="rodapeCurso">
+
+                    <strong>
+                        ${Number(curso.valor_curso) === 0
+                ? "Gratuito"
+                : `R$ ${Number(curso.valor_curso)
+                    .toFixed(2)
+                    .replace(".", ",")}`
+            }
+                    </strong>
+
+                    <button class="saiba-mais" type="button">
+                        Saiba mais
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+        `;
+
+        containerCursos.appendChild(card);
+
+        const botaoSaibaMais =
+            card.querySelector(".saiba-mais");
+
+        botaoSaibaMais.addEventListener("click", () => {
+            abrirModal(curso);
+        });
+
+    });
+}
+
+// FILTRO
+function filtrarCursos() {
+
+    const categoria =
+        document.getElementById("categoria").value;
+
+    const pesquisa =
+        document
+            .getElementById("inputPesquisa")
+            .value
+            .toLowerCase()
+            .trim();
+
+    const cursosFiltrados = cursos.filter((curso) => {
+
+        const nome =
+            curso.nome_curso.toLowerCase();
+
+        const categoriaCurso =
+            curso.categoria_curso.toLowerCase();
+
+        // Pesquisa
+        const encontrouPesquisa =
+            nome.includes(pesquisa) ||
+            categoriaCurso.includes(pesquisa);
+
+        // Categoria
+        let encontrouCategoria = true;
+
+        if (categoria === "tecnico") {
+
+            encontrouCategoria =
+                categoriaCurso === "técnico";
+
+        } else if (categoria === "gratuito") {
+
+            encontrouCategoria =
+                Number(curso.valor_curso) === 0;
+
+        } else if (categoria === "pago") {
+
+            encontrouCategoria =
+                Number(curso.valor_curso) > 0;
+
+        }
+
+        return encontrouPesquisa && encontrouCategoria;
+
+    });
+
+    renderizarCursos(cursosFiltrados);
 }
 
 function abrirModal(curso) {
@@ -227,5 +304,13 @@ document
         modalCurso.classList.remove("ativo");
 
     });
+
+document
+    .getElementById("categoria")
+    .addEventListener("change", filtrarCursos);
+
+document
+    .getElementById("inputPesquisa")
+    .addEventListener("input", filtrarCursos);
 
 carregarCursos();
