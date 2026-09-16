@@ -3,11 +3,12 @@ console.log("GERENCIAMENTO CARD JS CARREGADO!");
 // =========================
 // LISTAR CURSOS
 // =========================
+
 async function carregarCursos() {
 
     try {
 
-        const resposta = await fetch("/cards/", {
+        const resposta = await fetch("/cards/gerenciamento", {
             credentials: "include"
         });
 
@@ -32,14 +33,16 @@ async function carregarCursos() {
 
             div.innerHTML = `
                 <div class="course-info">
+
                     <img
-    src="/uploads/img/${curso.imagem_curso}"
-    alt="${curso.nome_curso}"
->
+                        src="/uploads/img/${curso.imagem_curso}"
+                        alt="${curso.nome_curso}"
+                    >
 
                     <div>
                         <h3>${curso.nome_curso}</h3>
                     </div>
+
                 </div>
 
                 <div>
@@ -82,11 +85,15 @@ async function carregarCursos() {
             `;
 
             lista.appendChild(div);
+
         });
 
     } catch (erro) {
 
-        console.error("ERRO AO CARREGAR CURSOS:", erro);
+        console.error(
+            "ERRO AO CARREGAR CURSOS:",
+            erro
+        );
 
     }
 }
@@ -95,6 +102,7 @@ async function carregarCursos() {
 // =========================
 // EXCLUIR CURSO
 // =========================
+
 async function excluirCurso(id) {
 
     const confirmar = confirm(
@@ -114,7 +122,10 @@ async function excluirCurso(id) {
 
         const resultado = await resposta.json();
 
-        console.log("RESPOSTA DA EXCLUSÃO:", resultado);
+        console.log(
+            "RESPOSTA DA EXCLUSÃO:",
+            resultado
+        );
 
         if (!resposta.ok) {
 
@@ -127,15 +138,23 @@ async function excluirCurso(id) {
             return;
         }
 
-        alert("Curso excluído com sucesso!");
+        alert(
+            "Curso excluído com sucesso!"
+        );
 
         carregarCursos();
 
     } catch (erro) {
 
-        console.error("ERRO AO EXCLUIR:", erro);
+        console.error(
+            "ERRO AO EXCLUIR:",
+            erro
+        );
 
-        alert("Não foi possível conectar ao servidor.");
+        alert(
+            "Não foi possível conectar ao servidor."
+        );
+
     }
 }
 
@@ -143,9 +162,17 @@ async function excluirCurso(id) {
 // =========================
 // EDITAR CURSO
 // =========================
+
 let cursoEditando = null;
+
 let novaImagem = null;
+
 let novaGrade = null;
+
+
+// =========================
+// ELEMENTOS DOS ARQUIVOS
+// =========================
 
 const trocarImagem =
     document.getElementById("trocarImagem");
@@ -160,15 +187,31 @@ const editarGrade =
     document.getElementById("editarGrade");
 
 
+// =========================
+// TROCAR IMAGEM
+// =========================
+
 trocarImagem.addEventListener("click", () => {
+
     editarImagem.click();
+
 });
 
+
+// =========================
+// TROCAR GRADE
+// =========================
 
 trocarGrade.addEventListener("click", () => {
+
     editarGrade.click();
+
 });
 
+
+// =========================
+// NOVA IMAGEM SELECIONADA
+// =========================
 
 editarImagem.addEventListener("change", () => {
 
@@ -177,12 +220,17 @@ editarImagem.addEventListener("change", () => {
         novaImagem = editarImagem.files[0];
 
         const nome =
-            document.getElementById("nomeImagemEditar");
+            document.getElementById(
+                "nomeImagemEditar"
+            );
 
         const tamanho =
-            document.getElementById("tamanhoImagemEditar");
+            document.getElementById(
+                "tamanhoImagemEditar"
+            );
 
-        nome.textContent = novaImagem.name;
+        nome.textContent =
+            novaImagem.name;
 
         tamanho.textContent =
             `${(novaImagem.size / 1024).toFixed(0)} KB`;
@@ -191,10 +239,15 @@ editarImagem.addEventListener("change", () => {
             "Nova imagem:",
             novaImagem.name
         );
+
     }
 
 });
 
+
+// =========================
+// NOVA GRADE SELECIONADA
+// =========================
 
 editarGrade.addEventListener("change", () => {
 
@@ -203,12 +256,17 @@ editarGrade.addEventListener("change", () => {
         novaGrade = editarGrade.files[0];
 
         const nome =
-            document.getElementById("nomeGradeEditar");
+            document.getElementById(
+                "nomeGradeEditar"
+            );
 
         const tamanho =
-            document.getElementById("tamanhoGradeEditar");
+            document.getElementById(
+                "tamanhoGradeEditar"
+            );
 
-        nome.textContent = novaGrade.name;
+        nome.textContent =
+            novaGrade.name;
 
         tamanho.textContent =
             `${(novaGrade.size / 1024).toFixed(0)} KB`;
@@ -217,6 +275,7 @@ editarGrade.addEventListener("change", () => {
             "Nova grade:",
             novaGrade.name
         );
+
     }
 
 });
@@ -228,17 +287,27 @@ editarGrade.addEventListener("change", () => {
 
 async function editarCurso(id) {
 
-    console.log("Editando curso:", id);
+    console.log(
+        "Editando curso:",
+        id
+    );
 
     try {
 
-        const resposta = await fetch(`/cards/${id}`, {
-            credentials: "include"
-        });
+        const resposta = await fetch(
+            `/cards/${id}`,
+            {
+                credentials: "include"
+            }
+        );
 
-        const curso = await resposta.json();
+        const curso =
+            await resposta.json();
 
-        console.log("CURSO PARA EDITAR:", curso);
+        console.log(
+            "CURSO PARA EDITAR:",
+            curso
+        );
 
         if (!resposta.ok) {
 
@@ -250,80 +319,147 @@ async function editarCurso(id) {
             return;
         }
 
+
+        // =========================
+        // DEFINIR CURSO
+        // =========================
+
         cursoEditando = id;
 
+
+        // =========================
+        // LIMPAR ARQUIVOS NOVOS
+        // =========================
+
+        novaImagem = null;
+
+        novaGrade = null;
+
+        editarImagem.value = "";
+
+        editarGrade.value = "";
+
+
+        // =========================
+        // ELEMENTOS DOS ARQUIVOS
+        // =========================
+
         const nomeImagem =
-    document.getElementById("nomeImagemEditar");
+            document.getElementById(
+                "nomeImagemEditar"
+            );
 
-const tamanhoImagem =
-    document.getElementById("tamanhoImagemEditar");
+        const tamanhoImagem =
+            document.getElementById(
+                "tamanhoImagemEditar"
+            );
 
-const nomeGrade =
-    document.getElementById("nomeGradeEditar");
+        const nomeGrade =
+            document.getElementById(
+                "nomeGradeEditar"
+            );
 
-const tamanhoGrade =
-    document.getElementById("tamanhoGradeEditar");
-
-
-if (curso.imagem_curso) {
-
-    nomeImagem.textContent =
-        curso.imagem_curso;
-
-    tamanhoImagem.textContent =
-        "Arquivo atual";
-} else {
-
-    nomeImagem.textContent =
-        "Nenhuma imagem selecionada";
-
-    tamanhoImagem.textContent =
-        "—";
-}
+        const tamanhoGrade =
+            document.getElementById(
+                "tamanhoGradeEditar"
+            );
 
 
-if (curso.grade_curso) {
+        // =========================
+        // IMAGEM ATUAL
+        // =========================
 
-    nomeGrade.textContent =
-        curso.grade_curso;
+        if (curso.imagem_curso) {
 
-    tamanhoGrade.textContent =
-        "Arquivo atual";
-} else {
+            nomeImagem.textContent =
+                curso.imagem_curso;
 
-    nomeGrade.textContent =
-        "Nenhuma grade selecionada";
+            tamanhoImagem.textContent =
+                "Arquivo atual";
 
-    tamanhoGrade.textContent =
-        "—";
-}
+        } else {
+
+            nomeImagem.textContent =
+                "Nenhuma imagem selecionada";
+
+            tamanhoImagem.textContent =
+                "—";
+
+        }
+
+
+        // =========================
+        // GRADE ATUAL
+        // =========================
+
+        if (curso.grade_curso) {
+
+            nomeGrade.textContent =
+                curso.grade_curso;
+
+            tamanhoGrade.textContent =
+                "Arquivo atual";
+
+        } else {
+
+            nomeGrade.textContent =
+                "Nenhuma grade selecionada";
+
+            tamanhoGrade.textContent =
+                "—";
+
+        }
+
 
         // =========================
         // PREENCHER CAMPOS
         // =========================
 
-        document.getElementById("editarNomeCurso").value =
+        document.getElementById(
+            "editarNomeCurso"
+        ).value =
             curso.nome_curso || "";
 
-        document.getElementById("editarModalidade").value =
+
+        document.getElementById(
+            "editarModalidade"
+        ).value =
             curso.modalidade_curso || "";
 
-        document.getElementById("editarDescricao").value =
+
+        document.getElementById(
+            "editarDescricao"
+        ).value =
             curso.descricao_curso || "";
 
-        document.getElementById("editarCargaHoraria").value =
+
+        document.getElementById(
+            "editarCargaHoraria"
+        ).value =
             curso.cargaHoraria_curso || "";
 
-        document.getElementById("editarCategoria").value =
+
+        document.getElementById(
+            "editarCategoria"
+        ).value =
             curso.categoria_curso || "";
 
-        document.getElementById("editarLocal").value =
+
+        document.getElementById(
+            "editarLocal"
+        ).value =
             curso.local_curso || "";
 
-        document.getElementById("editarValor").value =
+
+        document.getElementById(
+            "editarValor"
+        ).value =
             curso.valor_curso || 0;
 
-        document.getElementById("editarStatus").value =
+
+        document.getElementById(
+            "editarStatus"
+        ).value =
             curso.status_curso || "";
 
 
@@ -331,23 +467,51 @@ if (curso.grade_curso) {
         // TURNOS
         // =========================
 
-        document.getElementById("editarManha").checked = false;
-        document.getElementById("editarTarde").checked = false;
-        document.getElementById("editarNoite").checked = false;
+        document.getElementById(
+            "editarManha"
+        ).checked = false;
+
+        document.getElementById(
+            "editarTarde"
+        ).checked = false;
+
+        document.getElementById(
+            "editarNoite"
+        ).checked = false;
 
 
-        const turno = (curso.turno_curso || "").toLowerCase();
+        const turno =
+            (curso.turno_curso || "")
+            .toLowerCase();
 
-        if (turno.includes("manhã") || turno.includes("manha")) {
-            document.getElementById("editarManha").checked = true;
+
+        if (
+            turno.includes("manhã") ||
+            turno.includes("manha")
+        ) {
+
+            document.getElementById(
+                "editarManha"
+            ).checked = true;
+
         }
+
 
         if (turno.includes("tarde")) {
-            document.getElementById("editarTarde").checked = true;
+
+            document.getElementById(
+                "editarTarde"
+            ).checked = true;
+
         }
 
+
         if (turno.includes("noite")) {
-            document.getElementById("editarNoite").checked = true;
+
+            document.getElementById(
+                "editarNoite"
+            ).checked = true;
+
         }
 
 
@@ -369,206 +533,337 @@ if (curso.grade_curso) {
         alert(
             "Não foi possível carregar os dados do curso."
         );
+
     }
+
 }
 
 
 // =========================
 // CONTROLES DO MODAL
 // =========================
+
 const modalEditar =
-    document.getElementById("modalEditar");
+    document.getElementById(
+        "modalEditar"
+    );
 
 const fecharModal =
-    document.getElementById("fecharModal");
+    document.getElementById(
+        "fecharModal"
+    );
 
 const cancelarModal =
-    document.getElementById("cancelarModal");
+    document.getElementById(
+        "cancelarModal"
+    );
 
 const salvarModal =
-    document.getElementById("salvarModal");
+    document.getElementById(
+        "salvarModal"
+    );
 
 
+// =========================
 // FECHAR NO X
-fecharModal.addEventListener("click", () => {
+// =========================
 
-    modalEditar.classList.remove("ativo");
+fecharModal.addEventListener(
+    "click",
+    () => {
 
-});
+        modalEditar.classList.remove(
+            "ativo"
+        );
+
+    }
+);
 
 
+// =========================
 // FECHAR NO CANCELAR
-cancelarModal.addEventListener("click", () => {
+// =========================
 
-    modalEditar.classList.remove("ativo");
+cancelarModal.addEventListener(
+    "click",
+    () => {
 
-});
-
-salvarModal.addEventListener("click", async () => {
-
-    if (!cursoEditando) {
-        alert("Nenhum curso selecionado.");
-        return;
-    }
-
-
-    // =========================
-    // TURNOS
-    // =========================
-
-    const turnos = [];
-
-    if (document.getElementById("editarManha").checked) {
-        turnos.push("Manhã");
-    }
-
-    if (document.getElementById("editarTarde").checked) {
-        turnos.push("Tarde");
-    }
-
-    if (document.getElementById("editarNoite").checked) {
-        turnos.push("Noite");
-    }
-
-
-    // =========================
-    // FORM DATA
-    // =========================
-
-    const formData = new FormData();
-
-    formData.append(
-        "nome_curso",
-        document.getElementById("editarNomeCurso").value.trim()
-    );
-
-    formData.append(
-        "modalidade_curso",
-        document.getElementById("editarModalidade").value
-    );
-
-    formData.append(
-        "descricao_curso",
-        document.getElementById("editarDescricao").value.trim()
-    );
-
-    formData.append(
-        "cargaHoraria_curso",
-        document.getElementById("editarCargaHoraria").value
-    );
-
-    formData.append(
-        "categoria_curso",
-        document.getElementById("editarCategoria").value
-    );
-
-    formData.append(
-        "turno_curso",
-        turnos.join(", ")
-    );
-
-    formData.append(
-        "local_curso",
-        document.getElementById("editarLocal").value.trim()
-    );
-
-    formData.append(
-        "valor_curso",
-        document.getElementById("editarValor").value
-    );
-
-    formData.append(
-        "status_curso",
-        document.getElementById("editarStatus").value
-    );
-
-
-    // =========================
-    // IMAGEM
-    // =========================
-
-    if (novaImagem) {
-
-        formData.append(
-            "imagem_curso",
-            novaImagem
-        );
-    }
-
-
-    // =========================
-    // PDF
-    // =========================
-
-    if (novaGrade) {
-
-        formData.append(
-            "grade_curso",
-            novaGrade
-        );
-    }
-
-
-    try {
-
-        const resposta = await fetch(
-            `/cards/${cursoEditando}`,
-            {
-                method: "PATCH",
-                credentials: "include",
-                body: formData
-            }
+        modalEditar.classList.remove(
+            "ativo"
         );
 
-
-        const resultado = await resposta.json();
-
-        console.log(
-            "RESPOSTA DA EDIÇÃO:",
-            resultado
-        );
+    }
+);
 
 
-        if (!resposta.ok) {
+// =========================
+// SALVAR ALTERAÇÕES
+// =========================
+
+salvarModal.addEventListener(
+    "click",
+    async () => {
+
+        if (!cursoEditando) {
 
             alert(
-                resultado.mensagem ||
-                "Erro ao atualizar curso"
+                "Nenhum curso selecionado."
             );
 
             return;
         }
 
 
-        alert(
-            "Curso atualizado com sucesso!"
+        // =========================
+        // TURNOS
+        // =========================
+
+        const turnos = [];
+
+
+        if (
+            document.getElementById(
+                "editarManha"
+            ).checked
+        ) {
+
+            turnos.push("Manhã");
+
+        }
+
+
+        if (
+            document.getElementById(
+                "editarTarde"
+            ).checked
+        ) {
+
+            turnos.push("Tarde");
+
+        }
+
+
+        if (
+            document.getElementById(
+                "editarNoite"
+            ).checked
+        ) {
+
+            turnos.push("Noite");
+
+        }
+
+
+        // =========================
+        // FORM DATA
+        // =========================
+
+        const formData =
+            new FormData();
+
+
+        formData.append(
+            "nome_curso",
+            document
+                .getElementById(
+                    "editarNomeCurso"
+                )
+                .value
+                .trim()
         );
 
 
-        modalEditar.classList.remove("ativo");
-
-        cursoEditando = null;
-        novaImagem = null;
-        novaGrade = null;
-
-        editarImagem.value = "";
-        editarGrade.value = "";
-
-        carregarCursos();
-
-
-    } catch (erro) {
-
-        console.error(
-            "ERRO AO EDITAR CURSO:",
-            erro
+        formData.append(
+            "modalidade_curso",
+            document
+                .getElementById(
+                    "editarModalidade"
+                )
+                .value
         );
 
-        alert(
-            "Não foi possível conectar ao servidor."
+
+        formData.append(
+            "descricao_curso",
+            document
+                .getElementById(
+                    "editarDescricao"
+                )
+                .value
+                .trim()
         );
+
+
+        formData.append(
+            "cargaHoraria_curso",
+            document
+                .getElementById(
+                    "editarCargaHoraria"
+                )
+                .value
+        );
+
+
+        formData.append(
+            "categoria_curso",
+            document
+                .getElementById(
+                    "editarCategoria"
+                )
+                .value
+        );
+
+
+        formData.append(
+            "turno_curso",
+            turnos.join(", ")
+        );
+
+
+        formData.append(
+            "local_curso",
+            document
+                .getElementById(
+                    "editarLocal"
+                )
+                .value
+                .trim()
+        );
+
+
+        formData.append(
+            "valor_curso",
+            document
+                .getElementById(
+                    "editarValor"
+                )
+                .value
+        );
+
+
+        formData.append(
+            "status_curso",
+            document
+                .getElementById(
+                    "editarStatus"
+                )
+                .value
+        );
+
+
+        // =========================
+        // IMAGEM NOVA
+        // =========================
+
+        if (novaImagem) {
+
+            formData.append(
+                "imagem_curso",
+                novaImagem
+            );
+
+        }
+
+
+        // =========================
+        // GRADE NOVA
+        // =========================
+
+        if (novaGrade) {
+
+            formData.append(
+                "grade_curso",
+                novaGrade
+            );
+
+        }
+
+
+        // =========================
+        // ENVIAR PARA O SERVIDOR
+        // =========================
+
+        try {
+
+            const resposta =
+                await fetch(
+                    `/cards/${cursoEditando}`,
+                    {
+                        method: "PATCH",
+                        credentials: "include",
+                        body: formData
+                    }
+                );
+
+
+            const resultado =
+                await resposta.json();
+
+
+            console.log(
+                "RESPOSTA DA EDIÇÃO:",
+                resultado
+            );
+
+
+            if (!resposta.ok) {
+
+                alert(
+                    resultado.mensagem ||
+                    "Erro ao atualizar curso"
+                );
+
+                return;
+            }
+
+
+            alert(
+                "Curso atualizado com sucesso!"
+            );
+
+
+            // =========================
+            // LIMPAR E FECHAR
+            // =========================
+
+            modalEditar.classList.remove(
+                "ativo"
+            );
+
+
+            cursoEditando = null;
+
+            novaImagem = null;
+
+            novaGrade = null;
+
+
+            editarImagem.value = "";
+
+            editarGrade.value = "";
+
+
+            carregarCursos();
+
+        } catch (erro) {
+
+            console.error(
+                "ERRO AO EDITAR CURSO:",
+                erro
+            );
+
+            alert(
+                "Não foi possível conectar ao servidor."
+            );
+
+        }
+
     }
+);
 
-});
+
+// =========================
+// CARREGAR CURSOS
+// =========================
 
 carregarCursos();

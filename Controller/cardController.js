@@ -92,65 +92,65 @@ class CardController {
     // LISTAR CARDS
     // =========================
     static async listarTodos(req, res) {
-
         try {
-
-            // Verifica login
-            if (!req.session.usuario) {
-
-                return res.status(401).json({
-
-                    mensagem: "Usuário não está logado"
-
-                });
-
-            }
-
-
-            const usuario =
-                req.session.usuario;
-
-
-            let cursos;
-
-
-            // ADMIN → TODOS
-            if (usuario.tipo_usuario === "Administrador") {
-
-                cursos =
-                    await CardModel.listarTodos();
-
-            }
-
-            // USUÁRIO → SOMENTE OS DELE
-            else {
-
-                cursos =
-                    await CardModel.listarPorUsuario(
-                        usuario.id_usuario
-                    );
-
-            }
-
+            const cursos = await CardModel.listarTodos();
 
             return res.status(200).json(cursos);
 
-
         } catch (erro) {
-
             console.error(
                 "ERRO AO LISTAR CARDS:",
                 erro
             );
 
             return res.status(500).json({
-
                 mensagem: "Erro ao buscar os cards"
-
             });
-
         }
+    }
 
+    // =========================
+    // LISTAR CARDS PARA GERENCIAMENTO
+    // =========================
+
+    static async listarGerenciamento(req, res) {
+        try {
+
+            if (!req.session.usuario) {
+                return res.status(401).json({
+                    mensagem: "Usuário não está logado"
+                });
+            }
+
+            const usuario = req.session.usuario;
+
+            let cursos;
+
+            if (usuario.tipo_usuario === "Administrador") {
+
+                cursos = await CardModel.listarTodos();
+
+            } else {
+
+                cursos = await CardModel.listarPorUsuario(
+                    usuario.id_usuario
+                );
+
+            }
+
+            return res.status(200).json(cursos);
+
+        } catch (erro) {
+
+            console.error(
+                "ERRO AO LISTAR CARDS PARA GERENCIAMENTO:",
+                erro
+            );
+
+            return res.status(500).json({
+                mensagem: "Erro ao buscar os cards"
+            });
+        }
     }
 
 
@@ -158,72 +158,29 @@ class CardController {
     // BUSCAR CARD POR ID
     // =========================
     static async buscarPorId(req, res) {
-
         try {
-
-            if (!req.session.usuario) {
-
-                return res.status(401).json({
-
-                    mensagem: "Usuário não está logado"
-
-                });
-
-            }
-
             const { id } = req.params;
 
-            const curso =
-                await CardModel.buscarPorId(id);
-
+            const curso = await CardModel.buscarPorId(id);
 
             if (!curso) {
-
                 return res.status(404).json({
-
                     mensagem: "Card não encontrado"
-
                 });
-
             }
-
-
-            // Usuário normal não pode acessar
-            // curso de outro usuário
-            if (
-                req.session.usuario.tipo_usuario !== "Administrador" &&
-                curso.fk_usuario !==
-                req.session.usuario.id_usuario
-            ) {
-
-                return res.status(403).json({
-
-                    mensagem:
-                        "Você não tem permissão para acessar este card"
-
-                });
-
-            }
-
 
             return res.status(200).json(curso);
 
-
         } catch (erro) {
-
             console.error(
                 "ERRO AO ENCONTRAR CARD:",
                 erro
             );
 
             return res.status(500).json({
-
                 mensagem: "Erro ao buscar o card"
-
             });
-
         }
-
     }
 
 

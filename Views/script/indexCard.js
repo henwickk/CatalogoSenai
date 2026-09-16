@@ -45,9 +45,12 @@ async function carregarCursos() {
                         class="img-curso"
                     >
 
-                    <span class="disponivel">
-                        Disponível
-                    </span>
+                    <span class="${curso.status_curso === "Disponível"
+                    ? "disponivel"
+                    : "indisponivel"
+                }">
+    ${curso.status_curso}
+</span>
                 </div>
 
                 <div class="infosCurso">
@@ -156,24 +159,25 @@ function abrirModal(curso) {
     // Status
     const status = document.getElementById("modalStatus");
 
-    if (curso.status_curso === "Ativo") {
+    if (curso.status_curso === "Disponível") {
 
         status.innerHTML = `
-            <i class="bi bi-check-circle-fill"></i>
-            Disponível
-        `;
+        <i class="bi bi-check-circle-fill"></i>
+        Disponível
+    `;
 
         status.classList.remove("indisponivel");
+        status.classList.add("disponivel");
 
     } else {
 
         status.innerHTML = `
-            <i class="bi bi-x-circle-fill"></i>
-            Indisponível
-        `;
+        <i class="bi bi-x-circle-fill"></i>
+        Indisponível
+    `;
 
+        status.classList.remove("disponivel");
         status.classList.add("indisponivel");
-
     }
 
     // Imagem

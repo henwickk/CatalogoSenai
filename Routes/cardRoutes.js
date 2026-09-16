@@ -1,10 +1,15 @@
 const express = require("express");
+
 const router = express.Router();
 
 const CardController = require("../Controller/cardController");
+
 const upload = require("../upload");
 
-// Criar um card
+// =========================
+// CRIAR CARD
+// =========================
+
 router.post(
     "/",
     upload.fields([
@@ -14,13 +19,43 @@ router.post(
     CardController.criar
 );
 
-// Listar todos os cards
-router.get("/", CardController.listarTodos);
 
-// Buscar um card pelo ID
-router.get("/:id", CardController.buscarPorId);
+// =========================
+// LISTAR TODOS OS CARDS
+// PÚBLICO — INDEX
+// =========================
 
-// Editar parcialmente um card
+router.get(
+    "/",
+    CardController.listarTodos
+);
+
+
+// =========================
+// LISTAR CARDS PARA GERENCIAMENTO
+// PRIVADO — USUÁRIO / ADMIN
+// =========================
+
+router.get(
+    "/gerenciamento",
+    CardController.listarGerenciamento
+);
+
+
+// =========================
+// BUSCAR CARD POR ID
+// =========================
+
+router.get(
+    "/:id",
+    CardController.buscarPorId
+);
+
+
+// =========================
+// EDITAR CARD
+// =========================
+
 router.patch(
     "/:id",
     upload.fields([
@@ -30,7 +65,15 @@ router.patch(
     CardController.editar
 );
 
-// Deletar um card
-router.delete("/:id", CardController.deletar);
+
+// =========================
+// DELETAR CARD
+// =========================
+
+router.delete(
+    "/:id",
+    CardController.deletar
+);
+
 
 module.exports = router;
