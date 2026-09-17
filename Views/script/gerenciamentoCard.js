@@ -3,6 +3,15 @@ const filtros = document.querySelectorAll(".filter");
 const filtroCategoria = document.getElementById("categoria_curso");
 const inputPesquisa = document.getElementById("inputPesquisa");
 
+const filtros = document.querySelectorAll(".filter");
+const filtroCategoria = document.getElementById("categoria_curso");
+const inputPesquisa = document.getElementById("inputPesquisa");
+
+
+
+
+
+
 // =========================
 // LISTAR CURSOS
 // =========================
@@ -37,6 +46,14 @@ async function carregarCursos() {
             div.dataset.turnos = curso.turno_curso || "";
             div.dataset.categoria = curso.categoria_curso || "";
             div.dataset.nome = curso.nome_curso || "";
+            div.dataset.autor = curso.autor || "";
+
+            div.dataset.turnos = curso.turno_curso || "";
+
+            div.dataset.categoria = curso.categoria_curso || "";
+
+            div.dataset.nome = curso.nome_curso || "";
+
             div.dataset.autor = curso.autor || "";
 
             div.innerHTML = `
@@ -870,7 +887,6 @@ salvarModal.addEventListener(
 );
 
 
-
 filtros.forEach((filtro) => {
 
     filtro.addEventListener("click", () => {
@@ -879,14 +895,10 @@ filtros.forEach((filtro) => {
 
         if (valor === "Todos") {
 
-            const todosAtivo =
-                filtro.classList.contains("active");
+            const todosAtivo = filtro.classList.contains("active");
 
             filtros.forEach((btn) => {
-                btn.classList.toggle(
-                    "active",
-                    !todosAtivo
-                );
+                btn.classList.toggle("active", !todosAtivo);
             });
 
         } else {
@@ -894,20 +906,11 @@ filtros.forEach((filtro) => {
             filtro.classList.toggle("active");
 
             const turnos = Array.from(filtros)
-                .filter(
-                    btn => btn.dataset.value !== "Todos"
-                );
+                .filter(btn => btn.dataset.value !== "Todos");
 
-            const todos =
-                document.querySelector(
-                    '[data-value="Todos"]'
-                );
+            const todos = document.querySelector('[data-value="Todos"]');
 
-            if (
-                turnos.every(
-                    btn => btn.classList.contains("active")
-                )
-            ) {
+            if (turnos.every(btn => btn.classList.contains("active"))) {
                 todos.classList.add("active");
             } else {
                 todos.classList.remove("active");
@@ -919,17 +922,17 @@ filtros.forEach((filtro) => {
 
 });
 
+// BOTOES TURNO 
 
 filtroCategoria.addEventListener("change", () => {
     filtrarCursos();
 });
 
-
 inputPesquisa.addEventListener("input", () => {
     filtrarCursos();
 });
 
-
+// FILTRO CATEGORIA
 function filtrarCursos() {
 
     const cards = document.querySelectorAll(".course");
@@ -940,14 +943,18 @@ function filtrarCursos() {
         .filter(btn => btn.dataset.value !== "Todos")
         .map(btn => btn.dataset.value);
 
-    const categoriaSelecionada =
-        filtroCategoria.value;
+    const categoriaSelecionada = filtroCategoria.value;
 
-    const pesquisa =
-        inputPesquisa.value.toLowerCase().trim();
+    const pesquisa = inputPesquisa.value
+        .toLowerCase()
+        .trim();
 
 
     cards.forEach((card) => {
+
+        // =========================
+        // CATEGORIA
+        // =========================
 
         const categoriaCurso =
             card.dataset.categoria || "";
@@ -957,6 +964,10 @@ function filtrarCursos() {
             categoriaCurso === categoriaSelecionada;
 
 
+        // =========================
+        // TURNOS
+        // =========================
+
         const turnosDoCurso =
             (card.dataset.turnos || "")
                 .split(",")
@@ -965,15 +976,25 @@ function filtrarCursos() {
         let turnoOk = false;
 
         if (turnosSelecionados.length === 0) {
+
             turnoOk = false;
+
         } else if (turnosSelecionados.length === 3) {
+
             turnoOk = true;
+
         } else {
+
             turnoOk = turnosSelecionados.some(
                 turno => turnosDoCurso.includes(turno)
             );
+
         }
 
+
+        // =========================
+        // PESQUISA
+        // =========================
 
         const nomeCurso =
             (card.dataset.nome || "").toLowerCase();
@@ -987,17 +1008,19 @@ function filtrarCursos() {
             autorCurso.includes(pesquisa);
 
 
+        // =========================
+        // RESULTADO
+        // =========================
+
         card.style.display =
             categoriaOk &&
-                turnoOk &&
-                pesquisaOk
+            turnoOk &&
+            pesquisaOk
                 ? ""
                 : "none";
 
     });
-
 }
-
 
 // =========================
 // CARREGAR CURSOS
