@@ -29,7 +29,7 @@
                 <span>Cadastro Curso</span>
             </a>
 
-            <a href="gerenciamentoContas.html" class="menu-item">
+            <a href="gerenciamentoContas.html" class="menu-item" id="menu-contas">
                 <i class="bi bi-person-gear"></i>
                 <span>Gerenciar Contas</span>
             </a>
@@ -199,7 +199,8 @@
                         <div class="field amount">
                             <label>Valor</label>
 
-                            <input type="text" id="valor_curso" placeholder="Ex:3 x 500 sem juros / vazio para gratuito">
+                            <input type="text" id="valor_curso"
+                                placeholder="Ex:3 x 500 sem juros / vazio para gratuito">
                         </div>
 
                     </div>
@@ -313,9 +314,61 @@
             </footer>
         </form>
     </main>
+
+    <div id="modalSenha" class="modal-senha-overlay">
+
+        <div class="modal-senha">
+
+            <div class="modal-senha-header">
+                <h2>Alterar senha</h2>
+
+                <button type="button" id="fecharModalSenha">
+                    &times;
+                </button>
+            </div>
+
+            <div class="modal-senha-conteudo">
+
+                <div class="campo-senha">
+                    <label for="senhaAtual">Senha atual</label>
+                    <input type="password" id="senhaAtual" placeholder="Digite sua senha atual">
+                </div>
+
+                <div class="campo-senha">
+                    <label for="novaSenha">Nova senha</label>
+                    <input type="password" id="novaSenha" placeholder="Digite a nova senha">
+                </div>
+
+                <div class="campo-senha">
+                    <label for="confirmarNovaSenha">
+                        Confirmar nova senha
+                    </label>
+
+                    <input type="password" id="confirmarNovaSenha" placeholder="Digite novamente a nova senha">
+                </div>
+
+            </div>
+
+            <div class="modal-senha-acoes">
+
+                <button type="button" id="cancelarModalSenha" class="btn-cancelar-senha">
+                    Cancelar
+                </button>
+
+                <button type="button" id="salvarSenha" class="btn-salvar-senha">
+                    Alterar senha
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
     <script src="/script/scriptGestao.js"></script>
     <script src="/script/criarCard.js"></script>
     <script src="/script/usuarioLogado.js"></script>
+    <script src="/script/alterarSenha.js"></script>
 </body>
 
 </html>

@@ -3,15 +3,6 @@ const filtros = document.querySelectorAll(".filter");
 const filtroCategoria = document.getElementById("categoria_curso");
 const inputPesquisa = document.getElementById("inputPesquisa");
 
-const filtros = document.querySelectorAll(".filter");
-const filtroCategoria = document.getElementById("categoria_curso");
-const inputPesquisa = document.getElementById("inputPesquisa");
-
-
-
-
-
-
 // =========================
 // LISTAR CURSOS
 // =========================
@@ -46,14 +37,6 @@ async function carregarCursos() {
             div.dataset.turnos = curso.turno_curso || "";
             div.dataset.categoria = curso.categoria_curso || "";
             div.dataset.nome = curso.nome_curso || "";
-            div.dataset.autor = curso.autor || "";
-
-            div.dataset.turnos = curso.turno_curso || "";
-
-            div.dataset.categoria = curso.categoria_curso || "";
-
-            div.dataset.nome = curso.nome_curso || "";
-
             div.dataset.autor = curso.autor || "";
 
             div.innerHTML = `
