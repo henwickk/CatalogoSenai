@@ -81,7 +81,7 @@ input {
     margin-bottom: 25px;
 }
 
-button {
+.btEntrar {
     width: 100%;
     background: #1d2393;
     color: white;
@@ -100,3 +100,9 @@ button {
 button:hover {
     background: #10207a;
 }
+
+#mensagemLogin{
+    color: red;
+    font-weight: bold;
+}
+
