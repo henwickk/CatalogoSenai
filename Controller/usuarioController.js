@@ -23,7 +23,7 @@ class UsuarioController {
             // Usuário não encontrado
             if (!usuario) {
                 return res.status(401).json({
-                    mensagem: "Nome ou senha incorretos"
+                    mensagem: "Nome ou senha incorretos(Certifique-se de não deixar espaços)"
                 });
             }
 
@@ -43,7 +43,7 @@ class UsuarioController {
             // Senha incorreta
             if (!senhaCorreta) {
                 return res.status(401).json({
-                    mensagem: "Nome ou senha incorretos"
+                    mensagem: "Nome ou senha incorretos(Certifique-se de não deixar espaços)"
                 });
             }
 
