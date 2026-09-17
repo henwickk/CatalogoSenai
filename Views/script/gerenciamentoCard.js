@@ -1,4 +1,7 @@
 console.log("GERENCIAMENTO CARD JS CARREGADO!");
+const filtros = document.querySelectorAll(".filter");
+const filtroCategoria = document.getElementById("categoria_curso");
+const inputPesquisa = document.getElementById("inputPesquisa");
 
 const filtros = document.querySelectorAll(".filter");
 const filtroCategoria = document.getElementById("categoria_curso");
@@ -38,7 +41,12 @@ async function carregarCursos() {
 
             const div = document.createElement("div");
 
+
             div.classList.add("course");
+            div.dataset.turnos = curso.turno_curso || "";
+            div.dataset.categoria = curso.categoria_curso || "";
+            div.dataset.nome = curso.nome_curso || "";
+            div.dataset.autor = curso.autor || "";
 
             div.dataset.turnos = curso.turno_curso || "";
 
