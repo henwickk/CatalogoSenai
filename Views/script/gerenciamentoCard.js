@@ -1,4 +1,7 @@
 console.log("GERENCIAMENTO CARD JS CARREGADO!");
+const filtros = document.querySelectorAll(".filter");
+const filtroCategoria = document.getElementById("categoria_curso");
+const inputPesquisa = document.getElementById("inputPesquisa");
 
 // =========================
 // LISTAR CURSOS
@@ -29,7 +32,12 @@ async function carregarCursos() {
 
             const div = document.createElement("div");
 
+
             div.classList.add("course");
+            div.dataset.turnos = curso.turno_curso || "";
+            div.dataset.categoria = curso.categoria_curso || "";
+            div.dataset.nome = curso.nome_curso || "";
+            div.dataset.autor = curso.autor || "";
 
             div.innerHTML = `
                 <div class="course-info">
@@ -482,7 +490,7 @@ async function editarCurso(id) {
 
         const turno =
             (curso.turno_curso || "")
-            .toLowerCase();
+                .toLowerCase();
 
 
         if (
@@ -860,6 +868,135 @@ salvarModal.addEventListener(
 
     }
 );
+
+
+
+filtros.forEach((filtro) => {
+
+    filtro.addEventListener("click", () => {
+
+        const valor = filtro.dataset.value;
+
+        if (valor === "Todos") {
+
+            const todosAtivo =
+                filtro.classList.contains("active");
+
+            filtros.forEach((btn) => {
+                btn.classList.toggle(
+                    "active",
+                    !todosAtivo
+                );
+            });
+
+        } else {
+
+            filtro.classList.toggle("active");
+
+            const turnos = Array.from(filtros)
+                .filter(
+                    btn => btn.dataset.value !== "Todos"
+                );
+
+            const todos =
+                document.querySelector(
+                    '[data-value="Todos"]'
+                );
+
+            if (
+                turnos.every(
+                    btn => btn.classList.contains("active")
+                )
+            ) {
+                todos.classList.add("active");
+            } else {
+                todos.classList.remove("active");
+            }
+        }
+
+        filtrarCursos();
+    });
+
+});
+
+
+filtroCategoria.addEventListener("change", () => {
+    filtrarCursos();
+});
+
+
+inputPesquisa.addEventListener("input", () => {
+    filtrarCursos();
+});
+
+
+function filtrarCursos() {
+
+    const cards = document.querySelectorAll(".course");
+
+    const turnosSelecionados = Array.from(
+        document.querySelectorAll(".filter.active")
+    )
+        .filter(btn => btn.dataset.value !== "Todos")
+        .map(btn => btn.dataset.value);
+
+    const categoriaSelecionada =
+        filtroCategoria.value;
+
+    const pesquisa =
+        inputPesquisa.value.toLowerCase().trim();
+
+
+    cards.forEach((card) => {
+
+        const categoriaCurso =
+            card.dataset.categoria || "";
+
+        const categoriaOk =
+            categoriaSelecionada === "" ||
+            categoriaCurso === categoriaSelecionada;
+
+
+        const turnosDoCurso =
+            (card.dataset.turnos || "")
+                .split(",")
+                .map(turno => turno.trim());
+
+        let turnoOk = false;
+
+        if (turnosSelecionados.length === 0) {
+            turnoOk = false;
+        } else if (turnosSelecionados.length === 3) {
+            turnoOk = true;
+        } else {
+            turnoOk = turnosSelecionados.some(
+                turno => turnosDoCurso.includes(turno)
+            );
+        }
+
+
+        const nomeCurso =
+            (card.dataset.nome || "").toLowerCase();
+
+        const autorCurso =
+            (card.dataset.autor || "").toLowerCase();
+
+        const pesquisaOk =
+            pesquisa === "" ||
+            nomeCurso.includes(pesquisa) ||
+            autorCurso.includes(pesquisa);
+
+
+        card.style.display =
+            categoriaOk &&
+                turnoOk &&
+                pesquisaOk
+                ? ""
+                : "none";
+
+    });
+
+}
 
 
 // =========================
