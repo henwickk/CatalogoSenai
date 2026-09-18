@@ -97,8 +97,16 @@ input {
     transition: .3s;
 }
 
-button:hover {
+.btEntrar:hover {
     background: #10207a;
+}
+
+#mostrarSenha{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    font-size: 18px;
 }
 
 #mensagemLogin{
