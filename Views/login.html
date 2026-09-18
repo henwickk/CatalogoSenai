@@ -24,25 +24,17 @@
             <div class="box">
                 <i class="bi bi-person-fill"></i>
 
-                <input
-                    type="text"
-                    id="nome_usuario"
-                    placeholder="Nome de usuário"
-                    required
-                >
+                <input type="text" id="nome_usuario" placeholder="Nome de usuário" required>
             </div>
 
             <div class="box">
                 <i class="bi bi-lock-fill"></i>
 
-                <input
-                    type="password"
-                    id="senha_usuario"
-                    placeholder="Senha"
-                    required
-                >
+                <input type="password" id="senha_usuario" placeholder="Senha" required>
 
-                <button><i class="bi bi-eye"></i></button>
+                <button type="button" class="buttonMostrar" id="mostrarSenha">
+                    <i class="bi bi-eye"></i>
+                </button>
             </div>
 
             <button type="submit" class="btEntrar">
@@ -56,7 +48,8 @@
 
     </div>
 
-    <script src="script/login.js"></script>
+    <script src="script/login.js" defer></script>
 
 </body>
+
 </html>

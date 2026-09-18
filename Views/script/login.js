@@ -1,5 +1,26 @@
 const formLogin = document.getElementById("formLogin");
 const mensagemLogin = document.getElementById("mensagemLogin");
+const senha = document.getElementById("senha_usuario");
+const mostrarSenha = document.getElementById("mostrarSenha");
+
+
+mostrarSenha.addEventListener("click", () => {
+
+    if (senha_usuario.type === "password") {
+        senha_usuario.type = "text";
+
+        mostrarSenha.innerHTML = `
+            <i class="bi bi-eye-slash"></i>
+        `;
+    } else {
+        senha_usuario.type = "password";
+
+        mostrarSenha.innerHTML = `
+            <i class="bi bi-eye"></i>
+        `;
+    }
+
+});
 
 formLogin.addEventListener("submit", async (evento) => {
     evento.preventDefault();
