@@ -68,8 +68,11 @@ async function carregarCursos() {
                 </div>
 
                 <div>
-                    <span class="status published">
-                        ${curso.status_curso}
+                    <span class="status ${curso.status_curso === "Disponível"
+                        ? "published"
+                        : "unpublished"
+                    }">
+                    ${curso.status_curso}
                     </span>
                 </div>
 
@@ -462,7 +465,7 @@ async function editarCurso(id) {
         document.getElementById(
             "editarValor"
         ).value =
-            curso.valor_curso || 0;
+            curso.valor_curso || "";
 
 
         document.getElementById(
@@ -997,8 +1000,8 @@ function filtrarCursos() {
 
         card.style.display =
             categoriaOk &&
-            turnoOk &&
-            pesquisaOk
+                turnoOk &&
+                pesquisaOk
                 ? ""
                 : "none";
 

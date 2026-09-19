@@ -457,27 +457,6 @@ main {
     transform: scale(1.04);
 }
 
-.disponivel {
-    position: absolute;
-
-    top: 14px;
-    left: 14px;
-
-    background: #159447;
-    color: white;
-
-    padding: 6px 14px;
-
-    border-radius: 20px;
-
-    font-size: 12px;
-    font-weight: bold;
-} 
-
-.disponivel.indisponivel{
-    background: #e22222;
-}
-
 /* INFORMAÇÕES */
 
 .infosCurso {
@@ -942,6 +921,46 @@ ul {
 
     font-weight: bold;
     font-size: 14px;
+}
+
+.disponivel {
+    background: #159447;
+    color: white;
+} 
+
+.indisponivel {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.status-card-disponivel {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+
+    background: #159447;
+    color: white;
+
+    padding: 6px 14px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-card-indisponivel {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+
+    background: #e22222;
+    color: white;
+
+    padding: 6px 14px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .modalDescricao h3,

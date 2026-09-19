@@ -61,11 +61,11 @@ function renderizarCursos(listaCursos) {
                 >
 
                 <span class="${curso.status_curso === "Disponível"
-                ? "disponivel"
-                : "indisponivel"
+                ? "status-card-disponivel"
+                : "status-card-indisponivel"
             }">
-                    ${curso.status_curso}
-                </span>
+    ${curso.status_curso}
+</span>
 
             </div>
 
@@ -105,13 +105,8 @@ function renderizarCursos(listaCursos) {
                 <div class="rodapeCurso">
 
                     <strong>
-                        ${Number(curso.valor_curso) === 0
-                ? "Gratuito"
-                : `R$ ${Number(curso.valor_curso)
-                    .toFixed(2)
-                    .replace(".", ",")}`
-            }
-                    </strong>
+    ${formatarValor(curso.valor_curso)}
+</strong>
 
                     <button class="saiba-mais" type="button">
                         Saiba mais
@@ -133,6 +128,22 @@ function renderizarCursos(listaCursos) {
         });
 
     });
+}
+
+function formatarValor(valor) {
+    const valorTexto = String(valor ?? "").trim();
+
+    // Campo vazio = gratuito
+    if (valorTexto === "") {
+        return "Gratuito";
+    }
+
+    // Se já tiver R$, não adiciona outro
+    if (valorTexto.toUpperCase().startsWith("R$")) {
+        return valorTexto;
+    }
+
+    return `R$ ${valorTexto}`;
 }
 
 // FILTRO
@@ -215,11 +226,7 @@ function abrirModal(curso) {
 
     // Valor
     document.getElementById("modalValor").textContent =
-        Number(curso.valor_curso) === 0
-            ? "Gratuito"
-            : `R$ ${Number(curso.valor_curso)
-                .toFixed(2)
-                .replace(".", ",")}`;
+    formatarValor(curso.valor_curso);
 
     // Descrição
     document.getElementById("modalDescricao").textContent =

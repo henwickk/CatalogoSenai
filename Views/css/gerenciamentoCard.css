@@ -548,25 +548,20 @@ body {
 ========================= */
 
 .status {
-    display: inline-block;
-
     padding: 6px 10px;
-
     border-radius: 5px;
-
     font-size: 8pt;
+
 }
 
 .published {
     background: #e5f6eb;
-
     color: #21824d;
 }
 
-.draft {
-    background: #fff3dc;
-
-    color: #a77b1b;
+.unpublished {
+    background: #fee2e2;
+    color: #dc2626;
 }
 
 
