@@ -234,7 +234,7 @@ function abrirModal(curso) {
 
     // Carga horária
     document.getElementById("modalCargaHoraria").textContent =
-        `${curso.cargaHoraria_curso} hrs`;
+        `${curso.cargaHoraria_curso} h`;
 
     // Categoria
     document.getElementById("modalCategoria").textContent =
