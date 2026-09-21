@@ -458,6 +458,13 @@ async function editarCurso(id) {
         ).value =
             curso.local_curso || "";
 
+        const dataInicio = curso.dataPrevInicio_curso;
+
+        document.getElementById(
+            "data_inicio_curso"
+        ).value =
+            dataInicio ? dataInicio.substring(0, 10) : "";
+
 
         document.getElementById(
             "editarValor"
@@ -738,6 +745,15 @@ salvarModal.addEventListener(
                 .trim()
         );
 
+        formData.append(
+            "data_inicio_curso",
+            document
+                .getElementById(
+                    "editarDataInicio"
+                )
+                .value
+        );
+
 
         formData.append(
             "valor_curso",
@@ -997,8 +1013,8 @@ function filtrarCursos() {
 
         card.style.display =
             categoriaOk &&
-            turnoOk &&
-            pesquisaOk
+                turnoOk &&
+                pesquisaOk
                 ? ""
                 : "none";
 

@@ -39,7 +39,7 @@ formulario.addEventListener("submit", async (event) => {
 
     const turnosSelecionados =
         [...document.querySelectorAll(".shift.active")]
-        .map((turno) => turno.dataset.value);
+            .map((turno) => turno.dataset.value);
 
 
     // =========================
@@ -92,6 +92,11 @@ formulario.addEventListener("submit", async (event) => {
     dados.append(
         "local_curso",
         document.getElementById("local_curso").value
+    );
+
+    dados.append(
+        "data_inicio_curso",
+        document.getElementById("data_inicio_curso").value
     );
 
 
@@ -159,8 +164,8 @@ formulario.addEventListener("submit", async (event) => {
             alert(
                 "Erro: " +
                 (resultado.mensagem ||
-                 resultado.erro ||
-                 "Erro ao cadastrar")
+                    resultado.erro ||
+                    "Erro ao cadastrar")
             );
 
             return;

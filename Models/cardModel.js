@@ -17,8 +17,11 @@ class CardModel {
             valor_curso,
             imagem_curso,
             local_curso,
+            data_inicio_curso,
             fk_usuario
         } = dados;
+
+        const dataPrevInicio_curso = data_inicio_curso;
 
         const sql = `
             INSERT INTO curso (
@@ -33,9 +36,10 @@ class CardModel {
                 valor_curso,
                 imagem_curso,
                 local_curso,
+                dataPrevInicio_curso,
                 fk_usuario
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
 
         const valores = [
@@ -50,10 +54,12 @@ class CardModel {
             valor_curso,
             imagem_curso,
             local_curso,
+            data_inicio_curso,
             fk_usuario
         ];
 
         const [resultado] = await db.execute(sql, valores);
+        
 
         return resultado;
     }
@@ -129,7 +135,8 @@ class CardModel {
             "categoria_curso",
             "valor_curso",
             "imagem_curso",
-            "local_curso"
+            "local_curso",
+            "data_inicio_curso"
         ];
 
         const campos = [];

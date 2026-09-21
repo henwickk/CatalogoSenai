@@ -479,7 +479,8 @@ svg {
 }
 
 .row-top {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2.05fr 1fr .69fr;
+  gap: 100px;
 }
 
 .row-second {
@@ -493,6 +494,10 @@ svg {
 
 .amount {
   width: 100%;
+}
+
+.course-name input {
+    width: 100%;
 }
 
 
@@ -531,7 +536,7 @@ svg {
 
   align-items: center;
 
-  gap: 8px;
+  gap: 2px;
 }
 
 .date-range>span {
@@ -1064,7 +1069,7 @@ svg {
 @media (max-width: 1000px) {
 
   .row-top {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .course-name {
@@ -1140,8 +1145,12 @@ svg {
   }
 }
 
+#data_inicio_curso{
+  width: 10vw;
+}
+
 .course-name input {
-  width: 30vw;
+  width: 100%;
 }
 
 .description textarea {
