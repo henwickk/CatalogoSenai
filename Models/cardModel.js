@@ -17,11 +17,10 @@ class CardModel {
             valor_curso,
             imagem_curso,
             local_curso,
-            data_inicio_curso,
+            dataPrevInicio_curso,
             fk_usuario
         } = dados;
 
-        const dataPrevInicio_curso = data_inicio_curso;
 
         const sql = `
             INSERT INTO curso (
@@ -54,7 +53,7 @@ class CardModel {
             valor_curso,
             imagem_curso,
             local_curso,
-            data_inicio_curso,
+            dataPrevInicio_curso,
             fk_usuario
         ];
 
@@ -136,7 +135,7 @@ class CardModel {
             "valor_curso",
             "imagem_curso",
             "local_curso",
-            "data_inicio_curso"
+            "dataPrevInicio_curso"
         ];
 
         const campos = [];

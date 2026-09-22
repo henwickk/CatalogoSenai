@@ -461,7 +461,7 @@ async function editarCurso(id) {
         const dataInicio = curso.dataPrevInicio_curso;
 
         document.getElementById(
-            "data_inicio_curso"
+            "editarDataInicio"
         ).value =
             dataInicio ? dataInicio.substring(0, 10) : "";
 
@@ -746,7 +746,7 @@ salvarModal.addEventListener(
         );
 
         formData.append(
-            "data_inicio_curso",
+            "dataPrevInicio_curso",
             document
                 .getElementById(
                     "editarDataInicio"

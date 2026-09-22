@@ -213,6 +213,16 @@ function abrirModal(curso) {
     document.getElementById("modalLocal").textContent =
         curso.local_curso;
 
+    // Data prevista de início
+    const dataInicio = curso.dataPrevInicio_curso;
+
+    document.getElementById("dataInicioModal").textContent =
+        dataInicio
+            ? new Date(dataInicio).toLocaleDateString("pt-BR", {
+                timeZone: "UTC"
+            })
+            : "A definir";
+
     // Valor
     document.getElementById("modalValor").textContent =
         Number(curso.valor_curso) === 0
