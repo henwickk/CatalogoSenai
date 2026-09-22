@@ -461,6 +461,13 @@ async function editarCurso(id) {
         ).value =
             curso.local_curso || "";
 
+        const dataInicio = curso.dataPrevInicio_curso;
+
+        document.getElementById(
+            "editarDataInicio"
+        ).value =
+            dataInicio ? dataInicio.substring(0, 10) : "";
+
 
         document.getElementById(
             "editarValor"
@@ -739,6 +746,15 @@ salvarModal.addEventListener(
                 )
                 .value
                 .trim()
+        );
+
+        formData.append(
+            "dataPrevInicio_curso",
+            document
+                .getElementById(
+                    "editarDataInicio"
+                )
+                .value
         );
 
 
