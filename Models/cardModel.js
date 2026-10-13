@@ -5,6 +5,7 @@ class CardModel {
     // Criar um novo card
     static async criar(dados) {
 
+
         const {
             nome_curso,
             turno_curso,
@@ -56,9 +57,17 @@ class CardModel {
             dataPrevInicio_curso,
             fk_usuario
         ];
+        console.log("VALORES:", valores);
 
+        console.log(
+            "POSIÇÕES UNDEFINED:",
+            valores
+                .map((valor, indice) => valor === undefined ? indice : null)
+                .filter(indice => indice !== null)
+        );
         const [resultado] = await db.execute(sql, valores);
-        
+
+
 
         return resultado;
     }

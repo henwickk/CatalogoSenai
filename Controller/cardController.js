@@ -18,8 +18,8 @@ class CardController {
 
             const dados = req.body;
 
-            // console.log("BODY:", req.body);
-            // console.log("FILES:", req.files);
+            dados.dataPrevInicio_curso = dados.data_inicio_curso;
+
 
             // =========================
             // IMAGEM
