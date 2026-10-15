@@ -17,7 +17,7 @@ async function carregarCursos() {
 
         console.log("COMEÇANDO A BUSCAR CURSOS...");
 
-        const resposta = await fetch("http://localhost:3000/cards/");
+        const resposta = await fetch("/cards/");
 
         console.log("RESPOSTA:", resposta);
 
