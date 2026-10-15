@@ -833,8 +833,8 @@ ul {
 
 .modalConteudo {
     width: 80%;
-    max-width: 1000px;
-    height: 84vh;
+    max-width: 60vw;
+    height: 90vh;
 
     background: var(--card);
 
@@ -1116,15 +1116,86 @@ ul {
     color: #e3ecff;
 }
 
-.aviso {
-    background: var(--subcard);
 
-    border-radius: 14px;
-
-    padding: 20px;
-
-    margin-top: 25px;
+.aviso{
+    background: #EEF3FF;
+    padding: 18px;
+    border-radius: 12px;
+    color: #062451;
+    margin-top: 2vh;
 }
+
+.aviso h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 19pt;
+    margin: 0 0 16px;
+    color: #062451;
+}
+
+.aviso h3 i {
+    color: #1769D2;
+}
+
+.aviso-secao {
+    padding: 12px 0;
+    border-bottom: 1px solid #D3DFF5;
+}
+
+.aviso-secao h4,
+.aviso-desconto h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16pt;
+    margin: 0 0 8px;
+    color: #062451;
+}
+
+.aviso-secao h4 i {
+    color: #1769D2;
+}
+
+.aviso p,
+.aviso li {
+    font-size: 14pt;
+    line-height: 1.7;
+    color: #344563;
+}
+
+.aviso p {
+    margin: 0;
+}
+
+.aviso ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.aviso-observacao {
+    margin-top: 8px !important;
+    color: #64748B !important;
+    font-size: 12pt !important;
+}
+
+.aviso-desconto {
+    margin-top: 10px;
+    padding: 12px;
+    background: #FFF4E8;
+    border-left: 3px solid #E87516;
+    border-radius: 6px;
+}
+
+.aviso-desconto h4 i {
+    color: #E87516;
+}
+
+.aviso-desconto strong {
+    color: #B45309;
+}
+
+
 
 .btnBaixo {
     display: flex;

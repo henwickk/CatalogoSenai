@@ -7,14 +7,12 @@
     <title>Catálogo - SENAI</title>
 
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 </head>
 
@@ -91,8 +89,7 @@
 
                 </div>
 
-                <a href="https://www.google.com/maps/place/SENAI+Senai/@-2.9081189,-41.7830287,17z"
-                    id="localSenai">
+                <a href="https://www.google.com/maps/place/SENAI+Senai/@-2.9081189,-41.7830287,17z" id="localSenai">
 
                     <i class="bi bi-geo-alt-fill"></i>
                     <p>Unidade SENAI Parnaíba</p>
@@ -128,9 +125,7 @@
 
                     <div id="filtroBox">
 
-                        <input type="search"
-                            id="inputPesquisa"
-                            placeholder="Pesquisar curso">
+                        <input type="search" id="inputPesquisa" placeholder="Pesquisar curso">
 
                         <i class="bi bi-search"></i>
 
@@ -250,18 +245,15 @@
 
                     <div id="socialMidia">
 
-                        <a class="icons"
-                            href="https://www.facebook.com/people/Senai-Parna%C3%ADba/100087170853809/">
+                        <a class="icons" href="https://www.facebook.com/people/Senai-Parna%C3%ADba/100087170853809/">
                             <i class="bi bi-facebook"></i>
                         </a>
 
-                        <a class="icons"
-                            href="https://www.instagram.com/senaiparnaiba/">
+                        <a class="icons" href="https://www.instagram.com/senaiparnaiba/">
                             <i class="bi bi-instagram"></i>
                         </a>
 
-                        <a class="icons"
-                            href="https://api.whatsapp.com/send/?phone=5586995004221">
+                        <a class="icons" href="https://api.whatsapp.com/send/?phone=5586995004221">
                             <i class="bi bi-whatsapp"></i>
                         </a>
 
@@ -352,7 +344,7 @@
     <!-- MODAL -->
     <section class="modalSection" id="modalCurso">
 
-        <div class="modalConteudo" >
+        <div class="modalConteudo">
 
             <button class="fecharModal">
                 <i class="bi bi-x-lg"></i>
@@ -418,6 +410,22 @@
 
                 </div>
 
+                                <div class="gradeCurricular">
+
+                    <i class="bi bi-paperclip"></i>
+
+                    <div>
+                        <strong>Grade do curso</strong>
+                        <span>Baixe o arquivo com a grade completa</span>
+                    </div>
+
+                    <button id="baixarGrade">
+                        <i class="bi bi-download"></i>
+                        Baixar grade (PDF)
+                    </button>
+
+                </div>
+
             </div>
 
             <div class="ladoDireito">
@@ -444,7 +452,7 @@
                     </h3>
 
                     <p id="modalDescricao">
-                        
+
                     </p>
 
                 </div>
@@ -471,39 +479,61 @@
 
                 </div>
 
-                <div class="gradeCurricular">
 
-                    <i class="bi bi-paperclip"></i>
-
-                    <div>
-                        <strong>Grade do curso</strong>
-                        <span>Baixe o arquivo com a grade completa</span>
-                    </div>
-
-                    <button id="baixarGrade">
-                        <i class="bi bi-download"></i>
-                        Baixar grade (PDF)
-                    </button>
-
-                </div>
 
                 <div class="aviso">
-
                     <h3>
-                        <i class="bi bi-exclamation-triangle"></i>
+                        <i class="bi bi-info-circle"></i>
                         Importante
                     </h3>
 
-                    <p>
-                        Para realizar sua inscrição/matrícula você deve ir a
-                        uma de nossas unidades e apresentar cópias do RG, CPF,
-                        comprovante de escolaridade, comprovante de endereço,
-                        e-mail, foto 3x4 e CPF e RG do responsável, se menor
-                        de idade. EX-ALUNO SENAI POSSUI 50% DE DESCONTO EM
-                        CURSOS PAGOS.
-                    </p>
+                    <div class="aviso-secao">
+                        <h4>
+                            Inscrições e matrículas
+                            <i class="bi bi-mortarboard"></i>
+                        </h4>
+
+                        <p>
+                            Este catálogo é destinado apenas à consulta dos cursos.
+                            No momento, <strong>não realizamos inscrições ou matrículas on-line.</strong>
+                            Para se inscrever, procure uma unidade do SENAI.
+                        </p>
+                    </div>
+
+                    <div class="aviso-secao">
+                        <h4>
+                            Documentos necessários
+                            <i class="bi bi-file-earmark-text"></i>
+                        </h4>
+
+                        <ul>
+                            <li>RG e CPF;</li>
+                            <li>Comprovante de escolaridade;</li>
+                            <li>Comprovante de endereço;</li>
+                            <li>E-mail para contato.</li>
+                        </ul>
+
+                        <p class="aviso-observacao">
+                            Para menores de idade, também podem ser solicitados
+                            os documentos do responsável.
+                        </p>
+                    </div>
+
+                    <div class="aviso-desconto">
+                        <h4>
+                            Benefício para ex-alunos
+                            <i class="bi bi-percent"></i>
+                        </h4>
+
+                        <p>
+                            Ex-alunos do SENAI podem ter
+                            <strong>50% de desconto em cursos pagos</strong>,
+                            conforme as condições da instituição.
+                        </p>
+                    </div>
 
                 </div>
+
 
                 <div class="btnBaixo">
 
@@ -523,4 +553,5 @@
     <script src="/script/indexCard.js"></script>
 
 </body>
+
 </html>
