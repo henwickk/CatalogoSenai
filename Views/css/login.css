@@ -13,12 +13,15 @@ body {
     background-image: url('/img/senai1.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    padding-right: 250px;
-    padding-top: 280px;
+    background-position: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 32px clamp(16px, 17.36vw, 250px) 32px 24px;
 }
 
 .login {
-    width: 500px;
+    width: min(500px, 100%);
+    min-width: 0;
     background-color: #fff;
     padding: 40px;
     border-radius: 10px;
@@ -30,6 +33,7 @@ input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
 }
 
 .perfil {
@@ -55,6 +59,8 @@ input {
 .box {
     display: flex;
     align-items: center;
+    min-width: 0;
+    min-height: 48px;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 5px 10px;
@@ -70,8 +76,9 @@ input {
 .box input {
     outline: none;
     flex: 1;
+    min-width: 0;
     border: none;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .esqueci {
@@ -83,6 +90,7 @@ input {
 
 .btEntrar {
     width: 100%;
+    min-height: 48px;
     background: #1d2393;
     color: white;
     border: none;
@@ -112,5 +120,28 @@ input {
 #mensagemLogin{
     color: red;
     font-weight: bold;
+    overflow-wrap: anywhere;
+    margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+    body {
+        justify-content: center;
+        padding: 20px 16px;
+    }
+
+    .login {
+        padding: 28px 24px;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        padding: 16px 12px;
+    }
+
+    .login {
+        padding: 24px 18px;
+    }
 }
 
