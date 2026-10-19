@@ -1,12 +1,6 @@
-
 const mysql = require("mysql2/promise");
-const fs = require("fs");
-const path = require("path");
 
 require("dotenv").config();
-
-const caminhoCA = path.join(__dirname, "..", "ca.pem");
-const certificadoCA = fs.readFileSync(caminhoCA, "utf8");
 
 const connection = mysql.createPool({
     host: process.env.DB_HOST,
@@ -15,7 +9,7 @@ const connection = mysql.createPool({
     database: process.env.DB_NAME,
     port: Number(process.env.DB_PORT) || 3306,
     ssl: {
-        ca: certificadoCA,
+        ca: process.env.DB_SSL_CA,
         rejectUnauthorized: true
     }
 });
