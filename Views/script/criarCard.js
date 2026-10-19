@@ -133,6 +133,11 @@ formulario.addEventListener("submit", async (event) => {
 
     }
 
+    if (!imagem || !grade) {
+        alert("Selecione a imagem do curso e o PDF da grade curricular.");
+        return;
+    }
+
 
     console.log("DADOS DO CARD:", dados);
 

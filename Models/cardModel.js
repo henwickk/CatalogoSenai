@@ -19,7 +19,9 @@ class CardModel {
             imagem_curso,
             local_curso,
             dataPrevInicio_curso,
-            fk_usuario
+            fk_usuario,
+            imagem_public_id,
+            grade_public_id
         } = dados;
 
 
@@ -37,9 +39,11 @@ class CardModel {
                 imagem_curso,
                 local_curso,
                 dataPrevInicio_curso,
-                fk_usuario
+                fk_usuario,
+                imagem_public_id,
+                grade_public_id
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
 
         const valores = [
@@ -55,7 +59,9 @@ class CardModel {
             imagem_curso,
             local_curso,
             dataPrevInicio_curso,
-            fk_usuario
+            fk_usuario,
+            imagem_public_id,
+            grade_public_id
         ];
         console.log("VALORES:", valores);
 
@@ -143,6 +149,8 @@ class CardModel {
             "categoria_curso",
             "valor_curso",
             "imagem_curso",
+            "imagem_public_id",
+            "grade_public_id",
             "local_curso",
             "dataPrevInicio_curso"
         ];
