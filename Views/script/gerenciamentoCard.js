@@ -42,10 +42,7 @@ async function carregarCursos() {
             div.innerHTML = `
                 <div class="course-info">
 
-                    <img
-                        src="/uploads/img/${curso.imagem_curso}"
-                        alt="${curso.nome_curso}"
-                    >
+                    <img src="${curso.imagem_curso}" alt="${curso.nome_curso}">
 
                     <div>
                         <h3>${curso.nome_curso}</h3>
