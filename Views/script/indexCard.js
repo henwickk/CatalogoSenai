@@ -55,7 +55,7 @@ function renderizarCursos(listaCursos) {
             <div class="imagemCurso">
 
                 <img
-                    src="/uploads/img/${curso.imagem_curso}"
+                    src="${curso.imagem_curso}"
                     alt="Curso de ${curso.nome_curso}"
                     class="img-curso"
                 >
@@ -236,7 +236,7 @@ function abrirModal(curso) {
 
     // Valor
     document.getElementById("modalValor").textContent =
-    formatarValor(curso.valor_curso);
+        formatarValor(curso.valor_curso);
 
     // Descrição
     document.getElementById("modalDescricao").textContent =
@@ -276,7 +276,7 @@ function abrirModal(curso) {
 
     // Imagem
     document.getElementById("modalImagem").src =
-        `/uploads/img/${curso.imagem_curso}`;
+        curso.imagem_curso;
 
     // Botao baixar Grade
 
@@ -289,8 +289,9 @@ function abrirModal(curso) {
 
         const link = document.createElement("a");
 
-        link.href = `/uploads/grades/${curso.grade_curso}`;
-        link.download = curso.grade_curso;
+        link.href = curso.grade_curso;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
 
         document.body.appendChild(link);
         link.click();
