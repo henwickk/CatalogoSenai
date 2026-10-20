@@ -832,9 +832,9 @@ ul {
 }
 
 .modalConteudo {
-    width: 80%;
-    max-width: 60vw;
-    height: 90vh;
+    width: 92%;
+    max-width: 1400px;
+    height: min(90vh, 900px);
 
     background: var(--card);
 
@@ -845,9 +845,9 @@ ul {
     padding: 30px;
 
     display: grid;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
 
-    gap: 30px;
+    gap: clamp(16px, 2vw, 30px);
 
     transform: scale(.9);
 
@@ -859,7 +859,7 @@ ul {
 }
 
 .ladoDireito {
-    width: 94%;
+    width: 100%;
 }
 
 .div-img {
@@ -1272,6 +1272,30 @@ ul {
 /* =========================
    RESPONSIVE
 ========================= */
+
+@media screen and (min-width: 769px) {
+    .modalConteudo {
+        width: min(92vw, 1400px);
+        max-height: calc(100vh - 32px);
+        min-height: 0;
+        grid-template-rows: minmax(0, 1fr);
+        overflow: hidden;
+    }
+
+    .ladoEsquerdo,
+    .ladoDireito {
+        min-width: 0;
+        min-height: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        scrollbar-gutter: stable;
+        padding-right: 8px;
+    }
+
+    .ladoDireito {
+        padding-top: 28px;
+    }
+}
 
 @media screen and (max-width: 768px) {
 
